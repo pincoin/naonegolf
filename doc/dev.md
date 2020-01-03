@@ -15,6 +15,8 @@ $ brew install pyenv-virtualenv
 
 ### ~/.zshrc
 ```
+export LC_ALL=en_US.UTF-8
+
 export CFLAGS="$CFLAGS -I$(brew --prefix openssl)/include"
 export LDFLAGS="$LDFLAGS -L$(brew --prefix openssl)/lib"
 
