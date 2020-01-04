@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-03 22:58+0700\n"
+"POT-Creation-Date: 2020-01-04 20:28+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,12 +20,16 @@ msgstr ""
 
 #: conf/settings/local.py:10
 msgid "Korean"
-msgstr ""
+msgstr "ภาษาเกาหลี"
 
 #: conf/settings/local.py:11
 msgid "Thai"
-msgstr ""
+msgstr "ภาษาไทย"
 
 #: conf/settings/local.py:12
 msgid "English"
-msgstr ""
+msgstr "ภาษาอังกฤษ"
+
+#: conf/templates/conf/home.html:6
+msgid "NA-ONE Communication"
+msgstr "นา-วัน คอมิวนิเคชั่น"

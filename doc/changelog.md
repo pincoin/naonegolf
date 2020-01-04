@@ -8,10 +8,14 @@
 
 # 2020 1월 4일
 
-
+- html5 boilerplate / bootstrap - home page
+- gunicorn, celery, memcached
+- deploy
 
 # TODO
-- 템플릿 환경 만들기
+- 템플릿 환경 만들기 - 부트스트랩
+- gunicorn, celery, memecached
+- 모델 생성 - 골프장, 예약, 요금표
 - django-auth 연동 (가입 및 절차)
 - 라인/카톡 연동
 - 이메일 발송
