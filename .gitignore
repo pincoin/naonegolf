@@ -206,3 +206,4 @@ fabric.properties
 # Naonegolf
 secret.json
 assets/
+conf/settings/production.py

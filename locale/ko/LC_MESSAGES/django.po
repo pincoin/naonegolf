@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 20:28+0700\n"
+"POT-Creation-Date: 2020-01-04 21:50+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,10 @@ msgstr "태국어"
 msgid "English"
 msgstr "영어"
 
-#: conf/templates/conf/home.html:6
+#: conf/templates/conf/home.html:7 conf/templates/conf/home.html:29
 msgid "NA-ONE Communication"
 msgstr "나원 커뮤니케이션"
+
+#: conf/templates/conf/home.html:42
+msgid "Booking"
+msgstr "예매"
