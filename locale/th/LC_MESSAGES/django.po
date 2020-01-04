@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 21:50+0700\n"
+"POT-Creation-Date: 2020-01-04 21:55+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,14 @@ msgstr "ภาษาอังกฤษ"
 msgid "NA-ONE Communication"
 msgstr "นา-วัน คอมิวนิเคชั่น"
 
+#: conf/templates/conf/home.html:37
+msgid "Home"
+msgstr "Home"
+
 #: conf/templates/conf/home.html:42
 msgid "Booking"
-msgstr ""
+msgstr "จอง"
+
+#: conf/templates/conf/home.html:45
+msgid "Thai Holidays"
+msgstr "วันหยุดราชการ"
