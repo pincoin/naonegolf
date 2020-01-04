@@ -1,5 +1,4 @@
 # 2020년 1월 3일
-
 - 프로젝트 생성
 - golf, windmill, member 앱 생성
 - local, production 환경 분리
@@ -7,14 +6,16 @@
 - static / media files
 
 # 2020 1월 4일
-
 - html5 boilerplate / bootstrap - home page
-- gunicorn, celery, memcached
+- gunicorn
 - deploy
 
+# 2020년 1월 5일
+- 모델 생성: 휴일/골프장/예약
+
 # TODO
-- 템플릿 환경 만들기 - 부트스트랩
-- gunicorn, celery, memecached
+
+- celery, memecached
 - 모델 생성 - 골프장, 예약, 요금표
 - django-auth 연동 (가입 및 절차)
 - 라인/카톡 로그인 연동
