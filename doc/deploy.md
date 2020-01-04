@@ -191,24 +191,24 @@ server {
 }
 ```
 
-### /etc/nginx/sites-available/com.bangna.www-ssl
+### /etc/nginx/sites-available/com.naonegolf.www-ssl
 
 ```
 upstream app_server {
-    server unix:/var/www/bangna/run/gunicorn.sock;
+    server unix:/var/www/naonegolf/run/gunicorn.sock;
 }
 
 server {
     listen 443 ssl;
-    server_name www.bangna.com;
+    server_name www.naonegolf.com;
     charset utf-8;
     client_max_body_size 16M;
 
     ssl on;
-    ssl_certificate /var/www/bangna/ssl/bangna_com.pem;
-    ssl_certificate_key /var/www/bangna/ssl/bangna_com.key;
+    ssl_certificate /var/www/naonegolf/ssl/naonegolf_com.pem;
+    ssl_certificate_key /var/www/naonegolf/ssl/naonegolf_com.key;
 
-    root /var/www/bangna/repo;
+    root /var/www/naonegolf/repo;
 
     location = /favicon.ico {
         access_log off;
@@ -233,13 +233,13 @@ server {
         proxy_pass http://app_server;
     }
 
-    access_log /var/www/bangna/logs/access.log;
-    error_log /var/www/bangna/logs/error.log;
+    access_log /var/www/naonegolf/logs/access.log;
+    error_log /var/www/naonegolf/logs/error.log;
 }
 ```
 
 ```
-$ sudo ln -s /etc/nginx/sites-available/com.bangna.www /etc/nginx/sites-enabled/
+$ sudo ln -s /etc/nginx/sites-available/com.naonegolf.www /etc/nginx/sites-enabled/
 $ sudo nginx -t
 $ sudo service nginx restart
 ```
@@ -256,14 +256,14 @@ After=network.target
 [Service]
 User=was
 Group=www-data
-WorkingDirectory=/var/www/bangna/repo
+WorkingDirectory=/var/www/naonegolf/repo
 ExecStart=/home/was/.pyenv/versions/django/bin/gunicorn \
     --workers 3 \
-    --bind unix:/var/www/bangna/run/gunicorn.sock \
+    --bind unix:/var/www/naonegolf/run/gunicorn.sock \
     --env DJANGO_SETTINGS_MODULE=conf.settings.production \
     --log-level info \
-    --access-logfile /var/www/bangna/logs/gunicorn-access.log \
-    --error-logfile /var/www/bangna/logs/gunicorn-errors.log \
+    --access-logfile /var/www/naonegolf/logs/gunicorn-access.log \
+    --error-logfile /var/www/naonegolf/logs/gunicorn-errors.log \
     conf.wsgi:application
 
 [Install]
