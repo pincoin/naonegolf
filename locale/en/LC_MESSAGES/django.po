@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 21:55+0700\n"
+"POT-Creation-Date: 2020-01-05 10:58+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,4 +43,52 @@ msgstr ""
 
 #: conf/templates/conf/home.html:45
 msgid "Thai Holidays"
+msgstr ""
+
+#: golf/apps.py:6
+msgid "Golf"
+msgstr ""
+
+#: golf/models.py:9
+msgid "Thailand"
+msgstr ""
+
+#: golf/models.py:10
+msgid "South Korea"
+msgstr ""
+
+#: golf/models.py:11
+msgid "Japan"
+msgstr ""
+
+#: golf/models.py:12
+msgid "China"
+msgstr ""
+
+#: golf/models.py:16
+msgid "Holiday name"
+msgstr ""
+
+#: golf/models.py:21
+msgid "Holiday day"
+msgstr ""
+
+#: golf/models.py:26
+msgid "Country code"
+msgstr ""
+
+#: golf/models.py:33
+msgid "Holiday"
+msgstr ""
+
+#: golf/models.py:34
+msgid "Holidays"
+msgstr ""
+
+#: member/apps.py:6
+msgid "Member"
+msgstr ""
+
+#: windmill/apps.py:6
+msgid "Summit Windmill Golf Club"
 msgstr ""
