@@ -26,7 +26,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'conf', 'static'),
     os.path.join(BASE_DIR, 'golf', 'static'),
     os.path.join(BASE_DIR, 'member', 'static'),
+    os.path.join(BASE_DIR, 'windmill', 'static'),
 ]
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    # 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 
 # Media files (Uploaded files)
 MEDIA_URL = '/media/'
