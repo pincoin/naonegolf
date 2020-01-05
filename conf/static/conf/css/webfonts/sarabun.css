@@ -1,0 +1,26 @@
+/* sarabun-regular - latin_thai */
+@font-face {
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Sarabun Regular'), local('Sarabun-Regular'),
+    url('../../fonts/sarabun-v7-latin_thai-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../../fonts/sarabun-v7-latin_thai-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* sarabun-700 - latin_thai */
+@font-face {
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Sarabun Bold'), local('Sarabun-Bold'),
+    url('../../fonts/sarabun-v7-latin_thai-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../../fonts/sarabun-v7-latin_thai-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* sarabun-800 - latin_thai */
+@font-face {
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Sarabun ExtraBold'), local('Sarabun-ExtraBold'),
+    url('../../fonts/sarabun-v7-latin_thai-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../../fonts/sarabun-v7-latin_thai-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
