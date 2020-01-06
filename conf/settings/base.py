@@ -85,4 +85,38 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
+# for django-allauth
 SITE_ID = 1
+
+# django.contrib.auth settings for allauth
+PASSWORD_RESET_TIMEOUT_DAYS = 1  # default=3
+LOGIN_URL = '/accounts/login/'  # default=/accounts/login/
+LOGOUT_URL = '/accounts/logout/'  # default=/accounts/logout/
+LOGIN_REDIRECT_URL = '/'  # default=/accounts/profile/
+# LOGOUT_REDIRECT_URL = '/'
+
+# django-allauth
+# DEFAULT_FROM_EMAIL = EMAIL_NO_REPLY
+# ACCOUNT_ADAPTER = 'member.adapters.MyAccountAdapter'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
+# ACCOUNT_SIGNUP_FORM_CLASS = 'member.forms2.MemberSignupForm'
+ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True  # default=False
+SOCIALACCOUNT_AUTO_SIGNUP = False
+
+# Social providers for django-allauth
+# Each key has an empty dictionary value that will eventually contain provider specific configuration options by admin
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {},
+    'kakao': {},
+    'line': {
+        'SCOPE': [
+            'profile',
+            'openid',
+            'email',
+        ],
+    },
+}
