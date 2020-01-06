@@ -285,7 +285,7 @@ $ sudo systemctl start rabbitmq-server
 ```
 
 ```
-$ sudo rabbitmqctl add_user was PASSWD
+$ sudo rabbitmqctl add_user was PASSWD(alphanumeric)
 $ sudo rabbitmqctl set_user_tags was administrator
 $ sudo rabbitmqctl set_permissions was ".*" ".*" ".*"
 $ sudo rabbitmqctl delete_user guest
