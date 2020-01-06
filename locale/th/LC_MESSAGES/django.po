@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-05 10:58+0700\n"
+"POT-Creation-Date: 2020-01-06 23:05+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,23 +29,28 @@ msgstr "ภาษาไทย"
 msgid "English"
 msgstr "ภาษาอังกฤษ"
 
-#: conf/templates/conf/home.html:7 conf/templates/conf/home.html:29
+#: conf/templates/conf/base.html:7
+msgid "NA-ONE"
+msgstr "นา-วัน"
+
+#: conf/templates/conf/base.html:33 golf/admin.py:6 golf/admin.py:7
+#: golf/admin.py:8
 msgid "NA-ONE Communication"
 msgstr "นา-วัน คอมิวนิเคชั่น"
 
-#: conf/templates/conf/home.html:37
+#: conf/templates/conf/base.html:41
 msgid "Home"
 msgstr "Home"
 
-#: conf/templates/conf/home.html:42
+#: conf/templates/conf/base.html:46
 msgid "Booking"
 msgstr "จอง"
 
-#: conf/templates/conf/home.html:45
+#: conf/templates/conf/base.html:49
 msgid "Thai Holidays"
 msgstr "วันหยุดราชการ"
 
-#: golf/apps.py:6
+#: golf/apps.py:7
 msgid "Golf"
 msgstr "กอล์ฟ"
 
@@ -85,10 +90,10 @@ msgstr "วันหยุดราชการ"
 msgid "Holidays"
 msgstr "วันหยุดราชการ"
 
-#: member/apps.py:6
+#: member/apps.py:7
 msgid "Member"
 msgstr "สมาชิก"
 
-#: windmill/apps.py:6
+#: windmill/apps.py:7
 msgid "Summit Windmill Golf Club"
 msgstr "ซัมมิท วินด์มิลล์ กอล์ฟ คลับ"

@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+{% load static %}
+{% load i18n %}
+<head>
+    <meta charset="utf-8">
+    <title>{% trans 'NA-ONE' %} : {% block title %}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet"
+          href="{% static "conf/css/webfonts/nanum-gothic.css" %}">
+    <link rel="stylesheet"
+          href="{% static "conf/css/webfonts/sarabun.css" %}">
+    <link rel="stylesheet"
+          href="{% static "conf/css/vendor/bootstrap.min.css" %}">
+    <link rel="stylesheet"
+          href="{% static "conf/css/base.css" %}">
+
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">{% trans 'NA-ONE Communication' %}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">{% trans 'Home' %}
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans 'Booking' %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans 'Thai Holidays' %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main>{% block content %}{% endblock %}</main>
+
+<!-- Footer -->
+<footer class="py-2 bg-info">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; naonegolf.com 2017-{% now "Y" %} All Rights Reserved.</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+{% block javascript %}
+    <script type="text/javascript"
+            src="{% static "conf/js/vendor/jquery-3.4.1.min.js" %}"></script>
+    <script type="text/javascript"
+            src="{% static "conf/js/vendor/bootstrap.bundle.min.js" %}"></script>
+    <script type="text/javascript"
+            src="{% static "conf/js/base.js" %}"></script>
+    {{ form.media.js }}
+{% endblock %}
+
+</body>
+
+</html>
