@@ -291,7 +291,13 @@ $ sudo rabbitmqctl set_permissions was ".*" ".*" ".*"
 $ sudo rabbitmqctl delete_user guest
 ```
 
-/home/was/celery.conf
+```
+$ sudo su - was
+$ pyenv shell django
+$ pip install celery
+```
+
+/var/www/naonegolf/conf/celery.conf
 
 ```
 # 노드, 워커 개수 (보통은 하나):
@@ -312,8 +318,8 @@ CELERYD_OPTS="--time-limit=300 --concurrency=8"
 # - %n 노드 이름의 첫 부분
 # - %I 현재 자식 프로세스 인덱스
 #   prefork pool을 사용할 때 경쟁상태(race condition)을 피하기 위해 중요
-CELERYD_PID_FILE="/var/www/bangna/run/celery-%n.pid"
-CELERYD_LOG_FILE="/var/www/bangna/logs/celery-%n%I.log"
+CELERYD_PID_FILE="/var/www/naonegolf/run/celery-%n.pid"
+CELERYD_LOG_FILE="/var/www/naonegolf/logs/celery-%n%I.log"
 CELERYD_LOG_LEVEL="INFO"
 ```
 
@@ -328,8 +334,8 @@ After=network.target
 Type=forking
 User=was
 Group=devops
-EnvironmentFile=/var/www/bangna/conf/celery.conf
-WorkingDirectory=/var/www/bangna/repo
+EnvironmentFile=/var/www/naonegolf/conf/celery.conf
+WorkingDirectory=/var/www/naonegolf/repo
 ExecStart=/bin/sh -c 'DJANGO_SETTINGS_MODULE='conf.settings.production' ${CELERY_BIN} multi start ${CELERYD_NODES} \
     -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
     --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}'
