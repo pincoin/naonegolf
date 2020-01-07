@@ -18,6 +18,10 @@
 - celery 연동 및 memcached 설치
 
 # 2020년 1월 7일
+- 템플릿, carousel
+- mailgun 이메일 발송 서버 설정
+
+# 2020년 1월 8일
 - django-allauth 로그인 처리
 - django-auth 연동 (가입 및 절차)
 - 라인/카톡 로그인 연동

@@ -9,6 +9,15 @@ secret = json.loads(open(os.path.join(BASE_DIR, 'secret.json')).read())
 SECRET_KEY = secret['SECRET_KEY']
 ALLOWED_HOSTS = secret['ALLOWED_HOSTS']
 DATABASES = secret['DATABASES']
+
+EMAIL_HOST = secret['EMAIL_HOST']
+EMAIL_HOST_USER = secret['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = secret['EMAIL_HOST_PASSWORD']
+EMAIL_PORT = secret['EMAIL_PORT']
+EMAIL_USE_TLS = secret['EMAIL_USE_TLS']
+EMAIL_NO_REPLY = secret['EMAIL_NO_REPLY']
+EMAIL_CUSTOMER_SERVICE = secret['EMAIL_CUSTOMER_SERVICE']
+
 CELERY_BROKER_URL = secret['CELERY_BROKER_URL']
 
 # Application definition
@@ -96,7 +105,7 @@ LOGIN_REDIRECT_URL = '/'  # default=/accounts/profile/
 # LOGOUT_REDIRECT_URL = '/'
 
 # django-allauth
-# DEFAULT_FROM_EMAIL = EMAIL_NO_REPLY
+DEFAULT_FROM_EMAIL = EMAIL_NO_REPLY
 # ACCOUNT_ADAPTER = 'member.adapters.MyAccountAdapter'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
