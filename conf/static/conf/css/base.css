@@ -1,3 +1,7 @@
 body {
     padding-top: 56px;
 }
+
+.no-break-word {
+    word-break: keep-all;
+}
