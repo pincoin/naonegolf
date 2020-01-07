@@ -20,13 +20,12 @@
 # 2020년 1월 7일
 - 템플릿, carousel
 - mailgun 이메일 발송 서버 설정
+- celery task : 이메일 통보, 라인 단톡방 통보
 
 # 2020년 1월 8일
 - django-allauth 로그인 처리
 - django-auth 연동 (가입 및 절차)
 - 라인/카톡 로그인 연동
-- 이메일 발송
-- line notify 발송
 - 모델 생성: 골프장/예약
 - 예약 다이어그램
 
