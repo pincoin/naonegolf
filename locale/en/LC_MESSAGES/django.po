@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 19:44+0700\n"
+"POT-Creation-Date: 2020-01-08 20:48+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,12 +42,24 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: conf/templates/conf/base.html:46
+#: conf/templates/conf/base.html:44
 msgid "Booking"
 msgstr ""
 
-#: conf/templates/conf/base.html:49
+#: conf/templates/conf/base.html:47
 msgid "Thai Holidays"
+msgstr ""
+
+#: conf/templates/conf/base.html:50
+msgid "Login"
+msgstr ""
+
+#: conf/templates/conf/base.html:53
+msgid "Logout"
+msgstr ""
+
+#: conf/templates/conf/base.html:56
+msgid "Profile"
 msgstr ""
 
 #: golf/apps.py:7
