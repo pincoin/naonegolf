@@ -23,6 +23,7 @@ TIME_ZONE = 'Asia/Bangkok'
 STATIC_URL = '/assets/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets/')
 STATICFILES_DIRS = [
+    '/Users/mairoo/.pyenv/versions/naonegolf/lib/python3.7/site-packages/django/contrib/admin/static',
     os.path.join(BASE_DIR, 'conf', 'static'),
     os.path.join(BASE_DIR, 'golf', 'static'),
     os.path.join(BASE_DIR, 'member', 'static'),
