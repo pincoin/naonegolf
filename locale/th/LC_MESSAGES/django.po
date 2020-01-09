@@ -156,19 +156,19 @@ msgstr ""
 
 #: golf/models.py:97
 msgid "18 Holes"
-msgstr ""
+msgstr "18 หลุม"
 
 #: golf/models.py:98
 msgid "9 Holes"
-msgstr ""
+msgstr "9 หลุม"
 
 #: golf/models.py:99
 msgid "27 Holes"
-msgstr ""
+msgstr "27 หลุม"
 
 #: golf/models.py:100
 msgid "36 Holes"
-msgstr ""
+msgstr "36 หลุม"
 
 #: golf/models.py:111
 msgid "Golf club name"
