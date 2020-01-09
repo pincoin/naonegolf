@@ -10,7 +10,7 @@ urlpatterns = [
          HomeView.as_view(), name='home'),
 
     path('accounts/',
-         include('allauth.urls')),
+         include('member.urls')),
 
     path('admin/',
          admin.site.urls),

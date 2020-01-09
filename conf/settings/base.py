@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.kakao',
-    # 'member.socialaccount.providers.line',
+    'member.socialaccount.providers.line',
 ]
 
 INSTALLED_APPS += [
