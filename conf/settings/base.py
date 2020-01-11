@@ -109,7 +109,7 @@ LOGIN_REDIRECT_URL = '/'  # default=/accounts/profile/
 
 # django-allauth
 DEFAULT_FROM_EMAIL = EMAIL_NO_REPLY
-# ACCOUNT_ADAPTER = 'member.adapters.MyAccountAdapter'
+ACCOUNT_ADAPTER = 'member.adapters.MyAccountAdapter'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'

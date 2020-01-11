@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 20:48+0700\n"
+"POT-Creation-Date: 2020-01-11 20:37+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,32 +33,32 @@ msgstr "영어"
 msgid "NA-ONE"
 msgstr "나원"
 
-#: conf/templates/conf/base.html:33 golf/admin.py:6 golf/admin.py:7
+#: conf/templates/conf/base.html:35 golf/admin.py:6 golf/admin.py:7
 #: golf/admin.py:8
 msgid "NA-ONE Communication"
 msgstr "나원 커뮤니케이션"
 
-#: conf/templates/conf/base.html:41
+#: conf/templates/conf/base.html:43
 msgid "Home"
 msgstr "홈"
 
-#: conf/templates/conf/base.html:44
+#: conf/templates/conf/base.html:46
 msgid "Booking"
 msgstr "예매"
 
-#: conf/templates/conf/base.html:47
+#: conf/templates/conf/base.html:49
 msgid "Thai Holidays"
 msgstr "태국공휴일"
 
-#: conf/templates/conf/base.html:50
+#: conf/templates/conf/base.html:53
 msgid "Login"
 msgstr "로그인"
 
-#: conf/templates/conf/base.html:53
+#: conf/templates/conf/base.html:57
 msgid "Logout"
 msgstr "로그아웃"
 
-#: conf/templates/conf/base.html:56
+#: conf/templates/conf/base.html:60
 msgid "Profile"
 msgstr "프로필"
 
@@ -178,7 +178,7 @@ msgstr "골프장 이름"
 msgid "Phone number"
 msgstr "전화번호"
 
-#: golf/models.py:123
+#: golf/models.py:123 member/models.py:31
 msgid "Email address"
 msgstr "이메일주소"
 
@@ -208,19 +208,19 @@ msgstr "캐디 요금"
 
 #: golf/models.py:169
 msgid "Max # of High/Weekday"
-msgstr ""
+msgstr "성수기/평일 최대인원"
 
 #: golf/models.py:174
 msgid "Max # of High/Weekend"
-msgstr ""
+msgstr "성수기/휴일 최대인원"
 
 #: golf/models.py:179
 msgid "Max # of Low/Weekday"
-msgstr ""
+msgstr "비수기/평일 최대인원"
 
 #: golf/models.py:184
 msgid "Max # of Low/Weekend"
-msgstr ""
+msgstr "비수기/휴일 최대인원"
 
 #: golf/models.py:201 golf/models.py:211
 msgid "Golf club"
@@ -254,9 +254,41 @@ msgstr ""
 msgid "Product list membership"
 msgstr ""
 
+#: member/adapters.py:30
+msgid "Your email domain is not allowed."
+msgstr "가입할 수 없는 이메일 주소입니다."
+
+#: member/adapters.py:33
+msgid "Your email is banned."
+msgstr "이메일 주소가 차단되었습니다."
+
 #: member/apps.py:7
 msgid "Member"
 msgstr "회원"
+
+#: member/models.py:10
+msgid "user"
+msgstr "사용자"
+
+#: member/models.py:18
+msgid "IP address"
+msgstr "이메일주소"
+
+#: member/models.py:22
+msgid "Login log"
+msgstr "로그인 이력"
+
+#: member/models.py:23
+msgid "Login logs"
+msgstr "로그인 이력"
+
+#: member/models.py:35
+msgid "Banned Email Address"
+msgstr "차단 이메일주소"
+
+#: member/models.py:36
+msgid "Banned Email Addresses"
+msgstr "차단 이메일주소"
 
 #: windmill/apps.py:7
 msgid "Summit Windmill Golf Club"

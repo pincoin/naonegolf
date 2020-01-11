@@ -9,6 +9,9 @@ urlpatterns = [
     path('',
          HomeView.as_view(), name='home'),
 
+    path('auth/',
+         include('allauth.urls')),
+
     path('accounts/',
          include('member.urls')),
 

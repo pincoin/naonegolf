@@ -1,0 +1,46 @@
+{% extends 'conf/base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+    <div class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4">
+                    <nav class="panel">
+                        <p class="panel-heading has-text-centered has-text-weight-bold">
+                            {{ request.user.username }}
+                        </p>
+                        <a href="{% url 'account_profile' %}"
+                           class="panel-block{% if sidemenu == 'profile' %} is-active{% endif %}">
+                            {% trans 'Profile' %}
+                        </a>
+                        <a href="{% url 'account_login_log' %}"
+                           class="panel-block{% if sidemenu == 'logs' %} is-active{% endif %}">
+                            {% trans 'Login log' %}
+                        </a>
+                        <a href="{% url 'socialaccount_connections' %}"
+                           class="panel-block{% if sidemenu == 'sns' %} is-active{% endif %}">
+                            {% trans 'SNS' %}
+                        </a>
+                        <a href="{% url 'account_email' %}"
+                           class="panel-block{% if sidemenu == 'emails' %} is-active{% endif %}">
+                            {% trans 'Email management' %}
+                        </a>
+                        <a href="{% url 'account_change_password' %}"
+                           class="panel-block{% if sidemenu == 'password' %} is-active{% endif %}">
+                            {% trans 'Change password' %}
+                        </a>
+                        <a href="{% url 'account_unregister' %}"
+                           class="panel-block{% if sidemenu == 'unregister' %} is-active{% endif %}">
+                            {% trans 'Unregister' %}
+                        </a>
+                    </nav>
+                </div>
+                <div class="column is-8">
+                    {% block main_content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
