@@ -2,11 +2,52 @@
 
 {% load i18n %}
 {% load static %}
+{% load socialaccount %}
 
 {% block title %}{% trans 'Login' %}{% endblock %}
 
 {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">로그인</h5>
+                        <hr class="my-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <a class="w-100"
+                                   href="{% provider_login_url 'line' process='login' scope=scope auth_params=auth_params %}">
+                                    <img class="w-100 rounded" src="{% static 'member/images/line.svg' %}">
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a class=""
+                                   href="{% provider_login_url 'kakao' process='login' scope=scope auth_params=auth_params %}">
+                                    <img class="w-100 rounded" src="{% static 'member/images/kakao.svg' %}">
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a class=""
+                                   href="{% provider_login_url 'facebook' process='login' scope=scope auth_params=auth_params %}">
+                                    <img class="w-100 rounded" src="{% static 'member/images/facebook.svg' %}">
+                                </a>
+                            </div>
+                        </div>
+                        {% providers_media_js %}
+                        <hr class="my-4">
+                        <div class="text-center no-break-word">
+                            간편하게 SNS로 로그인할 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
-
-
+{% block stylesheet %}
+    {{ block.super }}
+    <link rel="stylesheet"
+          href="{% static "member/css/member.css" %}">
 {% endblock %}

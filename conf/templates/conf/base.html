@@ -13,16 +13,18 @@
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet"
-          href="{% static "conf/css/webfonts/nanum-gothic.css" %}">
-    <link rel="stylesheet"
-          href="{% static "conf/css/webfonts/sarabun.css" %}">
-    <link rel="stylesheet"
-          href="{% static "conf/css/vendor/bootstrap.min.css" %}">
-    <link rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet"
-          href="{% static "conf/css/base.css" %}">
+    {% block stylesheet %}
+        <link rel="stylesheet"
+              href="{% static "conf/css/webfonts/nanum-gothic.css" %}">
+        <link rel="stylesheet"
+              href="{% static "conf/css/webfonts/sarabun.css" %}">
+        <link rel="stylesheet"
+              href="{% static "conf/css/vendor/bootstrap.min.css" %}">
+        <link rel="stylesheet"
+              href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet"
+              href="{% static "conf/css/base.css" %}">
+    {% endblock %}
 
     <meta name="theme-color" content="#78c2ad">
 </head>

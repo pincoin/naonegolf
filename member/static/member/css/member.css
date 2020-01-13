@@ -1,0 +1,23 @@
+.button-image:before {
+    content: "";
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: text-top;
+    background-color: transparent;
+    background-position : center center;
+    background-repeat:no-repeat;
+}
+
+.line:before{
+     background-image : url(/assets/member/images/line.svg);
+}
+
+.kakao:before{
+     background-image : url(/assets/member/images/kakao.svg);
+}
+
+.facebook:before{
+     background-image : url(/assets/member/images/facebook.svg);
+}
