@@ -1,8 +1,8 @@
+from allauth.account import views as allauth_views
 from django.utils.translation import gettext_lazy as _
-from django.views import generic
 
 
-class MemberLoginView(generic.TemplateView):
+class MemberLoginView(allauth_views.LoginView):
     template_name = 'member/account/login.html'
 
     def get_context_data(self, **kwargs):
