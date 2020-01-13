@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-11 20:37+0700\n"
+"POT-Creation-Date: 2020-01-14 00:38+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,32 +33,34 @@ msgstr "영어"
 msgid "NA-ONE"
 msgstr "나원"
 
-#: conf/templates/conf/base.html:35 golf/admin.py:6 golf/admin.py:7
+#: conf/templates/conf/base.html:37 golf/admin.py:6 golf/admin.py:7
 #: golf/admin.py:8
 msgid "NA-ONE Communication"
 msgstr "나원 커뮤니케이션"
 
-#: conf/templates/conf/base.html:43
+#: conf/templates/conf/base.html:45
 msgid "Home"
 msgstr "홈"
 
-#: conf/templates/conf/base.html:46
+#: conf/templates/conf/base.html:48
 msgid "Booking"
 msgstr "예매"
 
-#: conf/templates/conf/base.html:49
+#: conf/templates/conf/base.html:51
 msgid "Thai Holidays"
 msgstr "태국공휴일"
 
-#: conf/templates/conf/base.html:53
-msgid "Login"
+#: conf/templates/conf/base.html:55
+#: member/templates/member/account/login.html:7
+#: member/templates/member/account/login.html:15 member/views.py:10
+msgid "Sign In"
 msgstr "로그인"
 
-#: conf/templates/conf/base.html:57
-msgid "Logout"
+#: conf/templates/conf/base.html:59
+msgid "Sign Out"
 msgstr "로그아웃"
 
-#: conf/templates/conf/base.html:60
+#: conf/templates/conf/base.html:62
 msgid "Profile"
 msgstr "프로필"
 
@@ -289,6 +291,10 @@ msgstr "차단 이메일주소"
 #: member/models.py:36
 msgid "Banned Email Addresses"
 msgstr "차단 이메일주소"
+
+#: member/templates/member/account/login.html:40
+msgid "You may login with SNS at your convinience."
+msgstr "간편하게 SNS로 로그인할 수 있습니다."
 
 #: windmill/apps.py:7
 msgid "Summit Windmill Golf Club"

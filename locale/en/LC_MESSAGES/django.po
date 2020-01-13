@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-11 20:37+0700\n"
+"POT-Creation-Date: 2020-01-14 00:38+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,32 +33,34 @@ msgstr ""
 msgid "NA-ONE"
 msgstr ""
 
-#: conf/templates/conf/base.html:35 golf/admin.py:6 golf/admin.py:7
+#: conf/templates/conf/base.html:37 golf/admin.py:6 golf/admin.py:7
 #: golf/admin.py:8
 msgid "NA-ONE Communication"
 msgstr ""
 
-#: conf/templates/conf/base.html:43
+#: conf/templates/conf/base.html:45
 msgid "Home"
 msgstr ""
 
-#: conf/templates/conf/base.html:46
+#: conf/templates/conf/base.html:48
 msgid "Booking"
 msgstr ""
 
-#: conf/templates/conf/base.html:49
+#: conf/templates/conf/base.html:51
 msgid "Thai Holidays"
 msgstr ""
 
-#: conf/templates/conf/base.html:53
-msgid "Login"
+#: conf/templates/conf/base.html:55
+#: member/templates/member/account/login.html:7
+#: member/templates/member/account/login.html:15 member/views.py:10
+msgid "Sign In"
 msgstr ""
 
-#: conf/templates/conf/base.html:57
-msgid "Logout"
+#: conf/templates/conf/base.html:59
+msgid "Sign Out"
 msgstr ""
 
-#: conf/templates/conf/base.html:60
+#: conf/templates/conf/base.html:62
 msgid "Profile"
 msgstr ""
 
@@ -288,6 +290,10 @@ msgstr ""
 
 #: member/models.py:36
 msgid "Banned Email Addresses"
+msgstr ""
+
+#: member/templates/member/account/login.html:40
+msgid "You may login with SNS at your convinience."
 msgstr ""
 
 #: windmill/apps.py:7

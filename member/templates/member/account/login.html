@@ -4,15 +4,15 @@
 {% load static %}
 {% load socialaccount %}
 
-{% block title %}{% trans 'Login' %}{% endblock %}
+{% block title %}{% trans 'Sign In' %}{% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-signin my-5">
+                <div class="card my-5">
                     <div class="card-body">
-                        <h5 class="card-title text-center">로그인</h5>
+                        <h5 class="card-title text-center">{% trans 'Sign In' %}</h5>
                         <hr class="my-4">
                         <div class="row">
                             <div class="col-4">
@@ -37,7 +37,8 @@
                         {% providers_media_js %}
                         <hr class="my-4">
                         <div class="text-center no-break-word">
-                            간편하게 SNS로 로그인할 수 있습니다.
+                            {% trans 'You may login with SNS at your convinience.' %}
+
                         </div>
                     </div>
                 </div>
