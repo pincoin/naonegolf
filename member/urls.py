@@ -13,6 +13,8 @@ urlpatterns = [
     # Account
     path('login/',
          views.MemberLoginView.as_view(), name="account_login"),
+    path('logout/',
+         views.MemberLogoutView.as_view(), name="account_logout"),
 ]
 
 # URL patterns for Line custom social providers
