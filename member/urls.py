@@ -7,7 +7,7 @@ from django.urls import (
 
 from . import views
 
-app_name = 'member'
+# app_name = 'member'
 
 urlpatterns = [
     # Account
@@ -15,6 +15,16 @@ urlpatterns = [
          views.MemberLoginView.as_view(), name="account_login"),
     path('logout/',
          views.MemberLogoutView.as_view(), name="account_logout"),
+
+    # Social Providers
+    path('social/login/cancelled/',
+         views.MemberSocialLoginCancelledView.as_view(), name='socialaccount_login_cancelled'),
+    path('social/login/error/',
+         views.MemberSocialLoginErrorView.as_view(), name='socialaccount_login_error'),
+    path('social/signup/',
+         views.MemberSocialSignupView.as_view(), name='socialaccount_signup'),
+    path('social/connections/',
+         views.MemberSocialConnectionsView.as_view(), name='socialaccount_connections'),
 ]
 
 # URL patterns for Line custom social providers
