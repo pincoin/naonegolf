@@ -1,0 +1,10 @@
+{% load account %}{% user_display user as user_display %}{% load i18n %}
+
+{% blocktrans %}
+    <p>
+        Hello from NA-ONE!
+    </p>
+    <p>
+        To confirm this is correct, go to {{ activate_url }}
+    </p>
+{% endblocktrans %}

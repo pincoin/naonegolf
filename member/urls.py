@@ -2,7 +2,7 @@ from importlib import import_module
 
 from allauth.socialaccount import providers
 from django.urls import (
-    path
+    path, re_path
 )
 
 from . import views
@@ -25,6 +25,14 @@ urlpatterns = [
          views.MemberSocialSignupView.as_view(), name='socialaccount_signup'),
     path('social/connections/',
          views.MemberSocialConnectionsView.as_view(), name='socialaccount_connections'),
+
+    # Email Confirmation
+    path('confirm-email/',
+         views.MemberEmailVerificationSentView.as_view(), name="account_email_verification_sent"),
+    re_path(r'^confirm-email/(?P<key>[-:\w]+)/$',
+            views.MemberConfirmEmailView.as_view(), name="account_confirm_email"),
+    path('email/',
+         views.MemberEmailView.as_view(), name="account_email"),
 ]
 
 # URL patterns for Line custom social providers

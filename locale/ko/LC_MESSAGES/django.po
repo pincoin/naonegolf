@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 23:49+0700\n"
+"POT-Creation-Date: 2020-01-15 11:27+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr "예매"
 msgid "Thai Holidays"
 msgstr "태국공휴일"
 
-#: conf/templates/conf/base.html:55 member/views.py:13
+#: conf/templates/conf/base.html:55 member/views.py:14
 msgid "Sign In"
 msgstr "로그인"
 
@@ -58,7 +58,7 @@ msgstr "로그인"
 #: member/templates/member/account/logout.html:31
 #: member/templates/member/socialaccount/connections.html:7
 #: member/templates/member/socialaccount/connections.html:15
-#: member/templates/member/socialaccount/connections.html:31 member/views.py:22
+#: member/templates/member/socialaccount/connections.html:31 member/views.py:23
 msgid "Sign Out"
 msgstr "로그아웃"
 
@@ -183,6 +183,7 @@ msgid "Phone number"
 msgstr "전화번호"
 
 #: golf/models.py:123 member/models.py:31
+#: member/templates/member/account/email_confirm.html:22
 msgid "Email address"
 msgstr "이메일주소"
 
@@ -294,6 +295,72 @@ msgstr "차단 이메일주소"
 msgid "Banned Email Addresses"
 msgstr "차단 이메일주소"
 
+#: member/templates/member/account/email.html:48
+msgid "Primary"
+msgstr ""
+
+#: member/templates/member/account/email.html:52
+msgid "Verified"
+msgstr ""
+
+#: member/templates/member/account/email.html:54
+msgid "Unverified"
+msgstr ""
+
+#: member/templates/member/account/email.html:68
+msgid "Make Primary"
+msgstr ""
+
+#: member/templates/member/account/email.html:76
+msgid "Re-send Verification"
+msgstr ""
+
+#: member/templates/member/account/email.html:84
+msgid "Remove"
+msgstr ""
+
+#: member/templates/member/account/email.html:94
+msgid ""
+"Warning: You currently do not have any e-mail address set up. You should "
+"really add an e-mail address so you can receive notifications, reset your "
+"password, etc."
+msgstr ""
+
+#: member/templates/member/account/email.html:137
+msgid "Add E-mail"
+msgstr ""
+
+#: member/templates/member/account/email.html:153
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: member/templates/member/account/email_confirm.html:25
+msgid "Username"
+msgstr ""
+
+#: member/templates/member/account/email_confirm.html:28
+msgid "Please, confirm the email address and username as shown above:"
+msgstr ""
+
+#: member/templates/member/account/email_confirm.html:37
+msgid "Confirm"
+msgstr ""
+
+#: member/templates/member/account/email_confirm.html:46
+msgid "This e-mail confirmation link expired or is invalid."
+msgstr ""
+
+#: member/templates/member/account/email_confirm.html:49
+#, python-format
+msgid ""
+"\n"
+"                                        Please\n"
+"                                        <a href=\"%(email_url)s\">issue a "
+"new e-mail confirmation request</a>\n"
+"                                        .\n"
+"                                    "
+msgstr ""
+
 #: member/templates/member/account/login.html:40
 msgid "You may login with SNS at your convinience."
 msgstr "간편하게 SNS로 로그인할 수 있습니다."
@@ -302,6 +369,18 @@ msgstr "간편하게 SNS로 로그인할 수 있습니다."
 #: member/templates/member/socialaccount/connections.html:18
 msgid "Are you sure you want to sign out?"
 msgstr "정말로 로그아웃 하시겠습니까?"
+
+#: member/templates/member/account/verification_sent.html:17
+msgid "We have sent an e-mail to you for verification."
+msgstr "인증 이메일을 보내드렸습니다."
+
+#: member/templates/member/account/verification_sent.html:20
+msgid "Follow the link provided to finalize the signup process."
+msgstr "이메일 인증 완료를 위해 다음 링크를 클릭하세요."
+
+#: member/templates/member/account/verification_sent.html:23
+msgid "Please contact us if you do not receive it within a few minutes."
+msgstr "5분 이내에 이메일을 받지 못하신 경우 저희에게 연락바랍니다."
 
 #: member/templates/member/socialaccount/authentication_error.html:18
 msgid ""
@@ -332,23 +411,35 @@ msgstr ""
 
 #: member/templates/member/socialaccount/signup.html:23
 msgid "As a final step, please complete the following form:"
-msgstr "마지막으로 이메일과 아이디를 입력해주세요."
+msgstr "마지막으로 연락 받을 이메일과 아이디를 입력해주세요."
 
-#: member/templates/member/socialaccount/signup.html:95 member/views.py:49
+#: member/templates/member/socialaccount/signup.html:95 member/views.py:50
 msgid "Sign Up"
 msgstr "회원가입"
 
-#: member/views.py:31
+#: member/views.py:32
 msgid "Login Cancelled"
 msgstr "로그인 취소"
 
-#: member/views.py:40
+#: member/views.py:41
 msgid "Social Network Login Failure"
 msgstr "SNS 로그인 실패"
 
-#: member/views.py:58
+#: member/views.py:59
 msgid "Connect with SNS accounts"
 msgstr "SNS 계정으로 연결"
+
+#: member/views.py:68
+msgid "Email Verification Sent"
+msgstr "이메일 발송"
+
+#: member/views.py:77
+msgid "Confirm Email Request"
+msgstr "이메일 인증 요청"
+
+#: member/views.py:87
+msgid "Email Management"
+msgstr "이메일 관리"
 
 #: windmill/apps.py:7
 msgid "Summit Windmill Golf Club"

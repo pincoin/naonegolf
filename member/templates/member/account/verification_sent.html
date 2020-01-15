@@ -1,0 +1,31 @@
+{% extends 'conf/base.html' %}
+
+{% load i18n static %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 mx-auto">
+                <div class="card my-5">
+                    <div class="card-body pb-0">
+                        <h5 class="card-title text-center">{{ page_title }}</h5>
+                        <hr class="my-4">
+                        <div class="no-break-word">
+                            <p>
+                                {% trans 'We have sent an e-mail to you for verification.' %}
+                            </p>
+                            <p>
+                                {% trans 'Follow the link provided to finalize the signup process.' %}
+                            </p>
+                            <p>
+                                {% trans 'Please contact us if you do not receive it within a few minutes.' %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
