@@ -26,7 +26,7 @@ class MyAccountAdapter(DefaultAccountAdapter):
         send_notification_email.delay(subject, 'dummy', from_email, email, html_message=bodies['html'])
 
     def clean_email(self, email):
-        if email.lower().split('@')[1] in member_settings.DISALLOWED_EMAIL_DOMAIN:
+        if email and email.lower().split('@')[1] in member_settings.DISALLOWED_EMAIL_DOMAIN:
             raise forms.ValidationError(_('Your email domain is not allowed.'))
 
         if EmailBanned.objects.filter(email__iexact=email).exists():
