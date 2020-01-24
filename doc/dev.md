@@ -33,6 +33,7 @@ pyenv install 3.7.5
 ### 가상환경 생성
 ```
 pyenv virtualenv -p python3.7 3.7.5 naonegolf
+pyenv shell naonegolf
 ```
 
 ### pip 업그레이드
