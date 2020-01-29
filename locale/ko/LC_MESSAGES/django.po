@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-15 11:27+0700\n"
+"POT-Creation-Date: 2020-01-29 15:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr "홈"
 msgid "Booking"
 msgstr "예매"
 
-#: conf/templates/conf/base.html:51
+#: conf/templates/conf/base.html:51 golf/templates/golf/holiday_list.html:6
 msgid "Thai Holidays"
 msgstr "태국공휴일"
 
@@ -65,6 +65,10 @@ msgstr "로그아웃"
 #: conf/templates/conf/base.html:62
 msgid "Profile"
 msgstr "프로필"
+
+#: conf/templates/conf/home.html:6
+msgid "SWGC Booking"
+msgstr "태국 서밋 윈드밀 골프 클럽 예매"
 
 #: golf/apps.py:7
 msgid "Golf"
@@ -295,43 +299,59 @@ msgstr "차단 이메일주소"
 msgid "Banned Email Addresses"
 msgstr "차단 이메일주소"
 
-#: member/templates/member/account/email.html:48
+#: member/templates/member/account/email.html:42
 msgid "Primary"
 msgstr ""
 
-#: member/templates/member/account/email.html:52
+#: member/templates/member/account/email.html:46
 msgid "Verified"
 msgstr ""
 
-#: member/templates/member/account/email.html:54
+#: member/templates/member/account/email.html:48
 msgid "Unverified"
 msgstr ""
 
-#: member/templates/member/account/email.html:68
+#: member/templates/member/account/email.html:62
 msgid "Make Primary"
 msgstr ""
 
-#: member/templates/member/account/email.html:76
+#: member/templates/member/account/email.html:70
 msgid "Re-send Verification"
 msgstr ""
 
-#: member/templates/member/account/email.html:84
+#: member/templates/member/account/email.html:78
 msgid "Remove"
 msgstr ""
 
-#: member/templates/member/account/email.html:94
+#: member/templates/member/account/email.html:88
 msgid ""
 "Warning: You currently do not have any e-mail address set up. You should "
 "really add an e-mail address so you can receive notifications, reset your "
 "password, etc."
 msgstr ""
 
-#: member/templates/member/account/email.html:137
+#: member/templates/member/account/email.html:131
 msgid "Add E-mail"
 msgstr ""
 
-#: member/templates/member/account/email.html:153
+#: member/templates/member/account/email.html:147
 msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: member/templates/member/account/email/email_confirmation_message.html:3
+#, python-format
+msgid ""
+"\n"
+"    <p>\n"
+"        Hello from NA-ONE!\n"
+"    </p>\n"
+"    <p>\n"
+"        To confirm this is correct, go to %(activate_url)s\n"
+"    </p>\n"
+msgstr ""
+
+#: member/templates/member/account/email/email_confirmation_subject.txt:3
+msgid "Please Confirm Your E-mail Address"
 msgstr ""
 
 #: member/templates/member/account/email_confirm.html:25
