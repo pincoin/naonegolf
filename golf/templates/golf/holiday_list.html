@@ -10,7 +10,7 @@
         <div class="row mt-3">
             <div class="alert alert-warning mb-0">
                 <h4 class="alert-heading pb-2">{% trans 'Thai Holidays' %}</h4>
-                <p class="">
+                <p>
                     태국 주말과 법정 공휴일은 티오프 시각 확정이 티오프 30일 전이 아니라 직전 월요일에 가능합니다.
                 </p>
                 <p>
@@ -23,10 +23,10 @@
         </div>
         {% for holiday in holidays %}
             <div class="row my-3">
-                <div class="col-2">
+                <div class="col-5 col-md-2">
                     {{ holiday.holiday }}
                 </div>
-                <div class="col-10 thai-text">
+                <div class="col-7 col-md-10 thai-text">
                     {{ holiday.title }}
                 </div>
             </div>
