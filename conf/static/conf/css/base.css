@@ -5,3 +5,7 @@ body {
 .no-break-word {
     word-break: keep-all;
 }
+
+.thai-text {
+    font-family: Sarabun, sans-serif;
+}
