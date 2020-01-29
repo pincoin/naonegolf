@@ -9,6 +9,12 @@ urlpatterns = [
     path('',
          HomeView.as_view(), name='home'),
 
+    path('golf/',
+         include('golf.urls', namespace='golf')),
+
+    path('windmill/',
+         include('windmill.urls', namespace='windmill')),
+
     path('accounts/',
          include('member.urls')),
 

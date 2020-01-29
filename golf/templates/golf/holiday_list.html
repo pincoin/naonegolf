@@ -1,0 +1,20 @@
+{% extends 'conf/base.html' %}
+
+{% load static %}
+
+{% block title %}태국 방콕 서밋 윈드밀 골프 클럽 예매{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% for holiday in holidays %}
+            <div class="row">
+                <div class="col-2">
+                    {{ holiday.holiday }}
+                </div>
+                <div class="col-10">
+                    {{ holiday.title }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
