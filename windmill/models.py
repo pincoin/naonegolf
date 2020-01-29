@@ -49,6 +49,13 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         ]
     )
 
+    status = models.IntegerField(
+        verbose_name=_('Tee off status'),
+        choices=STATUS_CHOICES,
+        default=STATUS_CHOICES.open,
+        db_index=True,
+    )
+
     class Meta:
         verbose_name = _('Daily tee off time')
         verbose_name_plural = _('Daily tee off times')

@@ -14,6 +14,4 @@ class HolidayListView(generic.ListView):
             .filter(holiday__gte=timezone.make_aware(timezone.localtime().today()),
                     country=models.Holiday.COUNTRY_CHOICES.thailand)
 
-        print(queryset)
-
         return queryset.order_by('holiday')

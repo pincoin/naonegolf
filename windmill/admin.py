@@ -11,7 +11,7 @@ admin.site.index_title = _('NA-ONE Communication')
 class TeeOffTimeInline(admin.TabularInline):
     model = models.TeeOffTime
     extra = 0
-    fields = ('hour', 'minute')
+    fields = ('hour', 'minute', 'status')
     ordering = ['hour', 'minute']
 
 

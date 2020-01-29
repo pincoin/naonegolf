@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-29 23:38+0700\n"
+"POT-Creation-Date: 2020-01-30 01:35+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,16 +46,20 @@ msgstr "Home"
 msgid "Booking"
 msgstr "จอง"
 
-#: conf/templates/conf/base.html:51 golf/templates/golf/holiday_list.html:6
+#: conf/templates/conf/base.html:51
+msgid "Tee-off"
+msgstr ""
+
+#: conf/templates/conf/base.html:54 golf/templates/golf/holiday_list.html:6
 #: golf/templates/golf/holiday_list.html:12
 msgid "Thai Holidays"
 msgstr "วันหยุดราชการ"
 
-#: conf/templates/conf/base.html:55 member/views.py:14
+#: conf/templates/conf/base.html:58 member/views.py:14
 msgid "Sign In"
 msgstr ""
 
-#: conf/templates/conf/base.html:59
+#: conf/templates/conf/base.html:62
 #: member/templates/member/account/logout.html:31
 #: member/templates/member/socialaccount/connections.html:7
 #: member/templates/member/socialaccount/connections.html:15
@@ -63,7 +67,7 @@ msgstr ""
 msgid "Sign Out"
 msgstr ""
 
-#: conf/templates/conf/base.html:62
+#: conf/templates/conf/base.html:65
 msgid "Profile"
 msgstr ""
 
@@ -509,9 +513,18 @@ msgid "Tee off minute"
 msgstr ""
 
 #: windmill/models.py:53
+msgid "Tee off status"
+msgstr ""
+
+#: windmill/models.py:60
 msgid "Daily tee off time"
 msgstr ""
 
-#: windmill/models.py:54
+#: windmill/models.py:61
 msgid "Daily tee off times"
+msgstr ""
+
+#: windmill/templates/windmill/tee_off_list.html:6
+#: windmill/templates/windmill/tee_off_list.html:12
+msgid "Tee off times"
 msgstr ""
