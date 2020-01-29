@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 01:35+0700\n"
+"POT-Creation-Date: 2020-01-30 01:43+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -268,6 +268,10 @@ msgstr ""
 msgid "Product list membership"
 msgstr ""
 
+#: golf/templates/golf/holiday_list.html:36
+msgid "No holiday"
+msgstr ""
+
 #: member/adapters.py:30
 msgid "Your email domain is not allowed."
 msgstr ""
@@ -519,4 +523,8 @@ msgstr ""
 #: windmill/templates/windmill/tee_off_list.html:6
 #: windmill/templates/windmill/tee_off_list.html:12
 msgid "Tee off times"
+msgstr ""
+
+#: windmill/templates/windmill/tee_off_list.html:33
+msgid "No tee off"
 msgstr ""

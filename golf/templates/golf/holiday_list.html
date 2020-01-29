@@ -30,6 +30,12 @@
                     {{ holiday.title }}
                 </div>
             </div>
+        {% empty %}
+            <div class="row my-3">
+                <div class="col">
+                    {% trans 'No holiday' %}
+                </div>
+            </div>
         {% endfor %}
     </div>
 {% endblock %}
