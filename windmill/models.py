@@ -7,7 +7,7 @@ from model_utils import models as model_utils_models
 
 class DailyBooking(model_utils_models.TimeStampedModel):
     day = models.DateField(
-        verbose_name=_('Day'),
+        verbose_name=_('Booking Day'),
         db_index=True,
         unique=True,
     )
@@ -34,16 +34,18 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
     )
 
     hour = models.IntegerField(
+        verbose_name=_('Tee off hour'),
         validators=[
-            validators.MaxValueValidator(6),
-            validators.MinValueValidator(19)
+            validators.MinValueValidator(6),
+            validators.MaxValueValidator(19),
         ]
     )
 
     minute = models.IntegerField(
+        verbose_name=_('Tee off minute'),
         validators=[
-            validators.MaxValueValidator(0),
-            validators.MinValueValidator(59)
+            validators.MinValueValidator(0),
+            validators.MaxValueValidator(59),
         ]
     )
 

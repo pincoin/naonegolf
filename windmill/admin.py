@@ -8,8 +8,16 @@ admin.site.site_title = _('NA-ONE Communication')
 admin.site.index_title = _('NA-ONE Communication')
 
 
+class TeeOffTimeInline(admin.TabularInline):
+    model = models.TeeOffTime
+    extra = 0
+    fields = ('hour', 'minute')
+    ordering = ['hour', 'minute']
+
+
 class DailyBookingAdmin(admin.ModelAdmin):
     list_display = ('day',)
+    inlines = [TeeOffTimeInline, ]
     ordering = ('day',)
     date_hierarchy = 'day'
 

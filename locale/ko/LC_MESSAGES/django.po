@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-29 15:13+0700\n"
+"POT-Creation-Date: 2020-01-29 23:38+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid "NA-ONE"
 msgstr "나원"
 
 #: conf/templates/conf/base.html:37 golf/admin.py:6 golf/admin.py:7
-#: golf/admin.py:8
+#: golf/admin.py:8 windmill/admin.py:6 windmill/admin.py:7 windmill/admin.py:8
 msgid "NA-ONE Communication"
 msgstr "나원 커뮤니케이션"
 
@@ -47,6 +47,7 @@ msgid "Booking"
 msgstr "예매"
 
 #: conf/templates/conf/base.html:51 golf/templates/golf/holiday_list.html:6
+#: golf/templates/golf/holiday_list.html:12
 msgid "Thai Holidays"
 msgstr "태국공휴일"
 
@@ -464,3 +465,47 @@ msgstr "이메일 관리"
 #: windmill/apps.py:7
 msgid "Summit Windmill Golf Club"
 msgstr "서밋 윈드밀 골프 클럽"
+
+#: windmill/models.py:10
+msgid "Booking Day"
+msgstr "예매일자"
+
+#: windmill/models.py:16
+msgid "Daily booking"
+msgstr "일별예약"
+
+#: windmill/models.py:17
+msgid "Daily bookings"
+msgstr "일별예약"
+
+#: windmill/models.py:25
+msgid "Open"
+msgstr "구매가능"
+
+#: windmill/models.py:26
+msgid "Held"
+msgstr "예약있음"
+
+#: windmill/models.py:27
+msgid "Closed"
+msgstr "판매완료"
+
+#: windmill/models.py:32
+msgid "Booking day"
+msgstr "예매일자"
+
+#: windmill/models.py:37
+msgid "Tee off hour"
+msgstr "시"
+
+#: windmill/models.py:45
+msgid "Tee off minute"
+msgstr "분"
+
+#: windmill/models.py:53
+msgid "Daily tee off time"
+msgstr "일별 티오프"
+
+#: windmill/models.py:54
+msgid "Daily tee off times"
+msgstr "일별 티오프"
