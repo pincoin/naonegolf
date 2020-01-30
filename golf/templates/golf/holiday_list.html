@@ -26,8 +26,11 @@
                 <div class="col-5 col-md-2">
                     {{ holiday.holiday }}
                 </div>
-                <div class="col-7 col-md-10 thai-text">
-                    {{ holiday.title }}
+                <div class="col-7 col-md-3 thai-text"
+                     data-toggle="tooltip"
+                     data-placement="top"
+                     title="{{ holiday.title }}">
+                    {{ holiday.title|truncatechars:25 }}
                 </div>
             </div>
         {% empty %}
@@ -38,4 +41,13 @@
             </div>
         {% endfor %}
     </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 {% endblock %}
