@@ -16,6 +16,10 @@ class BookingOrder(model_utils_models.TimeStampedModel):
         on_delete=models.SET_NULL,
     )
 
+    class Meta:
+        verbose_name = _('Booking order')
+        verbose_name_plural = _('Booking orders')
+
 
 class Booking(model_utils_models.TimeStampedModel):
     order = models.ForeignKey(
@@ -36,6 +40,10 @@ class Booking(model_utils_models.TimeStampedModel):
         on_delete=models.CASCADE,
     )
 
+    class Meta:
+        verbose_name = _('Booking')
+        verbose_name_plural = _('Bookings')
+
 
 class Golfer(model_utils_models.TimeStampedModel):
     booking = models.ForeignKey(
@@ -43,6 +51,10 @@ class Golfer(model_utils_models.TimeStampedModel):
         verbose_name=_('Daily booking'),
         on_delete=models.CASCADE,
     )
+
+    class Meta:
+        verbose_name = _('Golfer')
+        verbose_name_plural = _('Golfers')
 
 
 class DailyBooking(model_utils_models.TimeStampedModel):

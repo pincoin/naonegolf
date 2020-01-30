@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 01:43+0700\n"
+"POT-Creation-Date: 2020-01-30 22:44+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr "นา-วัน คอมิวนิเคชั่น"
 msgid "Home"
 msgstr "Home"
 
-#: conf/templates/conf/base.html:48
+#: conf/templates/conf/base.html:48 windmill/models.py:44
 msgid "Booking"
 msgstr "จอง"
 
@@ -270,7 +270,7 @@ msgstr ""
 msgid "Product list membership"
 msgstr ""
 
-#: golf/templates/golf/holiday_list.html:36
+#: golf/templates/golf/holiday_list.html:39
 #, fuzzy
 #| msgid "Holiday"
 msgid "No holiday"
@@ -476,57 +476,91 @@ msgstr ""
 msgid "Summit Windmill Golf Club"
 msgstr "ซัมมิท วินด์มิลล์ กอล์ฟ คลับ"
 
-#: windmill/models.py:10
+#: windmill/models.py:12
+msgid "Customer"
+msgstr ""
+
+#: windmill/models.py:20 windmill/models.py:27
 #, fuzzy
 #| msgid "Booking"
-msgid "Booking Day"
+msgid "Booking order"
 msgstr "จอง"
 
-#: windmill/models.py:16
+#: windmill/models.py:21
+#, fuzzy
+#| msgid "Booking"
+msgid "Booking orders"
+msgstr "จอง"
+
+#: windmill/models.py:36 windmill/models.py:51 windmill/models.py:68
 #, fuzzy
 #| msgid "Booking"
 msgid "Daily booking"
 msgstr "จอง"
 
-#: windmill/models.py:17
+#: windmill/models.py:45
+#, fuzzy
+#| msgid "Booking"
+msgid "Bookings"
+msgstr "จอง"
+
+#: windmill/models.py:56
+#, fuzzy
+#| msgid "Golf"
+msgid "Golfer"
+msgstr "กอล์ฟ"
+
+#: windmill/models.py:57
+#, fuzzy
+#| msgid "Golf"
+msgid "Golfers"
+msgstr "กอล์ฟ"
+
+#: windmill/models.py:62
+#, fuzzy
+#| msgid "Booking"
+msgid "Booking Day"
+msgstr "จอง"
+
+#: windmill/models.py:69
 msgid "Daily bookings"
 msgstr ""
 
-#: windmill/models.py:25
+#: windmill/models.py:77
 msgid "Open"
 msgstr ""
 
-#: windmill/models.py:26
+#: windmill/models.py:78
 msgid "Held"
 msgstr ""
 
-#: windmill/models.py:27
+#: windmill/models.py:79
 msgid "Closed"
 msgstr ""
 
-#: windmill/models.py:32
+#: windmill/models.py:84
 #, fuzzy
 #| msgid "Booking"
 msgid "Booking day"
 msgstr "จอง"
 
-#: windmill/models.py:37
+#: windmill/models.py:89
 msgid "Tee off hour"
 msgstr ""
 
-#: windmill/models.py:45
+#: windmill/models.py:97
 msgid "Tee off minute"
 msgstr ""
 
-#: windmill/models.py:53
+#: windmill/models.py:105
 msgid "Tee off status"
 msgstr ""
 
-#: windmill/models.py:60
+#: windmill/models.py:112
 msgid "Daily tee off time"
 msgstr ""
 
-#: windmill/models.py:61
+#: windmill/models.py:113
 msgid "Daily tee off times"
 msgstr ""
 

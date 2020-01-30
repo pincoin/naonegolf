@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 01:43+0700\n"
+"POT-Creation-Date: 2020-01-30 22:44+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr "나원 커뮤니케이션"
 msgid "Home"
 msgstr "홈"
 
-#: conf/templates/conf/base.html:48
+#: conf/templates/conf/base.html:48 windmill/models.py:44
 msgid "Booking"
 msgstr "예매"
 
@@ -268,7 +268,7 @@ msgstr ""
 msgid "Product list membership"
 msgstr ""
 
-#: golf/templates/golf/holiday_list.html:36
+#: golf/templates/golf/holiday_list.html:39
 msgid "No holiday"
 msgstr "법정 공휴일 목록이 없습니다."
 
@@ -474,51 +474,75 @@ msgstr "이메일 관리"
 msgid "Summit Windmill Golf Club"
 msgstr "서밋 윈드밀 골프 클럽"
 
-#: windmill/models.py:10
-msgid "Booking Day"
-msgstr "예매일자"
+#: windmill/models.py:12
+msgid "Customer"
+msgstr "고객"
 
-#: windmill/models.py:16
+#: windmill/models.py:20 windmill/models.py:27
+msgid "Booking order"
+msgstr "예약주문"
+
+#: windmill/models.py:21
+msgid "Booking orders"
+msgstr "예약주문"
+
+#: windmill/models.py:36 windmill/models.py:51 windmill/models.py:68
 msgid "Daily booking"
 msgstr "일별예약"
 
-#: windmill/models.py:17
+#: windmill/models.py:45
+msgid "Bookings"
+msgstr "예매"
+
+#: windmill/models.py:56
+msgid "Golfer"
+msgstr "인원"
+
+#: windmill/models.py:57
+msgid "Golfers"
+msgstr "인원"
+
+#: windmill/models.py:62
+msgid "Booking Day"
+msgstr "예매일자"
+
+#: windmill/models.py:69
 msgid "Daily bookings"
 msgstr "일별예약"
 
-#: windmill/models.py:25
+#: windmill/models.py:77
 msgid "Open"
 msgstr "구매가능"
 
-#: windmill/models.py:26
+#: windmill/models.py:78
 msgid "Held"
 msgstr "예약있음"
 
-#: windmill/models.py:27
+#: windmill/models.py:79
 msgid "Closed"
 msgstr "판매완료"
 
-#: windmill/models.py:32
+#: windmill/models.py:84
 msgid "Booking day"
 msgstr "예매일자"
 
-#: windmill/models.py:37
+#: windmill/models.py:89
 msgid "Tee off hour"
 msgstr "시"
 
-#: windmill/models.py:45
+#: windmill/models.py:97
 msgid "Tee off minute"
 msgstr "분"
 
-#: windmill/models.py:53
+#: windmill/models.py:105
 msgid "Tee off status"
 msgstr "상태"
 
-#: windmill/models.py:60
+#: windmill/models.py:112
 msgid "Daily tee off time"
 msgstr "일별 티오프"
 
-#: windmill/models.py:61
+#: windmill/models.py:113
 msgid "Daily tee off times"
 msgstr "일별 티오프"
 

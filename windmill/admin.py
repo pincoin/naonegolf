@@ -15,6 +15,19 @@ class TeeOffTimeInline(admin.TabularInline):
     ordering = ['hour', 'minute']
 
 
+class GolferInline(admin.TabularInline):
+    model = models.Golfer
+    extra = 0
+
+
+class BookingOrderAdmin(admin.ModelAdmin):
+    pass
+
+
+class BookingAdmin(admin.ModelAdmin):
+    inlines = [GolferInline, ]
+
+
 class DailyBookingAdmin(admin.ModelAdmin):
     list_display = ('day',)
     inlines = [TeeOffTimeInline, ]
@@ -22,4 +35,6 @@ class DailyBookingAdmin(admin.ModelAdmin):
     date_hierarchy = 'day'
 
 
+admin.site.register(models.BookingOrder, BookingOrderAdmin)
+admin.site.register(models.Booking, BookingAdmin)
 admin.site.register(models.DailyBooking, DailyBookingAdmin)
