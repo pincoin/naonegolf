@@ -1,8 +1,48 @@
+from django.conf import settings
 from django.core import validators
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from model_utils import Choices
 from model_utils import models as model_utils_models
+
+
+class BookingOrder(model_utils_models.TimeStampedModel):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        verbose_name=_('Customer'),
+        null=True,
+        blank=True,
+        editable=True,
+        on_delete=models.SET_NULL,
+    )
+
+
+class Booking(model_utils_models.TimeStampedModel):
+    order = models.ForeignKey(
+        'windmill.BookingOrder',
+        verbose_name=_('Booking order'),
+        null=True,
+        blank=True,
+        editable=True,
+        on_delete=models.CASCADE,
+    )
+
+    daily_booking = models.ForeignKey(
+        'windmill.DailyBooking',
+        verbose_name=_('Daily booking'),
+        null=True,
+        blank=True,
+        editable=True,
+        on_delete=models.CASCADE,
+    )
+
+
+class Golfer(model_utils_models.TimeStampedModel):
+    booking = models.ForeignKey(
+        'windmill.Booking',
+        verbose_name=_('Daily booking'),
+        on_delete=models.CASCADE,
+    )
 
 
 class DailyBooking(model_utils_models.TimeStampedModel):
