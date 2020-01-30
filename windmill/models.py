@@ -227,11 +227,15 @@ class Golfer(model_utils_models.TimeStampedModel):
     first_name = models.CharField(
         verbose_name=_('First name'),
         max_length=255,
+        null=True,
+        blank=True,
     )
 
     last_name = models.CharField(
         verbose_name=_('Last name'),
         max_length=255,
+        null=True,
+        blank=True,
     )
 
     class Meta:
