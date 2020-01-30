@@ -224,6 +224,16 @@ class Golfer(model_utils_models.TimeStampedModel):
         on_delete=models.CASCADE,
     )
 
+    first_name = models.CharField(
+        verbose_name=_('First name'),
+        max_length=255,
+    )
+
+    last_name = models.CharField(
+        verbose_name=_('Last name'),
+        max_length=255,
+    )
+
     class Meta:
         verbose_name = _('Golfer')
         verbose_name_plural = _('Golfers')
