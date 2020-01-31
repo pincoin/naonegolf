@@ -241,6 +241,64 @@ class DailyBooking(model_utils_models.TimeStampedModel):
         unique=True,
     )
 
+    pax = models.IntegerField(
+        verbose_name=_('Pax'),
+        default=4,
+    )
+
+    green_fee_sales = models.DecimalField(
+        verbose_name=_('Green fee sales'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    cart_fee_sales = models.DecimalField(
+        verbose_name=_('Cart fee sales'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    caddie_fee_sales = models.DecimalField(
+        verbose_name=_('Caddie fee sales'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    green_fee_cost = models.DecimalField(
+        verbose_name=_('Green fee cost'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    cart_fee_cost = models.DecimalField(
+        verbose_name=_('Cart fee cost'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    cart_fee_deducted_from_deposit = models.IntegerField(
+        verbose_name=_('Cart fee deducted from deposit'),
+        default=0,
+    )
+
+    caddie_fee_cost = models.DecimalField(
+        verbose_name=_('Caddie fee cost'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
     class Meta:
         verbose_name = _('Daily booking')
         verbose_name_plural = _('Daily bookings')
