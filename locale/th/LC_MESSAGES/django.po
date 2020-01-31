@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 22:44+0700\n"
+"POT-Creation-Date: 2020-01-31 00:51+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr "นา-วัน คอมิวนิเคชั่น"
 msgid "Home"
 msgstr "Home"
 
-#: conf/templates/conf/base.html:48 windmill/models.py:44
+#: conf/templates/conf/base.html:48 windmill/models.py:216
 msgid "Booking"
 msgstr "จอง"
 
@@ -117,47 +117,47 @@ msgstr "วันหยุดราชการ"
 msgid "Holidays"
 msgstr "วันหยุดราชการ"
 
-#: golf/models.py:44
+#: golf/models.py:44 windmill/models.py:41
 msgid "Low season"
 msgstr ""
 
-#: golf/models.py:45 golf/models.py:164
+#: golf/models.py:45 golf/models.py:164 windmill/models.py:42
 msgid "High season"
 msgstr ""
 
-#: golf/models.py:49
+#: golf/models.py:49 windmill/models.py:46
 msgid "Weekday"
 msgstr ""
 
-#: golf/models.py:50
+#: golf/models.py:50 windmill/models.py:47
 msgid "Weekend"
 msgstr ""
 
-#: golf/models.py:54
+#: golf/models.py:54 windmill/models.py:51
 msgid "Morning"
 msgstr ""
 
-#: golf/models.py:55
+#: golf/models.py:55 windmill/models.py:52
 msgid "Daytime"
 msgstr ""
 
-#: golf/models.py:56
+#: golf/models.py:56 windmill/models.py:53
 msgid "Twilight"
 msgstr ""
 
-#: golf/models.py:57
+#: golf/models.py:57 windmill/models.py:54
 msgid "Night"
 msgstr ""
 
-#: golf/models.py:61
+#: golf/models.py:61 windmill/models.py:190
 msgid "High/Low Season"
 msgstr ""
 
-#: golf/models.py:68
+#: golf/models.py:68 windmill/models.py:197
 msgid "Day of week"
 msgstr ""
 
-#: golf/models.py:75
+#: golf/models.py:75 windmill/models.py:204
 msgid "Time slot"
 msgstr ""
 
@@ -169,19 +169,19 @@ msgstr ""
 msgid "Golf club products"
 msgstr ""
 
-#: golf/models.py:97
+#: golf/models.py:97 windmill/models.py:58
 msgid "18 Holes"
 msgstr "18 หลุม"
 
-#: golf/models.py:98
+#: golf/models.py:98 windmill/models.py:59
 msgid "9 Holes"
 msgstr "9 หลุม"
 
-#: golf/models.py:99
+#: golf/models.py:99 windmill/models.py:60
 msgid "27 Holes"
 msgstr "27 หลุม"
 
-#: golf/models.py:100
+#: golf/models.py:100 windmill/models.py:61
 msgid "36 Holes"
 msgstr "36 หลุม"
 
@@ -202,7 +202,7 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: golf/models.py:137
+#: golf/models.py:137 windmill/models.py:97
 msgid "No. of holes"
 msgstr ""
 
@@ -215,6 +215,8 @@ msgid "Cart fee"
 msgstr ""
 
 #: golf/models.py:153 golf/models.py:160 golf/models.py:235
+#: windmill/models.py:108 windmill/models.py:116 windmill/models.py:124
+#: windmill/models.py:150 windmill/models.py:158 windmill/models.py:170
 msgid "THB"
 msgstr ""
 
@@ -476,91 +478,201 @@ msgstr ""
 msgid "Summit Windmill Golf Club"
 msgstr "ซัมมิท วินด์มิลล์ กอล์ฟ คลับ"
 
-#: windmill/models.py:12
+#: windmill/models.py:13
+msgid "order opened"
+msgstr ""
+
+#: windmill/models.py:14
+msgid "order pending"
+msgstr ""
+
+#: windmill/models.py:15
+msgid "payment pending"
+msgstr ""
+
+#: windmill/models.py:16
+msgid "order complete"
+msgstr ""
+
+#: windmill/models.py:17
+msgid "order offered"
+msgstr ""
+
+#: windmill/models.py:18
+msgid "order voided"
+msgstr ""
+
+#: windmill/models.py:19
+msgid "refund requested"
+msgstr ""
+
+#: windmill/models.py:20
+msgid "refund pending"
+msgstr ""
+
+#: windmill/models.py:21
+msgid "order refunded(original)"
+msgstr ""
+
+#: windmill/models.py:22
+msgid "order refunded(reverse)"
+msgstr ""
+
+#: windmill/models.py:27
 msgid "Customer"
 msgstr ""
 
-#: windmill/models.py:20 windmill/models.py:27
+#: windmill/models.py:35 windmill/models.py:66
 #, fuzzy
 #| msgid "Booking"
 msgid "Booking order"
 msgstr "จอง"
 
-#: windmill/models.py:21
+#: windmill/models.py:36
 #, fuzzy
 #| msgid "Booking"
 msgid "Booking orders"
 msgstr "จอง"
 
-#: windmill/models.py:36 windmill/models.py:51 windmill/models.py:68
+#: windmill/models.py:75 windmill/models.py:223 windmill/models.py:250
 #, fuzzy
 #| msgid "Booking"
 msgid "Daily booking"
 msgstr "จอง"
 
-#: windmill/models.py:45
+#: windmill/models.py:83
+#, fuzzy
+#| msgid "Holiday day"
+msgid "Round day"
+msgstr "วันที่"
+
+#: windmill/models.py:88
+msgid "Round time"
+msgstr ""
+
+#: windmill/models.py:92
+msgid "Pax"
+msgstr ""
+
+#: windmill/models.py:104
+msgid "Green fee sales"
+msgstr ""
+
+#: windmill/models.py:112
+msgid "Cart fee sales"
+msgstr ""
+
+#: windmill/models.py:120
+msgid "Caddie fee sales"
+msgstr ""
+
+#: windmill/models.py:128
+msgid "Green fee pay on arrival"
+msgstr ""
+
+#: windmill/models.py:134
+msgid "Cart fee pay on arrival"
+msgstr ""
+
+#: windmill/models.py:140
+msgid "Caddie fee pay on arrival"
+msgstr ""
+
+#: windmill/models.py:146
+msgid "Green fee cost"
+msgstr ""
+
+#: windmill/models.py:154
+msgid "Cart fee cost"
+msgstr ""
+
+#: windmill/models.py:162
+msgid "Cart fee deducted from deposit"
+msgstr ""
+
+#: windmill/models.py:167
+msgid "Caddie fee cost"
+msgstr ""
+
+#: windmill/models.py:174 windmill/models.py:228
+msgid "First name"
+msgstr ""
+
+#: windmill/models.py:179 windmill/models.py:233
+msgid "Last name"
+msgstr ""
+
+#: windmill/models.py:184
+msgid "Memo"
+msgstr ""
+
+#: windmill/models.py:211
+msgid "Stand-by"
+msgstr ""
+
+#: windmill/models.py:217
 #, fuzzy
 #| msgid "Booking"
 msgid "Bookings"
 msgstr "จอง"
 
-#: windmill/models.py:56
+#: windmill/models.py:238
 #, fuzzy
 #| msgid "Golf"
 msgid "Golfer"
 msgstr "กอล์ฟ"
 
-#: windmill/models.py:57
+#: windmill/models.py:239
 #, fuzzy
 #| msgid "Golf"
 msgid "Golfers"
 msgstr "กอล์ฟ"
 
-#: windmill/models.py:62
+#: windmill/models.py:244
 #, fuzzy
 #| msgid "Booking"
 msgid "Booking Day"
 msgstr "จอง"
 
-#: windmill/models.py:69
+#: windmill/models.py:251
 msgid "Daily bookings"
 msgstr ""
 
-#: windmill/models.py:77
+#: windmill/models.py:259
 msgid "Open"
 msgstr ""
 
-#: windmill/models.py:78
+#: windmill/models.py:260
 msgid "Held"
 msgstr ""
 
-#: windmill/models.py:79
+#: windmill/models.py:261
 msgid "Closed"
 msgstr ""
 
-#: windmill/models.py:84
+#: windmill/models.py:266
 #, fuzzy
 #| msgid "Booking"
 msgid "Booking day"
 msgstr "จอง"
 
-#: windmill/models.py:89
+#: windmill/models.py:271
 msgid "Tee off hour"
 msgstr ""
 
-#: windmill/models.py:97
+#: windmill/models.py:279
 msgid "Tee off minute"
 msgstr ""
 
-#: windmill/models.py:105
+#: windmill/models.py:287
 msgid "Tee off status"
 msgstr ""
 
-#: windmill/models.py:112
+#: windmill/models.py:294
 msgid "Daily tee off time"
 msgstr ""
 
-#: windmill/models.py:113
+#: windmill/models.py:295
 msgid "Daily tee off times"
 msgstr ""
 
