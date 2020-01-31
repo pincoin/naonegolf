@@ -79,11 +79,6 @@ class Booking(model_utils_models.TimeStampedModel):
         on_delete=models.CASCADE,
     )
 
-    round_date = models.DateField(
-        verbose_name=_('Round day'),
-        db_index=True,
-    )
-
     round_time = models.TimeField(
         verbose_name=_('Round time'),
     )
