@@ -1,0 +1,52 @@
+{% extends 'conf/base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'Book now' %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row my-4">
+            <div class="col">
+                <div class="alert alert-danger mb-0">
+                    사이트 공식 오픈 예정일: 2020년 3월 1일
+                </div>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col">
+                <div class="alert alert-warning">
+                    <ul class="pl-3 mb-0">
+                        <li class="my-1">3-5인은 확정 티오프를 즉시 예약할 수 있습니다, 단 예약 후 24시간 이내에 입금하셔야 예약이 확정됩니다.</li>
+                        <li class="my-1">1~2은 확정 티오프를 예약할 수 없으며 무조건 스탠바이 조인입니다. 24시간 이내에 입금하셔야 스탠바이 예약이 가능합니다.</li>
+                        <li class="my-1">24시간 이내에 입금하지 않은 예약건은 다른 고객님께서 구매하실 수 있도록 예약이 취소됩니다.</li>
+                        <li class="my-1">악의적 예약 선점 방지를 위해 한 티오프에 대하여 미입금 예약은 최대 3회까지만 가능합니다.</li>
+                        <li class="my-1">태국인이 아닌 외국인만 이용할 수 있으며 예약 시 예약자 전원의 여권을 업로드 해야 합니다. (단, 여권번호와
+                            주민등록번호는 가리셔도 됩니다.)
+                        </li>
+                        <li class="my-1">5인 예약일 경우에는 카트 의무입니다. 4인 이하는 카트 의무는 아니지만 카트를 이용할 경우 1인1카트입니다. 카드 요금은 1인당
+                            900바트입니다.
+                        </li>
+                        <li class="my-1">
+                            라운딩 2일 전에 캐디를 지정하실 수 있습니다. 단, 캐디의 스케줄에 따라 조율이 필요할 수 있으며 이 경후 추후 통보합니다.
+                        </li>
+                        <li class="my-1">이용일 7일 이전에 전액 환불, 6~4일 이내에는 50% 환불, 3일 이내에는 환불되지 않습니다.</li>
+                        <li class="my-1">악천후로 인하여 더 이상 진행이 불가능할 경우에도 레인체크 또는 환불되지 않습니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <form action="" method="post" class="col">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="row my-4">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,6 +1,7 @@
 from django.utils import timezone
 from django.views import generic
 
+from . import forms
 from . import models
 
 
@@ -16,3 +17,8 @@ class TeeOffListView(generic.ListView):
             .order_by('day')
 
         return queryset
+
+
+class BookingCreateForm(generic.CreateView):
+    form_class = forms.BookingForm
+    template_name = 'windmill/booking_create.html'
