@@ -311,7 +311,8 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
     STATUS_CHOICES = Choices(
         (0, 'open', _('Open')),
         (1, 'held', _('Held')),
-        (2, 'held', _('Closed')),
+        (2, 'sold', _('Sold')),
+        (3, 'revoked', _('Revoked')),
     )
 
     day = models.ForeignKey(

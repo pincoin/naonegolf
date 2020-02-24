@@ -35,6 +35,13 @@ class DailyBookingAdmin(admin.ModelAdmin):
     date_hierarchy = 'day'
 
 
+class TeeOffTimeAdmin(admin.ModelAdmin):
+    list_display = ('day', 'hour', 'minute', 'status')
+    list_filter = ('status',)
+    ordering = ('day',)
+
+
 admin.site.register(models.BookingOrder, BookingOrderAdmin)
 admin.site.register(models.Booking, BookingAdmin)
 admin.site.register(models.DailyBooking, DailyBookingAdmin)
+admin.site.register(models.TeeOffTime, TeeOffTimeAdmin)
