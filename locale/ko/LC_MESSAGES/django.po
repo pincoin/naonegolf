@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-02 18:23+0700\n"
+"POT-Creation-Date: 2020-02-24 22:01+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -631,32 +631,40 @@ msgid "Held"
 msgstr "예약있음"
 
 #: windmill/models.py:314
-msgid "Closed"
+msgid "Sold"
 msgstr "판매완료"
 
-#: windmill/models.py:319
+#: windmill/models.py:315
+msgid "Revoked"
+msgstr "취소"
+
+#: windmill/models.py:320
 msgid "Booking day"
 msgstr "예매일자"
 
-#: windmill/models.py:324
+#: windmill/models.py:325
 msgid "Tee off hour"
 msgstr "시"
 
-#: windmill/models.py:332
+#: windmill/models.py:333
 msgid "Tee off minute"
 msgstr "분"
 
-#: windmill/models.py:340
+#: windmill/models.py:341
 msgid "Tee off status"
 msgstr "상태"
 
-#: windmill/models.py:347
+#: windmill/models.py:348
 msgid "Daily tee off time"
 msgstr "일별 티오프"
 
-#: windmill/models.py:348
+#: windmill/models.py:349
 msgid "Daily tee off times"
 msgstr "일별 티오프"
+
+#: windmill/templates/windmill/booking_create.html:6
+msgid "Book now"
+msgstr "예매"
 
 #: windmill/templates/windmill/tee_off_list.html:6
 #: windmill/templates/windmill/tee_off_list.html:12

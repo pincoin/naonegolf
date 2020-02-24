@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-02 18:23+0700\n"
+"POT-Creation-Date: 2020-02-24 22:01+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -629,31 +629,39 @@ msgid "Held"
 msgstr ""
 
 #: windmill/models.py:314
-msgid "Closed"
+msgid "Sold"
 msgstr ""
 
-#: windmill/models.py:319
+#: windmill/models.py:315
+msgid "Revoked"
+msgstr ""
+
+#: windmill/models.py:320
 msgid "Booking day"
 msgstr ""
 
-#: windmill/models.py:324
+#: windmill/models.py:325
 msgid "Tee off hour"
 msgstr ""
 
-#: windmill/models.py:332
+#: windmill/models.py:333
 msgid "Tee off minute"
 msgstr ""
 
-#: windmill/models.py:340
+#: windmill/models.py:341
 msgid "Tee off status"
 msgstr ""
 
-#: windmill/models.py:347
+#: windmill/models.py:348
 msgid "Daily tee off time"
 msgstr ""
 
-#: windmill/models.py:348
+#: windmill/models.py:349
 msgid "Daily tee off times"
+msgstr ""
+
+#: windmill/templates/windmill/booking_create.html:6
+msgid "Book now"
 msgstr ""
 
 #: windmill/templates/windmill/tee_off_list.html:6
