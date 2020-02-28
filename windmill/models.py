@@ -135,10 +135,9 @@ class Booking(model_utils_models.TimeStampedModel):
         max_length=255,
     )
 
-    tee_off = models.ForeignKey(
+    tee_off = models.ManyToManyField(
         'windmill.TeeOffTime',
         verbose_name=_('Tee-off time'),
-        on_delete=models.CASCADE,
     )
 
     pax = models.IntegerField(

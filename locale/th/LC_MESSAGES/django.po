@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-28 23:50+0700\n"
+"POT-Creation-Date: 2020-02-29 00:43+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -212,7 +212,7 @@ msgstr ""
 msgid "Cart rental required"
 msgstr ""
 
-#: golf/models.py:150 windmill/admin.py:42
+#: golf/models.py:150
 msgid "Cart fee"
 msgstr ""
 
@@ -222,7 +222,7 @@ msgstr ""
 msgid "THB"
 msgstr ""
 
-#: golf/models.py:157 windmill/admin.py:37
+#: golf/models.py:157
 msgid "Caddie fee"
 msgstr ""
 
@@ -474,14 +474,14 @@ msgstr ""
 msgid "Email Management"
 msgstr ""
 
-#: windmill/admin.py:27
+#: windmill/admin.py:26
 #, fuzzy
 #| msgid "Booking"
 msgid "Booking info"
 msgstr "จอง"
 
-#: windmill/admin.py:32
-msgid "Green fee"
+#: windmill/admin.py:31
+msgid "Payment info"
 msgstr ""
 
 #: windmill/apps.py:7

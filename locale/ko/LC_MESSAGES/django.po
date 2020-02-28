@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-28 23:50+0700\n"
+"POT-Creation-Date: 2020-02-29 00:43+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -212,7 +212,7 @@ msgstr "홀수"
 msgid "Cart rental required"
 msgstr "카트 의무"
 
-#: golf/models.py:150 windmill/admin.py:42
+#: golf/models.py:150
 msgid "Cart fee"
 msgstr "카트피"
 
@@ -222,7 +222,7 @@ msgstr "카트피"
 msgid "THB"
 msgstr "바트"
 
-#: golf/models.py:157 windmill/admin.py:37
+#: golf/models.py:157
 msgid "Caddie fee"
 msgstr "캐디피"
 
@@ -476,13 +476,13 @@ msgstr "이메일 인증 요청"
 msgid "Email Management"
 msgstr "이메일 관리"
 
-#: windmill/admin.py:27
+#: windmill/admin.py:26
 msgid "Booking info"
 msgstr "예약정보"
 
-#: windmill/admin.py:32
-msgid "Green fee"
-msgstr "그린피"
+#: windmill/admin.py:31
+msgid "Payment info"
+msgstr "결제정보"
 
 #: windmill/apps.py:7
 msgid "Summit Windmill Golf Club"
@@ -644,3 +644,6 @@ msgstr "티오프"
 #: windmill/templates/windmill/tee_off_list.html:33
 msgid "No tee off"
 msgstr "예약 가능한 티오프가 없습니다."
+
+#~ msgid "Green fee"
+#~ msgstr "그린피"
