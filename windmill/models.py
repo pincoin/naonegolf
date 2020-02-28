@@ -42,6 +42,27 @@ class RoundDay(model_utils_models.TimeStampedModel):
         default=0,
     )
 
+    sales = models.DecimalField(
+        verbose_name=_('Daily sales'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    cost = models.DecimalField(
+        verbose_name=_('Daily cost'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    cart_fee_deducted_from_deposit = models.IntegerField(
+        verbose_name=_('Cart fee deducted from deposit'),
+        default=0,
+    )
+
     class Meta:
         verbose_name = _('Round day')
         verbose_name_plural = _('Round days')

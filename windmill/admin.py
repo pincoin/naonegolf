@@ -16,7 +16,7 @@ class TeeOffTimeInline(admin.TabularInline):
 
 
 class RoundDayAdmin(admin.ModelAdmin):
-    list_display = ('day', 'season', 'day_of_week', 'pax')
+    list_display = ('day', 'season', 'day_of_week', 'pax', 'sales', 'cost', 'cart_fee_deducted_from_deposit')
     inlines = [TeeOffTimeInline, ]
     ordering = ('-day',)
     date_hierarchy = 'day'
