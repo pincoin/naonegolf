@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
+from . import forms
 from . import models
 
 admin.site.site_header = _('NA-ONE Communication')
@@ -13,6 +14,10 @@ class TeeOffTimeInline(admin.TabularInline):
     extra = 0
     fields = ('time', 'slot', 'type', 'status')
     ordering = ['time', ]
+
+
+class AgencyAdmin(admin.ModelAdmin):
+    pass
 
 
 class RoundDayAdmin(admin.ModelAdmin):
@@ -31,12 +36,12 @@ class TeeOffTimeAdmin(admin.ModelAdmin):
 class BookingAdmin(admin.ModelAdmin):
     list_display = ('customer_name', 'pax', 'hole', 'status')
     list_filter = ('status', 'hole')
-    filter_horizontal = ['tee_off', ]
+    form = forms.BookingAdminForm
 
     fieldsets = (
         (_('Booking info'), {
             'fields': (
-                'customer_name', 'tee_off', 'pax', 'hole', 'status',
+                'agency', 'customer_name', 'pax', 'hole', 'status',
             )
         }),
         (_('Payment info'), {
@@ -49,6 +54,7 @@ class BookingAdmin(admin.ModelAdmin):
     )
 
 
+admin.site.register(models.Agency, AgencyAdmin)
 admin.site.register(models.RoundDay, RoundDayAdmin)
 admin.site.register(models.TeeOffTime, TeeOffTimeAdmin)
 admin.site.register(models.Booking, BookingAdmin)

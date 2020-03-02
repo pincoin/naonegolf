@@ -6,6 +6,72 @@ from model_utils import Choices
 from model_utils import models as model_utils_models
 
 
+class Agency(model_utils_models.TimeStampedModel):
+    TYPE_CHOICES = Choices(
+        (0, 'normal', _('Normal')),
+        (1, 'prepaid', _('Prepaid')),
+    )
+
+    type = models.IntegerField(
+        verbose_name=_('Pay type'),
+        choices=TYPE_CHOICES,
+        default=TYPE_CHOICES.normal,
+        db_index=True,
+    )
+
+    name = models.CharField(
+        verbose_name=_('Name'),
+        max_length=255,
+    )
+
+    weekday_day = models.DecimalField(
+        verbose_name=_('Weekday day'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    weekend_morning = models.DecimalField(
+        verbose_name=_('Weekend morning'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    weekend_afternoon = models.DecimalField(
+        verbose_name=_('Weekend afternoon'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    twilight = models.DecimalField(
+        verbose_name=_('Twilight'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    night = models.DecimalField(
+        verbose_name=_('Night'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    class Meta:
+        verbose_name = _('Agency')
+        verbose_name_plural = _('Agencies')
+
+    def __str__(self):
+        return '{} {}'.format(self.name, self.type)
+
+
 class RoundDay(model_utils_models.TimeStampedModel):
     SEASON_CHOICES = Choices(
         (0, 'low', _('Low season')),
@@ -118,6 +184,14 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         on_delete=models.CASCADE,
     )
 
+    booking = models.ForeignKey(
+        'windmill.Booking',
+        verbose_name=_('Booking'),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
     time = models.TimeField(
         verbose_name=_('Tee-off time'),
     )
@@ -151,14 +225,17 @@ class Booking(model_utils_models.TimeStampedModel):
         (9, 'refunded2', _('order refunded(reverse)')),  # refund order
     )
 
+    agency = models.ForeignKey(
+        'windmill.Agency',
+        verbose_name=_('Agency'),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
     customer_name = models.CharField(
         verbose_name=_('Customer name'),
         max_length=255,
-    )
-
-    tee_off = models.ManyToManyField(
-        'windmill.TeeOffTime',
-        verbose_name=_('Tee-off time'),
     )
 
     pax = models.IntegerField(
@@ -255,4 +332,4 @@ class Booking(model_utils_models.TimeStampedModel):
         verbose_name_plural = _('Bookings')
 
     def __str__(self):
-        return '{} {}'.format(self.customer_name, self.tee_off)
+        return '{}'.format(self.customer_name)

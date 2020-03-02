@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-29 01:12+0700\n"
+"POT-Creation-Date: 2020-03-02 17:41+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid "NA-ONE"
 msgstr ""
 
 #: conf/templates/conf/base.html:37 golf/admin.py:6 golf/admin.py:7
-#: golf/admin.py:8 windmill/admin.py:6 windmill/admin.py:7 windmill/admin.py:8
+#: golf/admin.py:8 windmill/admin.py:7 windmill/admin.py:8 windmill/admin.py:9
 msgid "NA-ONE Communication"
 msgstr ""
 
@@ -46,7 +46,8 @@ msgstr ""
 msgid "SWGC"
 msgstr ""
 
-#: conf/templates/conf/base.html:53 windmill/models.py:254
+#: conf/templates/conf/base.html:53 windmill/models.py:189
+#: windmill/models.py:331
 msgid "Booking"
 msgstr ""
 
@@ -119,47 +120,47 @@ msgstr ""
 msgid "Holidays"
 msgstr ""
 
-#: golf/models.py:44 windmill/models.py:11
+#: golf/models.py:44 windmill/models.py:77
 msgid "Low season"
 msgstr ""
 
-#: golf/models.py:45 golf/models.py:164 windmill/models.py:12
+#: golf/models.py:45 golf/models.py:164 windmill/models.py:78
 msgid "High season"
 msgstr ""
 
-#: golf/models.py:49 windmill/models.py:16
+#: golf/models.py:49 windmill/models.py:82
 msgid "Weekday"
 msgstr ""
 
-#: golf/models.py:50 windmill/models.py:17
+#: golf/models.py:50 windmill/models.py:83
 msgid "Weekend"
 msgstr ""
 
-#: golf/models.py:54 windmill/models.py:76
+#: golf/models.py:54 windmill/models.py:142
 msgid "Morning"
 msgstr ""
 
-#: golf/models.py:55 windmill/models.py:77
+#: golf/models.py:55 windmill/models.py:143
 msgid "Daytime"
 msgstr ""
 
-#: golf/models.py:56 windmill/models.py:78
+#: golf/models.py:56 windmill/models.py:52 windmill/models.py:144
 msgid "Twilight"
 msgstr ""
 
-#: golf/models.py:57 windmill/models.py:79
+#: golf/models.py:57 windmill/models.py:60 windmill/models.py:145
 msgid "Night"
 msgstr ""
 
-#: golf/models.py:61 windmill/models.py:21
+#: golf/models.py:61 windmill/models.py:87
 msgid "High/Low Season"
 msgstr ""
 
-#: golf/models.py:68 windmill/models.py:28
+#: golf/models.py:68 windmill/models.py:94
 msgid "Day of week"
 msgstr ""
 
-#: golf/models.py:75 windmill/models.py:95
+#: golf/models.py:75 windmill/models.py:161
 msgid "Time slot"
 msgstr ""
 
@@ -171,19 +172,19 @@ msgstr ""
 msgid "Golf club products"
 msgstr ""
 
-#: golf/models.py:97 windmill/models.py:135
+#: golf/models.py:97 windmill/models.py:209
 msgid "18 Holes"
 msgstr ""
 
-#: golf/models.py:98 windmill/models.py:136
+#: golf/models.py:98 windmill/models.py:210
 msgid "9 Holes"
 msgstr ""
 
-#: golf/models.py:99 windmill/models.py:137
+#: golf/models.py:99 windmill/models.py:211
 msgid "27 Holes"
 msgstr ""
 
-#: golf/models.py:100 windmill/models.py:138
+#: golf/models.py:100 windmill/models.py:212
 msgid "36 Holes"
 msgstr ""
 
@@ -204,7 +205,7 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: golf/models.py:137 windmill/models.py:170
+#: golf/models.py:137 windmill/models.py:247
 msgid "No. of holes"
 msgstr ""
 
@@ -217,9 +218,11 @@ msgid "Cart fee"
 msgstr ""
 
 #: golf/models.py:153 golf/models.py:160 golf/models.py:235
-#: windmill/models.py:50 windmill/models.py:58 windmill/models.py:188
-#: windmill/models.py:196 windmill/models.py:204 windmill/models.py:230
-#: windmill/models.py:238 windmill/models.py:250
+#: windmill/models.py:32 windmill/models.py:40 windmill/models.py:48
+#: windmill/models.py:56 windmill/models.py:64 windmill/models.py:116
+#: windmill/models.py:124 windmill/models.py:265 windmill/models.py:273
+#: windmill/models.py:281 windmill/models.py:307 windmill/models.py:315
+#: windmill/models.py:327
 msgid "THB"
 msgstr ""
 
@@ -475,11 +478,11 @@ msgstr ""
 msgid "Email Management"
 msgstr ""
 
-#: windmill/admin.py:37
+#: windmill/admin.py:42
 msgid "Booking info"
 msgstr ""
 
-#: windmill/admin.py:42
+#: windmill/admin.py:47
 msgid "Payment info"
 msgstr ""
 
@@ -487,155 +490,191 @@ msgstr ""
 msgid "Summit Windmill Golf Club"
 msgstr ""
 
-#: windmill/models.py:35
+#: windmill/models.py:11
+msgid "Normal"
+msgstr ""
+
+#: windmill/models.py:12
+msgid "Prepaid"
+msgstr ""
+
+#: windmill/models.py:16
+msgid "Pay type"
+msgstr ""
+
+#: windmill/models.py:23
+msgid "Name"
+msgstr ""
+
+#: windmill/models.py:28
+msgid "Weekday day"
+msgstr ""
+
+#: windmill/models.py:36
+msgid "Weekend morning"
+msgstr ""
+
+#: windmill/models.py:44
+msgid "Weekend afternoon"
+msgstr ""
+
+#: windmill/models.py:68 windmill/models.py:230
+msgid "Agency"
+msgstr ""
+
+#: windmill/models.py:69
+msgid "Agencies"
+msgstr ""
+
+#: windmill/models.py:101
 msgid "Booking Day"
 msgstr ""
 
-#: windmill/models.py:41 windmill/models.py:165
+#: windmill/models.py:107 windmill/models.py:242
 msgid "Pax"
 msgstr ""
 
-#: windmill/models.py:46
+#: windmill/models.py:112
 msgid "Daily sales"
 msgstr ""
 
-#: windmill/models.py:54
+#: windmill/models.py:120
 msgid "Daily cost"
 msgstr ""
 
-#: windmill/models.py:62 windmill/models.py:242
+#: windmill/models.py:128 windmill/models.py:319
 msgid "Cart fee deducted from deposit"
 msgstr ""
 
-#: windmill/models.py:67 windmill/models.py:117
+#: windmill/models.py:133 windmill/models.py:183
 msgid "Round day"
 msgstr ""
 
-#: windmill/models.py:68
+#: windmill/models.py:134
 msgid "Round days"
 msgstr ""
 
-#: windmill/models.py:83
+#: windmill/models.py:149
 msgid "Fixed"
 msgstr ""
 
-#: windmill/models.py:84
+#: windmill/models.py:150
 msgid "Stand-by"
 msgstr ""
 
-#: windmill/models.py:88
+#: windmill/models.py:154
 msgid "Open"
 msgstr ""
 
-#: windmill/models.py:89
+#: windmill/models.py:155
 msgid "Held"
 msgstr ""
 
-#: windmill/models.py:90
+#: windmill/models.py:156
 msgid "Sold"
 msgstr ""
 
-#: windmill/models.py:91
+#: windmill/models.py:157
 msgid "Revoked"
 msgstr ""
 
-#: windmill/models.py:102
+#: windmill/models.py:168
 msgid "Type"
 msgstr ""
 
-#: windmill/models.py:109 windmill/models.py:177
+#: windmill/models.py:175 windmill/models.py:254
 msgid "Status"
 msgstr ""
 
-#: windmill/models.py:122 windmill/models.py:126 windmill/models.py:161
+#: windmill/models.py:196 windmill/models.py:200
 msgid "Tee-off time"
 msgstr ""
 
-#: windmill/models.py:127
+#: windmill/models.py:201
 msgid "Tee-off times"
 msgstr ""
 
-#: windmill/models.py:142
+#: windmill/models.py:216
 msgid "order opened"
 msgstr ""
 
-#: windmill/models.py:143
+#: windmill/models.py:217
 msgid "order pending"
 msgstr ""
 
-#: windmill/models.py:144
+#: windmill/models.py:218
 msgid "payment pending"
 msgstr ""
 
-#: windmill/models.py:145
+#: windmill/models.py:219
 msgid "order complete"
 msgstr ""
 
-#: windmill/models.py:146
+#: windmill/models.py:220
 msgid "order offered"
 msgstr ""
 
-#: windmill/models.py:147
+#: windmill/models.py:221
 msgid "order voided"
 msgstr ""
 
-#: windmill/models.py:148
+#: windmill/models.py:222
 msgid "refund requested"
 msgstr ""
 
-#: windmill/models.py:149
+#: windmill/models.py:223
 msgid "refund pending"
 msgstr ""
 
-#: windmill/models.py:150
+#: windmill/models.py:224
 msgid "order refunded(original)"
 msgstr ""
 
-#: windmill/models.py:151
+#: windmill/models.py:225
 msgid "order refunded(reverse)"
 msgstr ""
 
-#: windmill/models.py:155
+#: windmill/models.py:237
 msgid "Customer name"
 msgstr ""
 
-#: windmill/models.py:184
+#: windmill/models.py:261
 msgid "Green fee sales"
 msgstr ""
 
-#: windmill/models.py:192
+#: windmill/models.py:269
 msgid "Cart fee sales"
 msgstr ""
 
-#: windmill/models.py:200
+#: windmill/models.py:277
 msgid "Caddie fee sales"
 msgstr ""
 
-#: windmill/models.py:208
+#: windmill/models.py:285
 msgid "Green fee pay on arrival"
 msgstr ""
 
-#: windmill/models.py:214
+#: windmill/models.py:291
 msgid "Cart fee pay on arrival"
 msgstr ""
 
-#: windmill/models.py:220
+#: windmill/models.py:297
 msgid "Caddie fee pay on arrival"
 msgstr ""
 
-#: windmill/models.py:226
+#: windmill/models.py:303
 msgid "Green fee cost"
 msgstr ""
 
-#: windmill/models.py:234
+#: windmill/models.py:311
 msgid "Cart fee cost"
 msgstr ""
 
-#: windmill/models.py:247
+#: windmill/models.py:324
 msgid "Caddie fee cost"
 msgstr ""
 
-#: windmill/models.py:255
+#: windmill/models.py:332
 msgid "Bookings"
 msgstr ""
 
