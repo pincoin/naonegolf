@@ -36,6 +36,7 @@ class TeeOffTimeAdmin(admin.ModelAdmin):
 class BookingAdmin(admin.ModelAdmin):
     list_display = ('customer_name', 'pax', 'hole', 'status')
     list_filter = ('status', 'hole')
+    inlines = [TeeOffTimeInline, ]
     form = forms.BookingAdminForm
 
     fieldsets = (
