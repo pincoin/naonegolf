@@ -13,16 +13,19 @@ class TeeOffTimeInline(admin.StackedInline):
     model = models.TeeOffTime
     extra = 0
     fieldsets = (
-        (_('Booking info'), {
+        (_('Tee-off info'), {
             'fields': (
-                'day',  'time', 'slot', 'status', 'type',
+                'day', 'time', 'slot', 'status', 'type',
             )
         }),
         (_('Payment info'), {
             'fields': (
-                ('green_fee_pay_on_arrival', 'green_fee_sales', 'green_fee_cost'),
-                ('caddie_fee_pay_on_arrival', 'caddie_fee_sales', 'caddie_fee_cost'),
-                ('cart_fee_pay_on_arrival', 'cart_fee_sales', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',),
+                ('green_fee_pay_on_arrival', 'green_fee_sales_unit_price', 'green_fee_sales',
+                 'green_fee_cost_unit_price', 'green_fee_cost'),
+                ('caddie_fee_pay_on_arrival', 'caddie_fee_sales_unit_price', 'caddie_fee_sales',
+                 'caddie_fee_cost_unit_price', 'caddie_fee_cost'),
+                ('cart_fee_pay_on_arrival', 'cart_fee_sales_unit_price', 'cart_fee_sales',
+                 'cart_fee_cost_unit_price', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',),
             )
         }),
     )
@@ -44,6 +47,23 @@ class TeeOffTimeAdmin(admin.ModelAdmin):
     list_display = ('day', 'time', 'slot', 'type', 'status')
     list_display_links = ('day', 'time')
     list_filter = ('status', 'type')
+    fieldsets = (
+        (_('Tee-off info'), {
+            'fields': (
+                'day', 'time', 'slot', 'status', 'type',
+            )
+        }),
+        (_('Payment info'), {
+            'fields': (
+                ('green_fee_pay_on_arrival', 'green_fee_sales_unit_price', 'green_fee_sales',
+                 'green_fee_cost_unit_price', 'green_fee_cost'),
+                ('caddie_fee_pay_on_arrival', 'caddie_fee_sales_unit_price', 'caddie_fee_sales',
+                 'caddie_fee_cost_unit_price', 'caddie_fee_cost'),
+                ('cart_fee_pay_on_arrival', 'cart_fee_sales_unit_price', 'cart_fee_sales',
+                 'cart_fee_cost_unit_price', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',),
+            )
+        }),
+    )
 
 
 class BookingAdmin(admin.ModelAdmin):
