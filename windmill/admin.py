@@ -9,10 +9,23 @@ admin.site.site_title = _('NA-ONE Communication')
 admin.site.index_title = _('NA-ONE Communication')
 
 
-class TeeOffTimeInline(admin.TabularInline):
+class TeeOffTimeInline(admin.StackedInline):
     model = models.TeeOffTime
     extra = 0
-    fields = ('time', 'slot', 'type', 'status')
+    fieldsets = (
+        (_('Booking info'), {
+            'fields': (
+                'day',  'time', 'slot', 'status', 'type',
+            )
+        }),
+        (_('Payment info'), {
+            'fields': (
+                ('green_fee_pay_on_arrival', 'green_fee_sales', 'green_fee_cost'),
+                ('caddie_fee_pay_on_arrival', 'caddie_fee_sales', 'caddie_fee_cost'),
+                ('cart_fee_pay_on_arrival', 'cart_fee_sales', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',),
+            )
+        }),
+    )
     ordering = ['time', ]
 
 
@@ -43,13 +56,6 @@ class BookingAdmin(admin.ModelAdmin):
         (_('Booking info'), {
             'fields': (
                 'agency', 'customer_name', 'pax', 'hole', 'status',
-            )
-        }),
-        (_('Payment info'), {
-            'fields': (
-                ('green_fee_pay_on_arrival', 'green_fee_sales', 'green_fee_cost'),
-                ('caddie_fee_pay_on_arrival', 'caddie_fee_sales', 'caddie_fee_cost'),
-                ('cart_fee_pay_on_arrival', 'cart_fee_sales', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',),
             )
         }),
     )

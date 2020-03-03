@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-02 17:41+0700\n"
+"POT-Creation-Date: 2020-03-03 15:42+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgid "SWGC"
 msgstr ""
 
 #: conf/templates/conf/base.html:53 windmill/models.py:189
-#: windmill/models.py:331
+#: windmill/models.py:385
 msgid "Booking"
 msgstr ""
 
@@ -172,19 +172,19 @@ msgstr ""
 msgid "Golf club products"
 msgstr ""
 
-#: golf/models.py:97 windmill/models.py:209
+#: golf/models.py:97 windmill/models.py:333
 msgid "18 Holes"
 msgstr ""
 
-#: golf/models.py:98 windmill/models.py:210
+#: golf/models.py:98 windmill/models.py:334
 msgid "9 Holes"
 msgstr ""
 
-#: golf/models.py:99 windmill/models.py:211
+#: golf/models.py:99 windmill/models.py:335
 msgid "27 Holes"
 msgstr ""
 
-#: golf/models.py:100 windmill/models.py:212
+#: golf/models.py:100 windmill/models.py:336
 msgid "36 Holes"
 msgstr ""
 
@@ -205,7 +205,7 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: golf/models.py:137 windmill/models.py:247
+#: golf/models.py:137 windmill/models.py:371
 msgid "No. of holes"
 msgstr ""
 
@@ -220,9 +220,11 @@ msgstr ""
 #: golf/models.py:153 golf/models.py:160 golf/models.py:235
 #: windmill/models.py:32 windmill/models.py:40 windmill/models.py:48
 #: windmill/models.py:56 windmill/models.py:64 windmill/models.py:116
-#: windmill/models.py:124 windmill/models.py:265 windmill/models.py:273
-#: windmill/models.py:281 windmill/models.py:307 windmill/models.py:315
-#: windmill/models.py:327
+#: windmill/models.py:124 windmill/models.py:204 windmill/models.py:212
+#: windmill/models.py:220 windmill/models.py:228 windmill/models.py:236
+#: windmill/models.py:249 windmill/models.py:257 windmill/models.py:265
+#: windmill/models.py:273 windmill/models.py:299 windmill/models.py:307
+#: windmill/models.py:320
 msgid "THB"
 msgstr ""
 
@@ -478,11 +480,11 @@ msgstr ""
 msgid "Email Management"
 msgstr ""
 
-#: windmill/admin.py:42
+#: windmill/admin.py:16 windmill/admin.py:56
 msgid "Booking info"
 msgstr ""
 
-#: windmill/admin.py:47
+#: windmill/admin.py:21
 msgid "Payment info"
 msgstr ""
 
@@ -518,7 +520,7 @@ msgstr ""
 msgid "Weekend afternoon"
 msgstr ""
 
-#: windmill/models.py:68 windmill/models.py:230
+#: windmill/models.py:68 windmill/models.py:354
 msgid "Agency"
 msgstr ""
 
@@ -530,7 +532,7 @@ msgstr ""
 msgid "Booking Day"
 msgstr ""
 
-#: windmill/models.py:107 windmill/models.py:242
+#: windmill/models.py:107 windmill/models.py:366
 msgid "Pax"
 msgstr ""
 
@@ -542,7 +544,7 @@ msgstr ""
 msgid "Daily cost"
 msgstr ""
 
-#: windmill/models.py:128 windmill/models.py:319
+#: windmill/models.py:128 windmill/models.py:311
 msgid "Cart fee deducted from deposit"
 msgstr ""
 
@@ -582,99 +584,127 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: windmill/models.py:175 windmill/models.py:254
+#: windmill/models.py:175 windmill/models.py:378
 msgid "Status"
 msgstr ""
 
-#: windmill/models.py:196 windmill/models.py:200
+#: windmill/models.py:196 windmill/models.py:324
 msgid "Tee-off time"
 msgstr ""
 
-#: windmill/models.py:201
-msgid "Tee-off times"
+#: windmill/models.py:200
+msgid "Green fee sales unit price"
+msgstr ""
+
+#: windmill/models.py:208
+msgid "Green fee cost unit price"
 msgstr ""
 
 #: windmill/models.py:216
-msgid "order opened"
-msgstr ""
-
-#: windmill/models.py:217
-msgid "order pending"
-msgstr ""
-
-#: windmill/models.py:218
-msgid "payment pending"
-msgstr ""
-
-#: windmill/models.py:219
-msgid "order complete"
-msgstr ""
-
-#: windmill/models.py:220
-msgid "order offered"
-msgstr ""
-
-#: windmill/models.py:221
-msgid "order voided"
-msgstr ""
-
-#: windmill/models.py:222
-msgid "refund requested"
-msgstr ""
-
-#: windmill/models.py:223
-msgid "refund pending"
-msgstr ""
-
-#: windmill/models.py:224
-msgid "order refunded(original)"
-msgstr ""
-
-#: windmill/models.py:225
-msgid "order refunded(reverse)"
-msgstr ""
-
-#: windmill/models.py:237
-msgid "Customer name"
-msgstr ""
-
-#: windmill/models.py:261
 msgid "Green fee sales"
 msgstr ""
 
-#: windmill/models.py:269
+#: windmill/models.py:224
+msgid "Cart fee sales unit price"
+msgstr ""
+
+#: windmill/models.py:232
+msgid "Cart fee cost unit price"
+msgstr ""
+
+#: windmill/models.py:240
+msgid "Cart PAX"
+msgstr ""
+
+#: windmill/models.py:245
 msgid "Cart fee sales"
 msgstr ""
 
-#: windmill/models.py:277
+#: windmill/models.py:253
+msgid "Caddie fee sales unit price"
+msgstr ""
+
+#: windmill/models.py:261
+msgid "Caddie fee cost unit price"
+msgstr ""
+
+#: windmill/models.py:269
 msgid "Caddie fee sales"
 msgstr ""
 
-#: windmill/models.py:285
+#: windmill/models.py:277
 msgid "Green fee pay on arrival"
 msgstr ""
 
-#: windmill/models.py:291
+#: windmill/models.py:283
 msgid "Cart fee pay on arrival"
 msgstr ""
 
-#: windmill/models.py:297
+#: windmill/models.py:289
 msgid "Caddie fee pay on arrival"
 msgstr ""
 
-#: windmill/models.py:303
+#: windmill/models.py:295
 msgid "Green fee cost"
 msgstr ""
 
-#: windmill/models.py:311
+#: windmill/models.py:303
 msgid "Cart fee cost"
 msgstr ""
 
-#: windmill/models.py:324
+#: windmill/models.py:316
 msgid "Caddie fee cost"
 msgstr ""
 
-#: windmill/models.py:332
+#: windmill/models.py:325
+msgid "Tee-off times"
+msgstr ""
+
+#: windmill/models.py:340
+msgid "order opened"
+msgstr ""
+
+#: windmill/models.py:341
+msgid "order pending"
+msgstr ""
+
+#: windmill/models.py:342
+msgid "payment pending"
+msgstr ""
+
+#: windmill/models.py:343
+msgid "order complete"
+msgstr ""
+
+#: windmill/models.py:344
+msgid "order offered"
+msgstr ""
+
+#: windmill/models.py:345
+msgid "order voided"
+msgstr ""
+
+#: windmill/models.py:346
+msgid "refund requested"
+msgstr ""
+
+#: windmill/models.py:347
+msgid "refund pending"
+msgstr ""
+
+#: windmill/models.py:348
+msgid "order refunded(original)"
+msgstr ""
+
+#: windmill/models.py:349
+msgid "order refunded(reverse)"
+msgstr ""
+
+#: windmill/models.py:361
+msgid "Customer name"
+msgstr ""
+
+#: windmill/models.py:386
 msgid "Bookings"
 msgstr ""
 
