@@ -196,67 +196,6 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         verbose_name=_('Tee-off time'),
     )
 
-    class Meta:
-        verbose_name = _('Tee-off time')
-        verbose_name_plural = _('Tee-off times')
-
-    def __str__(self):
-        return '{} {}'.format(self.day, self.time)
-
-
-class Booking(model_utils_models.TimeStampedModel):
-    HOLE_CHOICES = Choices(
-        (0, 'hole18', _('18 Holes')),
-        (1, 'hole9', _('9 Holes')),
-        (2, 'hole27', _('27 Holes')),
-        (3, 'hole36', _('36 Holes')),
-    )
-
-    STATUS_CHOICES = Choices(
-        (0, 'order_opened', _('order opened')),
-        (1, 'order_pending', _('order pending')),
-        (2, 'payment_pending', _('payment pending')),
-        (3, 'completed', _('order complete')),
-        (4, 'offered', _('order offered')),
-        (5, 'voided', _('order voided')),
-        (6, 'refund_requested', _('refund requested')),
-        (7, 'refund_pending', _('refund pending')),
-        (8, 'refunded1', _('order refunded(original)')),  # original order
-        (9, 'refunded2', _('order refunded(reverse)')),  # refund order
-    )
-
-    agency = models.ForeignKey(
-        'windmill.Agency',
-        verbose_name=_('Agency'),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-    )
-
-    customer_name = models.CharField(
-        verbose_name=_('Customer name'),
-        max_length=255,
-    )
-
-    pax = models.IntegerField(
-        verbose_name=_('Pax'),
-        default=4,
-    )
-
-    hole = models.IntegerField(
-        verbose_name=_('No. of holes'),
-        choices=HOLE_CHOICES,
-        default=HOLE_CHOICES.hole18,
-        db_index=True,
-    )
-
-    status = models.IntegerField(
-        verbose_name=_('Status'),
-        choices=STATUS_CHOICES,
-        default=STATUS_CHOICES.order_opened,
-        db_index=True,
-    )
-
     green_fee_sales = models.DecimalField(
         verbose_name=_('Green fee sales'),
         max_digits=11,
@@ -324,7 +263,69 @@ class Booking(model_utils_models.TimeStampedModel):
         verbose_name=_('Caddie fee cost'),
         max_digits=11,
         decimal_places=0,
+        default=Decimal('0'),
         help_text=_('THB'),
+    )
+
+    class Meta:
+        verbose_name = _('Tee-off time')
+        verbose_name_plural = _('Tee-off times')
+
+    def __str__(self):
+        return '{} {}'.format(self.day, self.time)
+
+
+class Booking(model_utils_models.TimeStampedModel):
+    HOLE_CHOICES = Choices(
+        (0, 'hole18', _('18 Holes')),
+        (1, 'hole9', _('9 Holes')),
+        (2, 'hole27', _('27 Holes')),
+        (3, 'hole36', _('36 Holes')),
+    )
+
+    STATUS_CHOICES = Choices(
+        (0, 'order_opened', _('order opened')),
+        (1, 'order_pending', _('order pending')),
+        (2, 'payment_pending', _('payment pending')),
+        (3, 'completed', _('order complete')),
+        (4, 'offered', _('order offered')),
+        (5, 'voided', _('order voided')),
+        (6, 'refund_requested', _('refund requested')),
+        (7, 'refund_pending', _('refund pending')),
+        (8, 'refunded1', _('order refunded(original)')),  # original order
+        (9, 'refunded2', _('order refunded(reverse)')),  # refund order
+    )
+
+    agency = models.ForeignKey(
+        'windmill.Agency',
+        verbose_name=_('Agency'),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
+    customer_name = models.CharField(
+        verbose_name=_('Customer name'),
+        max_length=255,
+    )
+
+    pax = models.IntegerField(
+        verbose_name=_('Pax'),
+        default=4,
+    )
+
+    hole = models.IntegerField(
+        verbose_name=_('No. of holes'),
+        choices=HOLE_CHOICES,
+        default=HOLE_CHOICES.hole18,
+        db_index=True,
+    )
+
+    status = models.IntegerField(
+        verbose_name=_('Status'),
+        choices=STATUS_CHOICES,
+        default=STATUS_CHOICES.order_opened,
+        db_index=True,
     )
 
     class Meta:
