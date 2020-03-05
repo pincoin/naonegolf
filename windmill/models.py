@@ -6,24 +6,24 @@ from model_utils import Choices
 from model_utils import models as model_utils_models
 
 
-class Account(model_utils_models.TimeStampedModel):
-    name = models.CharField(
-        verbose_name=_('Name'),
-        max_length=255,
+class Agency(model_utils_models.TimeStampedModel):
+    ENTITY_TYPE = Choices(
+        (0, 'naone', _('NA-ONE')),
+        (1, 'swgc', _('SWGC')),
+        (2, 'member', _('SWGC Member')),
+        (3, 'company', _('Company')),
     )
 
-    class Meta:
-        verbose_name = _('Account')
-        verbose_name_plural = _('Accounts')
-
-    def __str__(self):
-        return '{}'.format(self.name)
-
-
-class Agency(model_utils_models.TimeStampedModel):
     TYPE_CHOICES = Choices(
         (0, 'normal', _('Normal')),
         (1, 'prepaid', _('Prepaid')),
+    )
+
+    entity = models.IntegerField(
+        verbose_name=_('Agency entity type'),
+        choices=ENTITY_TYPE,
+        default=ENTITY_TYPE.company,
+        db_index=True,
     )
 
     type = models.IntegerField(
@@ -346,10 +346,7 @@ class NaoneManagingBook(model_utils_models.TimeStampedModel):
     ASSET_TYPE_CHOICES = Choices(
         (0, 'petty_cash', _('Petty cash')),
         (1, 'prepaid', _('Prepaid')),
-        (2, 'expenses', _('Expenses')),
-        (3, 'green_fee', _('Green fee')),
-        (4, 'cart_fee', _('Cart fee')),
-        (5, 'caddie_fee', _('Caddie fee')),
+        (2, 'ecoupon', _('E-Coupon')),
     )
 
     CASH_FLOW_CHOICES = Choices(
@@ -365,14 +362,6 @@ class NaoneManagingBook(model_utils_models.TimeStampedModel):
     agency = models.ForeignKey(
         'windmill.Agency',
         verbose_name=_('Agency'),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-    )
-
-    account = models.ForeignKey(
-        'windmill.Account',
-        verbose_name=_('Account'),
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
@@ -422,8 +411,7 @@ class NaoneManagingBook(model_utils_models.TimeStampedModel):
         verbose_name_plural = _('NA-ONE Managing Book')
 
     def __str__(self):
-        return '{} {} {}'.format(self.account, self.cash_flow, self.amount)
-
+        return '{} {} {}'.format(self.agency, self.cash_flow, self.amount)
 
 
 class Booking(model_utils_models.TimeStampedModel):

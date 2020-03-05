@@ -36,10 +36,6 @@ class AgencyAdmin(admin.ModelAdmin):
     pass
 
 
-class AccountAdmin(admin.ModelAdmin):
-    pass
-
-
 class RoundDayAdmin(admin.ModelAdmin):
     list_display = ('day', 'season', 'day_of_week', 'pax', 'sales', 'cost', 'cart_fee_deducted_from_deposit')
     inlines = [TeeOffTimeInline, ]
@@ -89,7 +85,6 @@ class NaoneManagingBook(admin.ModelAdmin):
     pass
 
 
-admin.site.register(models.Account, AccountAdmin)
 admin.site.register(models.Agency, AgencyAdmin)
 admin.site.register(models.RoundDay, RoundDayAdmin)
 admin.site.register(models.TeeOffTime, TeeOffTimeAdmin)
