@@ -362,7 +362,6 @@ class NaoneManagingBook(model_utils_models.TimeStampedModel):
     date = models.DateField(
         verbose_name=_('Transaction date'),
         db_index=True,
-        unique=True,
     )
 
     agency = models.ForeignKey(
