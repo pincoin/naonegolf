@@ -84,7 +84,8 @@ class BookingAdmin(admin.ModelAdmin):
 
 
 class NaoneManagingBook(admin.ModelAdmin):
-    list_display = ('agency', 'asset_type', 'cash_flow', 'date', 'memo', 'count', 'amount')
+    list_display = ('date', 'memo', 'agency', 'asset_type', 'cash_flow', 'count', 'amount')
+    list_display_links = ('date', 'memo', 'agency')
     list_filter = ('agency', 'asset_type', 'cash_flow')
     ordering = ['-date', ]
 
