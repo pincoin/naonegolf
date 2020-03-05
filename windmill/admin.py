@@ -84,7 +84,8 @@ class BookingAdmin(admin.ModelAdmin):
 
 
 class NaoneManagingBook(admin.ModelAdmin):
-    pass
+    list_display = ('agency', 'asset_type', 'cash_flow', 'memo', 'count', 'amount')
+    list_filter = ('agency', 'asset_type', 'cash_flow')
 
 
 admin.site.register(models.Agency, AgencyAdmin)
