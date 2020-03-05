@@ -83,7 +83,7 @@ class Agency(model_utils_models.TimeStampedModel):
         verbose_name_plural = _('Agencies')
 
     def __str__(self):
-        return '{} {}'.format(self.name, self.type)
+        return '{} {}'.format(self.name, self.get_entity_display(), self.get_type_display())
 
 
 class RoundDay(model_utils_models.TimeStampedModel):
