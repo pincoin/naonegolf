@@ -794,9 +794,3 @@ msgstr "티오프"
 #: windmill/templates/windmill/tee_off_list.html:33
 msgid "No tee off"
 msgstr "예약 가능한 티오프가 없습니다."
-
-#~ msgid "Expenses"
-#~ msgstr "비용"
-
-#~ msgid "Green fee"
-#~ msgstr "그린피"

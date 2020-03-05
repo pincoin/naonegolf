@@ -83,7 +83,7 @@ class Agency(model_utils_models.TimeStampedModel):
         verbose_name_plural = _('Agencies')
 
     def __str__(self):
-        return '{} {}'.format(self.name, self.get_entity_display(), self.get_type_display())
+        return '{} [{}/{}]'.format(self.name, self.get_entity_display(), self.get_type_display())
 
 
 class RoundDay(model_utils_models.TimeStampedModel):
@@ -417,7 +417,7 @@ class NaoneManagingBook(model_utils_models.TimeStampedModel):
         verbose_name_plural = _('NA-ONE Managing Book')
 
     def __str__(self):
-        return '{} {} {}'.format(self.agency, self.cash_flow, self.amount)
+        return '{} {} {}'.format(self.agency, self.get_cash_flow_display(), self.amount)
 
 
 class Booking(model_utils_models.TimeStampedModel):
