@@ -368,7 +368,7 @@ class NaoneManagingBook(model_utils_models.TimeStampedModel):
     )
 
     memo = models.CharField(
-        verbose_name=_('Customer name'),
+        verbose_name=_('Transaction memo'),
         max_length=255,
     )
 

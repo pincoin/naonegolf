@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-05 19:22+0700\n"
+"POT-Creation-Date: 2020-03-05 19:51+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -480,15 +480,15 @@ msgstr ""
 msgid "Email Management"
 msgstr ""
 
-#: windmill/admin.py:16 windmill/admin.py:51
+#: windmill/admin.py:16 windmill/admin.py:53
 msgid "Tee-off info"
 msgstr ""
 
-#: windmill/admin.py:21 windmill/admin.py:56
+#: windmill/admin.py:21 windmill/admin.py:58
 msgid "Payment info"
 msgstr ""
 
-#: windmill/admin.py:76
+#: windmill/admin.py:78
 #, fuzzy
 #| msgid "Booking"
 msgid "Booking info"
@@ -706,8 +706,8 @@ msgstr ""
 msgid "Closing input"
 msgstr ""
 
-#: windmill/models.py:371 windmill/models.py:447
-msgid "Customer name"
+#: windmill/models.py:371
+msgid "Transaction memo"
 msgstr ""
 
 #: windmill/models.py:376
@@ -772,6 +772,10 @@ msgstr ""
 
 #: windmill/models.py:435
 msgid "order refunded(reverse)"
+msgstr ""
+
+#: windmill/models.py:447
+msgid "Customer name"
 msgstr ""
 
 #: windmill/models.py:472

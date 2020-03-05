@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-05 19:22+0700\n"
+"POT-Creation-Date: 2020-03-05 19:51+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -482,15 +482,15 @@ msgstr "이메일 인증 요청"
 msgid "Email Management"
 msgstr "이메일 관리"
 
-#: windmill/admin.py:16 windmill/admin.py:51
+#: windmill/admin.py:16 windmill/admin.py:53
 msgid "Tee-off info"
 msgstr "티오프 정보"
 
-#: windmill/admin.py:21 windmill/admin.py:56
+#: windmill/admin.py:21 windmill/admin.py:58
 msgid "Payment info"
 msgstr "결제정보"
 
-#: windmill/admin.py:76
+#: windmill/admin.py:78
 msgid "Booking info"
 msgstr "예약정보"
 
@@ -702,9 +702,9 @@ msgstr "수동입력"
 msgid "Closing input"
 msgstr "마감입력"
 
-#: windmill/models.py:371 windmill/models.py:447
-msgid "Customer name"
-msgstr "고객명"
+#: windmill/models.py:371
+msgid "Transaction memo"
+msgstr "메모"
 
 #: windmill/models.py:376
 msgid "Asset type"
@@ -769,6 +769,10 @@ msgstr "환불완료(O)"
 #: windmill/models.py:435
 msgid "order refunded(reverse)"
 msgstr "환불완료(R)"
+
+#: windmill/models.py:447
+msgid "Customer name"
+msgstr "고객명"
 
 #: windmill/models.py:472
 msgid "Bookings"
