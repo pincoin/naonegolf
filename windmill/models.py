@@ -359,6 +359,12 @@ class NaoneManagingBook(model_utils_models.TimeStampedModel):
         (1, 'closing', _('Closing input')),
     )
 
+    date = models.DateField(
+        verbose_name=_('Transaction date'),
+        db_index=True,
+        unique=True,
+    )
+
     agency = models.ForeignKey(
         'windmill.Agency',
         verbose_name=_('Agency'),
