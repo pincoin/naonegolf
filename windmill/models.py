@@ -6,6 +6,20 @@ from model_utils import Choices
 from model_utils import models as model_utils_models
 
 
+class Account(model_utils_models.TimeStampedModel):
+    name = models.CharField(
+        verbose_name=_('Name'),
+        max_length=255,
+    )
+
+    class Meta:
+        verbose_name = _('Account')
+        verbose_name_plural = _('Accounts')
+
+    def __str__(self):
+        return '{}'.format(self.name)
+
+
 class Agency(model_utils_models.TimeStampedModel):
     TYPE_CHOICES = Choices(
         (0, 'normal', _('Normal')),
@@ -326,6 +340,90 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
 
     def __str__(self):
         return '{} {}'.format(self.day, self.time)
+
+
+class NaoneManagingBook(model_utils_models.TimeStampedModel):
+    ASSET_TYPE_CHOICES = Choices(
+        (0, 'petty_cash', _('Petty cash')),
+        (1, 'prepaid', _('Prepaid')),
+        (2, 'expenses', _('Expenses')),
+        (3, 'green_fee', _('Green fee')),
+        (4, 'cart_fee', _('Cart fee')),
+        (5, 'caddie_fee', _('Caddie fee')),
+    )
+
+    CASH_FLOW_CHOICES = Choices(
+        (0, 'cash_in', _('Cash-in')),
+        (1, 'cash_out', _('Cash-out')),
+    )
+
+    INPUT_TYPE_CHOICES = Choices(
+        (0, 'manual', _('Manual input')),
+        (1, 'closing', _('Closing input')),
+    )
+
+    agency = models.ForeignKey(
+        'windmill.Agency',
+        verbose_name=_('Agency'),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
+    account = models.ForeignKey(
+        'windmill.Account',
+        verbose_name=_('Account'),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
+    memo = models.CharField(
+        verbose_name=_('Customer name'),
+        max_length=255,
+    )
+
+    asset_type = models.IntegerField(
+        verbose_name=_('Asset type'),
+        choices=ASSET_TYPE_CHOICES,
+        default=ASSET_TYPE_CHOICES.petty_cash,
+        db_index=True,
+    )
+
+    cash_flow = models.IntegerField(
+        verbose_name=_('Cash flow'),
+        choices=CASH_FLOW_CHOICES,
+        default=CASH_FLOW_CHOICES.cash_in,
+        db_index=True,
+    )
+
+    count = models.IntegerField(
+        verbose_name=_('Count'),
+        default=0,
+    )
+
+    amount = models.DecimalField(
+        verbose_name=_('Amount'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    input_type = models.IntegerField(
+        verbose_name=_('Input type'),
+        choices=INPUT_TYPE_CHOICES,
+        default=INPUT_TYPE_CHOICES.manual,
+        db_index=True,
+    )
+
+    class Meta:
+        verbose_name = _('NA-ONE Managing Book')
+        verbose_name_plural = _('NA-ONE Managing Book')
+
+    def __str__(self):
+        return '{} {} {}'.format(self.account, self.cash_flow, self.amount)
+
 
 
 class Booking(model_utils_models.TimeStampedModel):
