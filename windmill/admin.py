@@ -33,7 +33,9 @@ class TeeOffTimeInline(admin.StackedInline):
 
 
 class AgencyAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'entity', 'type',
+                    'weekday_day', 'weekend_morning', 'weekend_afternoon', 'twilight', 'night')
+    list_filter = ('entity', 'type')
 
 
 class RoundDayAdmin(admin.ModelAdmin):
