@@ -1,7 +1,7 @@
 from django.views import generic
 
 
-class TeeOffListView(generic.ListView):
+class TeeOffListView(generic.TemplateView):
     context_object_name = 'days'
 
     template_name = 'windmill/tee_off_list.html'

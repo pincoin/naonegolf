@@ -30,7 +30,12 @@
         {% empty %}
             <div class="row my-3">
                 <div class="col">
-                    {% trans 'No tee off' %}
+                    <span class="d-none">{% trans 'No tee off' %}</span>
+                    티오프 문의 연락처
+                    <ul>
+                        <li class="py-1">휴대전화/라인 (+66) 065-690-0040</li>
+                        <li class="py-1">카카오톡 jonghwa23</li>
+                    </ul>
                 </div>
             </div>
         {% endfor %}
