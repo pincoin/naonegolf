@@ -1,8 +1,4 @@
-from django.utils import timezone
 from django.views import generic
-
-from . import forms
-from . import models
 
 
 class TeeOffListView(generic.ListView):
@@ -10,6 +6,6 @@ class TeeOffListView(generic.ListView):
 
     template_name = 'windmill/tee_off_list.html'
 
-class BookingCreateForm(generic.CreateView):
 
+class BookingCreateForm(generic.TemplateView):
     template_name = 'windmill/booking_create.html'
