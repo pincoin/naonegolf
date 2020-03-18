@@ -370,8 +370,18 @@ class NaoneAsset(model_utils_models.TimeStampedModel):
         help_text=_('THB'),
     )
 
-    quantity = models.IntegerField(
-        verbose_name=_('Quantity'),
+    twilight = models.IntegerField(
+        verbose_name=_('Twilight golf'),
+        default=0,
+    )
+
+    night = models.IntegerField(
+        verbose_name=_('Night golf'),
+        default=0,
+    )
+
+    cart = models.IntegerField(
+        verbose_name=_('Golf cart'),
         default=0,
     )
 

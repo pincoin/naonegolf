@@ -84,7 +84,7 @@ class BookingAdmin(admin.ModelAdmin):
 
 
 class NaoneAssetAdmin(admin.ModelAdmin):
-    list_display = ('asset_type', 'name', 'balance', 'quantity')
+    list_display = ('asset_type', 'name', 'balance', 'cart', 'twilight', 'night')
     list_filter = ('asset_type',)
 
 
