@@ -84,7 +84,8 @@ class BookingAdmin(admin.ModelAdmin):
 
 
 class NaoneAssetAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('asset_type', 'name', 'balance', 'quantity')
+    list_filter = ('asset_type',)
 
 
 class NaoneManagingBookAdmin(admin.ModelAdmin):
