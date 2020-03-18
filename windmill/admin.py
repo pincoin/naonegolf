@@ -83,7 +83,11 @@ class BookingAdmin(admin.ModelAdmin):
     )
 
 
-class NaoneManagingBook(admin.ModelAdmin):
+class NaoneAssetAdmin(admin.ModelAdmin):
+    pass
+
+
+class NaoneManagingBookAdmin(admin.ModelAdmin):
     list_display = ('date', 'memo', 'agency', 'asset_type', 'cash_flow', 'count', 'amount_comma_separated')
     list_display_links = ('date', 'memo', 'agency')
     list_filter = ('agency', 'asset_type', 'cash_flow')
@@ -99,4 +103,5 @@ admin.site.register(models.Agency, AgencyAdmin)
 admin.site.register(models.RoundDay, RoundDayAdmin)
 admin.site.register(models.TeeOffTime, TeeOffTimeAdmin)
 admin.site.register(models.Booking, BookingAdmin)
-admin.site.register(models.NaoneManagingBook, NaoneManagingBook)
+admin.site.register(models.NaoneAsset, NaoneAssetAdmin)
+admin.site.register(models.NaoneManagingBook, NaoneManagingBookAdmin)

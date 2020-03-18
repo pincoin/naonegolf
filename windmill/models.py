@@ -342,6 +342,45 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         return '{} {}'.format(self.day, self.time)
 
 
+class NaoneAsset(model_utils_models.TimeStampedModel):
+    name = models.CharField(
+        verbose_name=_('Asset name'),
+        max_length=255,
+    )
+
+    balance = models.DecimalField(
+        verbose_name=_('Asset balance'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    prepaid = models.BooleanField(
+        verbose_name=_('Prepaid'),
+        default=False,
+        db_index=True,
+    )
+
+    coupon = models.BooleanField(
+        verbose_name=_('E-Coupon'),
+        default=False,
+        db_index=True,
+    )
+
+    quantity = models.IntegerField(
+        verbose_name=_('Quantity'),
+        default=0,
+    )
+
+    class Meta:
+        verbose_name = _('NA-ONE Asset')
+        verbose_name_plural = _('NA-ONE Assets')
+
+    def __str__(self):
+        return '{} {}'.format(self.name, self.balance)
+
+
 class NaoneManagingBook(model_utils_models.TimeStampedModel):
     ASSET_TYPE_CHOICES = Choices(
         (0, 'petty_cash', _('Petty cash')),
