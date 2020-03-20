@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-18 13:51+0700\n"
+"POT-Creation-Date: 2020-03-20 21:08+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -222,9 +222,9 @@ msgstr ""
 #: windmill/models.py:70 windmill/models.py:78 windmill/models.py:130
 #: windmill/models.py:138 windmill/models.py:218 windmill/models.py:226
 #: windmill/models.py:234 windmill/models.py:242 windmill/models.py:250
-#: windmill/models.py:263 windmill/models.py:271 windmill/models.py:279
-#: windmill/models.py:287 windmill/models.py:313 windmill/models.py:321
-#: windmill/models.py:334 windmill/models.py:370 windmill/models.py:455
+#: windmill/models.py:258 windmill/models.py:266 windmill/models.py:274
+#: windmill/models.py:292 windmill/models.py:300 windmill/models.py:308
+#: windmill/models.py:316 windmill/models.py:370 windmill/models.py:455
 msgid "THB"
 msgstr ""
 
@@ -568,7 +568,7 @@ msgstr ""
 msgid "Daily cost"
 msgstr ""
 
-#: windmill/models.py:142 windmill/models.py:325
+#: windmill/models.py:142 windmill/models.py:283
 msgid "Cart fee deducted from deposit"
 msgstr ""
 
@@ -621,63 +621,63 @@ msgid "Green fee sales unit price"
 msgstr ""
 
 #: windmill/models.py:222
-msgid "Green fee cost unit price"
-msgstr ""
-
-#: windmill/models.py:230
 msgid "Green fee sales"
 msgstr ""
 
+#: windmill/models.py:230
+msgid "Green fee cost unit price"
+msgstr ""
+
 #: windmill/models.py:238
-msgid "Cart fee sales unit price"
-msgstr ""
-
-#: windmill/models.py:246
-msgid "Cart fee cost unit price"
-msgstr ""
-
-#: windmill/models.py:254
-msgid "Cart PAX"
-msgstr ""
-
-#: windmill/models.py:259
-msgid "Cart fee sales"
-msgstr ""
-
-#: windmill/models.py:267
-msgid "Caddie fee sales unit price"
-msgstr ""
-
-#: windmill/models.py:275
-msgid "Caddie fee cost unit price"
-msgstr ""
-
-#: windmill/models.py:283
-msgid "Caddie fee sales"
-msgstr ""
-
-#: windmill/models.py:291
-msgid "Green fee pay on arrival"
-msgstr ""
-
-#: windmill/models.py:297
-msgid "Cart fee pay on arrival"
-msgstr ""
-
-#: windmill/models.py:303
-msgid "Caddie fee pay on arrival"
-msgstr ""
-
-#: windmill/models.py:309
 msgid "Green fee cost"
 msgstr ""
 
-#: windmill/models.py:317
+#: windmill/models.py:246
+msgid "Cart fee sales unit price"
+msgstr ""
+
+#: windmill/models.py:254
+msgid "Cart fee sales"
+msgstr ""
+
+#: windmill/models.py:262
+msgid "Cart fee cost unit price"
+msgstr ""
+
+#: windmill/models.py:270
 msgid "Cart fee cost"
 msgstr ""
 
-#: windmill/models.py:330
+#: windmill/models.py:278
+msgid "Cart PAX"
+msgstr ""
+
+#: windmill/models.py:288
+msgid "Caddie fee sales unit price"
+msgstr ""
+
+#: windmill/models.py:296
+msgid "Caddie fee sales"
+msgstr ""
+
+#: windmill/models.py:304
+msgid "Caddie fee cost unit price"
+msgstr ""
+
+#: windmill/models.py:312
 msgid "Caddie fee cost"
+msgstr ""
+
+#: windmill/models.py:320
+msgid "Green fee pay on arrival"
+msgstr ""
+
+#: windmill/models.py:326
+msgid "Cart fee pay on arrival"
+msgstr ""
+
+#: windmill/models.py:332
+msgid "Caddie fee pay on arrival"
 msgstr ""
 
 #: windmill/models.py:339

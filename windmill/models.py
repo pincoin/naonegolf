@@ -218,6 +218,14 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         help_text=_('THB'),
     )
 
+    green_fee_sales = models.DecimalField(
+        verbose_name=_('Green fee sales'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
     green_fee_cost_unit_price = models.DecimalField(
         verbose_name=_('Green fee cost unit price'),
         max_digits=11,
@@ -226,8 +234,8 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         help_text=_('THB'),
     )
 
-    green_fee_sales = models.DecimalField(
-        verbose_name=_('Green fee sales'),
+    green_fee_cost = models.DecimalField(
+        verbose_name=_('Green fee cost'),
         max_digits=11,
         decimal_places=0,
         default=Decimal('0'),
@@ -242,8 +250,24 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         help_text=_('THB'),
     )
 
+    cart_fee_sales = models.DecimalField(
+        verbose_name=_('Cart fee sales'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
     cart_fee_cost_unit_price = models.DecimalField(
         verbose_name=_('Cart fee cost unit price'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    cart_fee_cost = models.DecimalField(
+        verbose_name=_('Cart fee cost'),
         max_digits=11,
         decimal_places=0,
         default=Decimal('0'),
@@ -255,12 +279,9 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         default=4,
     )
 
-    cart_fee_sales = models.DecimalField(
-        verbose_name=_('Cart fee sales'),
-        max_digits=11,
-        decimal_places=0,
-        default=Decimal('0'),
-        help_text=_('THB'),
+    cart_fee_deducted_from_deposit = models.IntegerField(
+        verbose_name=_('Cart fee deducted from deposit'),
+        default=0,
     )
 
     caddie_fee_sales_unit_price = models.DecimalField(
@@ -268,6 +289,14 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         max_digits=11,
         decimal_places=0,
         default=Decimal('400'),
+        help_text=_('THB'),
+    )
+
+    caddie_fee_sales = models.DecimalField(
+        verbose_name=_('Caddie fee sales'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
         help_text=_('THB'),
     )
 
@@ -279,8 +308,8 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         help_text=_('THB'),
     )
 
-    caddie_fee_sales = models.DecimalField(
-        verbose_name=_('Caddie fee sales'),
+    caddie_fee_cost = models.DecimalField(
+        verbose_name=_('Caddie fee cost'),
         max_digits=11,
         decimal_places=0,
         default=Decimal('0'),
@@ -303,35 +332,6 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         verbose_name=_('Caddie fee pay on arrival'),
         default=False,
         db_index=True,
-    )
-
-    green_fee_cost = models.DecimalField(
-        verbose_name=_('Green fee cost'),
-        max_digits=11,
-        decimal_places=0,
-        default=Decimal('0'),
-        help_text=_('THB'),
-    )
-
-    cart_fee_cost = models.DecimalField(
-        verbose_name=_('Cart fee cost'),
-        max_digits=11,
-        decimal_places=0,
-        default=Decimal('0'),
-        help_text=_('THB'),
-    )
-
-    cart_fee_deducted_from_deposit = models.IntegerField(
-        verbose_name=_('Cart fee deducted from deposit'),
-        default=0,
-    )
-
-    caddie_fee_cost = models.DecimalField(
-        verbose_name=_('Caddie fee cost'),
-        max_digits=11,
-        decimal_places=0,
-        default=Decimal('0'),
-        help_text=_('THB'),
     )
 
     class Meta:
