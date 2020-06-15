@@ -164,11 +164,63 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         (1, 'stand_by', _('Stand-by'))
     )
 
-    STATUS_CHOICES = Choices(
+    TEE_OFF_STATUS_CHOICES = Choices(
         (0, 'open', _('Open')),
         (1, 'held', _('Held')),
         (2, 'sold', _('Sold')),
         (3, 'revoked', _('Revoked')),
+    )
+
+    HOLE_CHOICES = Choices(
+        (0, 'hole18', _('18 Holes')),
+        (1, 'hole9', _('9 Holes')),
+        (2, 'hole27', _('27 Holes')),
+        (3, 'hole36', _('36 Holes')),
+    )
+
+    BOOKING_STATUS_CHOICES = Choices(
+        (0, 'order_opened', _('order opened')),
+        (1, 'order_pending', _('order pending')),
+        (2, 'payment_pending', _('payment pending')),
+        (3, 'completed', _('order complete')),
+        (4, 'offered', _('order offered')),
+        (5, 'voided', _('order voided')),
+        (6, 'refund_requested', _('refund requested')),
+        (7, 'refund_pending', _('refund pending')),
+        (8, 'refunded1', _('order refunded(original)')),  # original order
+        (9, 'refunded2', _('order refunded(reverse)')),  # refund order
+    )
+
+    agency = models.ForeignKey(
+        'windmill.Agency',
+        verbose_name=_('Agency'),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
+    customer_name = models.CharField(
+        verbose_name=_('Customer name'),
+        max_length=255,
+    )
+
+    pax = models.IntegerField(
+        verbose_name=_('Pax'),
+        default=4,
+    )
+
+    hole = models.IntegerField(
+        verbose_name=_('No. of holes'),
+        choices=HOLE_CHOICES,
+        default=HOLE_CHOICES.hole18,
+        db_index=True,
+    )
+
+    booking_status = models.IntegerField(
+        verbose_name=_('Status'),
+        choices=BOOKING_STATUS_CHOICES,
+        default=BOOKING_STATUS_CHOICES.order_opened,
+        db_index=True,
     )
 
     slot = models.IntegerField(
@@ -185,10 +237,10 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         db_index=True,
     )
 
-    status = models.IntegerField(
+    tee_off_status = models.IntegerField(
         verbose_name=_('Status'),
-        choices=STATUS_CHOICES,
-        default=STATUS_CHOICES.open,
+        choices=TEE_OFF_STATUS_CHOICES,
+        default=TEE_OFF_STATUS_CHOICES.open,
         db_index=True,
     )
 
@@ -226,6 +278,15 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         help_text=_('THB'),
     )
 
+    green_fee_sales_asset = models.ForeignKey(
+        'windmill.NaoneAsset',
+        verbose_name=_('Green fee sales asset'),
+        related_name='green_fee_sales_set',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
     green_fee_cost_unit_price = models.DecimalField(
         verbose_name=_('Green fee cost unit price'),
         max_digits=11,
@@ -240,6 +301,15 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         decimal_places=0,
         default=Decimal('0'),
         help_text=_('THB'),
+    )
+
+    green_fee_cost_asset = models.ForeignKey(
+        'windmill.NaoneAsset',
+        verbose_name=_('Green fee cost asset'),
+        related_name='green_fee_cost_set',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
     )
 
     cart_fee_sales_unit_price = models.DecimalField(
@@ -258,6 +328,15 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         help_text=_('THB'),
     )
 
+    cart_fee_sales_asset = models.ForeignKey(
+        'windmill.NaoneAsset',
+        verbose_name=_('Cart fee sales asset'),
+        related_name='cart_fee_sales_set',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
     cart_fee_cost_unit_price = models.DecimalField(
         verbose_name=_('Cart fee cost unit price'),
         max_digits=11,
@@ -272,6 +351,15 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         decimal_places=0,
         default=Decimal('0'),
         help_text=_('THB'),
+    )
+
+    cart_fee_cost_asset = models.ForeignKey(
+        'windmill.NaoneAsset',
+        verbose_name=_('Cart fee cost asset'),
+        related_name='cart_fee_cost_set',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
     )
 
     cart_pax = models.IntegerField(
@@ -300,6 +388,15 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         help_text=_('THB'),
     )
 
+    caddie_fee_sales_asset = models.ForeignKey(
+        'windmill.NaoneAsset',
+        verbose_name=_('Caddie fee sales asset'),
+        related_name='caddie_fee_sales_set',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
     caddie_fee_cost_unit_price = models.DecimalField(
         verbose_name=_('Caddie fee cost unit price'),
         max_digits=11,
@@ -314,6 +411,15 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         decimal_places=0,
         default=Decimal('0'),
         help_text=_('THB'),
+    )
+
+    caddie_fee_cost_asset = models.ForeignKey(
+        'windmill.NaoneAsset',
+        verbose_name=_('Caddie fee cost asset'),
+        related_name='caddie_fee_cost_set',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
     )
 
     green_fee_pay_on_arrival = models.BooleanField(

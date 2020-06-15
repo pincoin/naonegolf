@@ -46,23 +46,40 @@ class RoundDayAdmin(admin.ModelAdmin):
 
 
 class TeeOffTimeAdmin(admin.ModelAdmin):
-    list_display = ('day', 'time', 'slot', 'type', 'status')
+    list_display = ('day', 'time', 'slot', 'type', 'tee_off_status')
     list_display_links = ('day', 'time')
-    list_filter = ('status', 'type')
+    list_filter = ('tee_off_status', 'type')
+    raw_id_fields = ('booking',)
     fieldsets = (
-        (_('Tee-off info'), {
+        (_('Booking info'), {
             'fields': (
-                'day', 'time', 'slot', 'status', 'type',
+                'agency', 'customer_name', 'pax', 'hole', 'booking_status',
             )
         }),
-        (_('Payment info'), {
+        (_('Tee-off info'), {
             'fields': (
-                ('green_fee_pay_on_arrival', 'green_fee_sales_unit_price', 'green_fee_sales',
-                 'green_fee_cost_unit_price', 'green_fee_cost'),
-                ('caddie_fee_pay_on_arrival', 'caddie_fee_sales_unit_price', 'caddie_fee_sales',
-                 'caddie_fee_cost_unit_price', 'caddie_fee_cost'),
-                ('cart_fee_pay_on_arrival', 'cart_fee_sales_unit_price', 'cart_fee_sales',
-                 'cart_fee_cost_unit_price', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',),
+                'booking', 'day', 'time', 'slot', 'tee_off_status', 'type',
+            )
+        }),
+        (_('Green fee'), {
+            'fields': (
+                ('green_fee_pay_on_arrival',
+                 'green_fee_sales_unit_price', 'green_fee_sales', 'green_fee_sales_asset',
+                 'green_fee_cost_unit_price', 'green_fee_cost', 'green_fee_cost_asset',),
+            )
+        }),
+        (_('Caddie fee'), {
+            'fields': (
+                ('caddie_fee_pay_on_arrival',
+                 'caddie_fee_sales_unit_price', 'caddie_fee_sales', 'caddie_fee_sales_asset',
+                 'caddie_fee_cost_unit_price', 'caddie_fee_cost', 'caddie_fee_cost_asset',),
+            )
+        }),
+        (_('Cart fee'), {
+            'fields': (
+                ('cart_fee_pay_on_arrival',
+                 'cart_fee_sales_unit_price', 'cart_fee_sales', 'cart_fee_sales_asset',
+                 'cart_fee_cost_unit_price', 'cart_fee_deducted_from_deposit', 'cart_fee_cost', 'cart_fee_cost_asset'),
             )
         }),
     )
