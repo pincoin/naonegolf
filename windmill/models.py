@@ -261,6 +261,7 @@ class NaoneAssetTransaction(model_utils_models.TimeStampedModel):
         (0, 'green_fee', _('Green fee')),
         (1, 'caddie_fee', _('Caddie fee')),
         (2, 'cart_fee', _('Cart fee')),
+        (3, 'promotion', _('Promotion')),
     )
 
     CASH_FLOW_CHOICES = Choices(

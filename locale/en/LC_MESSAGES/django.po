@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-16 17:00+0700\n"
+"POT-Creation-Date: 2020-06-16 18:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Booking"
 msgstr ""
 
-#: conf/templates/conf/base.html:54 windmill/models.py:278
+#: conf/templates/conf/base.html:54 windmill/models.py:279
 msgid "Tee-off"
 msgstr ""
 
@@ -219,7 +219,7 @@ msgstr ""
 #: golf/models.py:153 golf/models.py:160 golf/models.py:235
 #: windmill/models.py:46 windmill/models.py:54 windmill/models.py:62
 #: windmill/models.py:70 windmill/models.py:78 windmill/models.py:248
-#: windmill/models.py:318 windmill/models.py:326 windmill/models.py:405
+#: windmill/models.py:319 windmill/models.py:327 windmill/models.py:406
 msgid "THB"
 msgstr ""
 
@@ -483,7 +483,7 @@ msgstr ""
 msgid "Tee off info"
 msgstr ""
 
-#: windmill/admin.py:70 windmill/models.py:322 windmill/models.py:401
+#: windmill/admin.py:73 windmill/models.py:323 windmill/models.py:402
 msgid "Amount"
 msgstr ""
 
@@ -503,7 +503,7 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: windmill/models.py:19 windmill/models.py:226 windmill/models.py:349
+#: windmill/models.py:19 windmill/models.py:226 windmill/models.py:350
 msgid "Prepaid"
 msgstr ""
 
@@ -531,7 +531,7 @@ msgstr ""
 msgid "Weekend afternoon"
 msgstr ""
 
-#: windmill/models.py:82 windmill/models.py:141 windmill/models.py:370
+#: windmill/models.py:82 windmill/models.py:141 windmill/models.py:371
 msgid "Agency"
 msgstr ""
 
@@ -635,7 +635,7 @@ msgstr ""
 msgid "Tee-off times"
 msgstr ""
 
-#: windmill/models.py:225 windmill/models.py:348
+#: windmill/models.py:225 windmill/models.py:349
 msgid "Petty cash"
 msgstr ""
 
@@ -643,11 +643,11 @@ msgstr ""
 msgid "Bank account"
 msgstr ""
 
-#: windmill/models.py:228 windmill/models.py:350
+#: windmill/models.py:228 windmill/models.py:351
 msgid "E-Coupon"
 msgstr ""
 
-#: windmill/models.py:232 windmill/models.py:382
+#: windmill/models.py:232 windmill/models.py:383
 msgid "Asset type"
 msgstr ""
 
@@ -671,67 +671,71 @@ msgstr ""
 msgid "Green fee"
 msgstr ""
 
-#: windmill/models.py:267 windmill/models.py:354
-msgid "Cash-in"
+#: windmill/models.py:264
+msgid "Promotion"
 msgstr ""
 
 #: windmill/models.py:268 windmill/models.py:355
+msgid "Cash-in"
+msgstr ""
+
+#: windmill/models.py:269 windmill/models.py:356
 msgid "Cash-out"
 msgstr ""
 
-#: windmill/models.py:272 windmill/models.py:359
+#: windmill/models.py:273 windmill/models.py:360
 msgid "Manual input"
 msgstr ""
 
-#: windmill/models.py:273 windmill/models.py:360
+#: windmill/models.py:274 windmill/models.py:361
 msgid "Closing input"
 msgstr ""
 
-#: windmill/models.py:286
+#: windmill/models.py:287
 msgid "Fee"
 msgstr ""
 
-#: windmill/models.py:293 windmill/models.py:389
+#: windmill/models.py:294 windmill/models.py:390
 msgid "Cash flow"
 msgstr ""
 
-#: windmill/models.py:300 windmill/models.py:409
+#: windmill/models.py:301 windmill/models.py:410
 msgid "Input type"
 msgstr ""
 
-#: windmill/models.py:308
+#: windmill/models.py:309
 msgid "Asset"
 msgstr ""
 
-#: windmill/models.py:314
+#: windmill/models.py:315
 msgid "Unit price"
 msgstr ""
 
-#: windmill/models.py:330 windmill/models.py:364
+#: windmill/models.py:331 windmill/models.py:365
 msgid "Transaction date"
 msgstr ""
 
-#: windmill/models.py:334
+#: windmill/models.py:335
 msgid "Remarks"
 msgstr ""
 
-#: windmill/models.py:339
+#: windmill/models.py:340
 msgid "Asset transaction"
 msgstr ""
 
-#: windmill/models.py:340
+#: windmill/models.py:341
 msgid "Asset transactions"
 msgstr ""
 
-#: windmill/models.py:377
+#: windmill/models.py:378
 msgid "Transaction memo"
 msgstr ""
 
-#: windmill/models.py:396
+#: windmill/models.py:397
 msgid "Count"
 msgstr ""
 
-#: windmill/models.py:416 windmill/models.py:417
+#: windmill/models.py:417 windmill/models.py:418
 msgid "NA-ONE Managing Book"
 msgstr ""
 
