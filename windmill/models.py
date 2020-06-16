@@ -371,11 +371,6 @@ class NaoneAssetTransaction(model_utils_models.TimeStampedModel):
         help_text=_('THB'),
     )
 
-    cart_fee_deducted_from_deposit = models.IntegerField(
-        verbose_name=_('Cart fee deducted from deposit'),
-        default=0,
-    )
-
     transaction_date = models.DateTimeField(
         verbose_name=_('Transaction date'),
     )
