@@ -28,7 +28,7 @@ class AgencyAdmin(admin.ModelAdmin):
 
 
 class RoundDayAdmin(admin.ModelAdmin):
-    list_display = ('day', 'season', 'day_of_week', 'pax', 'sales', 'cost', 'cart_fee_deducted_from_deposit')
+    list_display = ('day', 'season', 'day_of_week', 'pax', 'sales', 'cost')
     inlines = [TeeOffTimeInline, ]
     ordering = ('-day',)
     date_hierarchy = 'day'

@@ -138,11 +138,6 @@ class RoundDay(model_utils_models.TimeStampedModel):
         help_text=_('THB'),
     )
 
-    cart_fee_deducted_from_deposit = models.IntegerField(
-        verbose_name=_('Cart fee deducted from deposit'),
-        default=0,
-    )
-
     class Meta:
         verbose_name = _('Round day')
         verbose_name_plural = _('Round days')
