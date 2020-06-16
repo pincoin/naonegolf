@@ -56,7 +56,7 @@ class NaoneAssetAdmin(admin.ModelAdmin):
 
 class NaoneAssetTransaction(admin.ModelAdmin):
     list_display = ('fee', 'cash_flow', 'input_type', 'asset', 'unit_price', 'amount', 'transaction_date')
-    list_filter = ('fee', 'cash_flow', 'input_type')
+    list_filter = ('fee', 'cash_flow', 'input_type', 'asset')
     date_hierarchy = 'transaction_date'
     ordering = ['-transaction_date', 'fee', 'cash_flow']
 
