@@ -275,7 +275,7 @@ class NaoneAssetTransaction(model_utils_models.TimeStampedModel):
 
     order = models.ForeignKey(
         'windmill.TeeOffTime',
-        verbose_name=_('Order'),
+        verbose_name=_('Tee-off'),
         db_index=True,
         on_delete=models.CASCADE,
         blank=True,
