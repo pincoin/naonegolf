@@ -279,7 +279,7 @@ class NaoneAsset(model_utils_models.TimeStampedModel):
         verbose_name_plural = _('NA-ONE Assets')
 
     def __str__(self):
-        return '{} {}'.format(self.name, self.balance)
+        return '{}'.format(self.name)
 
 
 class NaoneAssetTransaction(model_utils_models.TimeStampedModel):
