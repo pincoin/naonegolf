@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-16 15:44+0700\n"
+"POT-Creation-Date: 2020-06-16 16:34+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,8 +46,8 @@ msgstr "홈"
 msgid "SWGC"
 msgstr "윈드밀"
 
-#: conf/templates/conf/base.html:53 windmill/models.py:250
-#: windmill/models.py:527
+#: conf/templates/conf/base.html:53 windmill/models.py:273
+#: windmill/models.py:545
 msgid "Booking"
 msgstr "예매"
 
@@ -120,47 +120,48 @@ msgstr "공휴일"
 msgid "Holidays"
 msgstr "공휴일"
 
-#: golf/models.py:44 windmill/models.py:91
+#: golf/models.py:44 windmill/models.py:91 windmill/models.py:151
 msgid "Low season"
 msgstr "비수기"
 
 #: golf/models.py:45 golf/models.py:164 windmill/models.py:92
+#: windmill/models.py:152
 msgid "High season"
 msgstr "성수기"
 
-#: golf/models.py:49 windmill/models.py:96
+#: golf/models.py:49 windmill/models.py:96 windmill/models.py:156
 msgid "Weekday"
 msgstr "평일"
 
-#: golf/models.py:50 windmill/models.py:97
+#: golf/models.py:50 windmill/models.py:97 windmill/models.py:157
 msgid "Weekend"
 msgstr "휴일"
 
-#: golf/models.py:54 windmill/models.py:151
+#: golf/models.py:54 windmill/models.py:161
 msgid "Morning"
 msgstr "오전"
 
-#: golf/models.py:55 windmill/models.py:152
+#: golf/models.py:55 windmill/models.py:162
 msgid "Daytime"
 msgstr "오후"
 
-#: golf/models.py:56 windmill/models.py:66 windmill/models.py:153
+#: golf/models.py:56 windmill/models.py:66 windmill/models.py:163
 msgid "Twilight"
 msgstr "일몰"
 
-#: golf/models.py:57 windmill/models.py:74 windmill/models.py:154
+#: golf/models.py:57 windmill/models.py:74 windmill/models.py:164
 msgid "Night"
 msgstr "야간"
 
-#: golf/models.py:61 windmill/models.py:101
+#: golf/models.py:61 windmill/models.py:101 windmill/models.py:232
 msgid "High/Low Season"
 msgstr "성수기/비수기"
 
-#: golf/models.py:68 windmill/models.py:108
+#: golf/models.py:68 windmill/models.py:108 windmill/models.py:239
 msgid "Day of week"
 msgstr "평일/주말(공휴일)"
 
-#: golf/models.py:75 windmill/models.py:222
+#: golf/models.py:75 windmill/models.py:246
 msgid "Time slot"
 msgstr "시간대"
 
@@ -172,19 +173,19 @@ msgstr "골프장 상품"
 msgid "Golf club products"
 msgstr "골프장 상품"
 
-#: golf/models.py:97 windmill/models.py:170 windmill/models.py:475
+#: golf/models.py:97 windmill/models.py:180 windmill/models.py:493
 msgid "18 Holes"
 msgstr "18홀"
 
-#: golf/models.py:98 windmill/models.py:171 windmill/models.py:476
+#: golf/models.py:98 windmill/models.py:181 windmill/models.py:494
 msgid "9 Holes"
 msgstr "9홀"
 
-#: golf/models.py:99 windmill/models.py:172 windmill/models.py:477
+#: golf/models.py:99 windmill/models.py:182 windmill/models.py:495
 msgid "27 Holes"
 msgstr "27홀"
 
-#: golf/models.py:100 windmill/models.py:173 windmill/models.py:478
+#: golf/models.py:100 windmill/models.py:183 windmill/models.py:496
 msgid "36 Holes"
 msgstr "36홀"
 
@@ -205,7 +206,7 @@ msgstr "이메일주소"
 msgid "Website"
 msgstr "웹사이트"
 
-#: golf/models.py:137 windmill/models.py:208 windmill/models.py:513
+#: golf/models.py:137 windmill/models.py:218 windmill/models.py:531
 msgid "No. of holes"
 msgstr "홀수"
 
@@ -213,19 +214,19 @@ msgstr "홀수"
 msgid "Cart rental required"
 msgstr "카트 의무"
 
-#: golf/models.py:150 windmill/models.py:308
+#: golf/models.py:150 windmill/models.py:331
 msgid "Cart fee"
 msgstr "카트피"
 
 #: golf/models.py:153 golf/models.py:160 golf/models.py:235
 #: windmill/models.py:46 windmill/models.py:54 windmill/models.py:62
 #: windmill/models.py:70 windmill/models.py:78 windmill/models.py:130
-#: windmill/models.py:138 windmill/models.py:293 windmill/models.py:363
-#: windmill/models.py:371 windmill/models.py:455
+#: windmill/models.py:138 windmill/models.py:316 windmill/models.py:386
+#: windmill/models.py:394 windmill/models.py:473
 msgid "THB"
 msgstr "바트"
 
-#: golf/models.py:157 windmill/models.py:307
+#: golf/models.py:157 windmill/models.py:330
 msgid "Caddie fee"
 msgstr "캐디피"
 
@@ -479,11 +480,15 @@ msgstr "이메일 인증 요청"
 msgid "Email Management"
 msgstr "이메일 관리"
 
-#: windmill/admin.py:44 windmill/admin.py:59
+#: windmill/admin.py:43 windmill/admin.py:65
 msgid "Booking info"
 msgstr "예약정보"
 
-#: windmill/admin.py:81 windmill/models.py:367 windmill/models.py:451
+#: windmill/admin.py:48
+msgid "Tee off info"
+msgstr "티오프 정보"
+
+#: windmill/admin.py:87 windmill/models.py:390 windmill/models.py:469
 msgid "Amount"
 msgstr "금액"
 
@@ -503,7 +508,7 @@ msgstr "회사"
 msgid "Normal"
 msgstr "일반"
 
-#: windmill/models.py:19 windmill/models.py:271 windmill/models.py:399
+#: windmill/models.py:19 windmill/models.py:294 windmill/models.py:417
 msgid "Prepaid"
 msgstr "선납"
 
@@ -531,8 +536,8 @@ msgstr "주말오전"
 msgid "Weekend afternoon"
 msgstr "주말오후"
 
-#: windmill/models.py:82 windmill/models.py:191 windmill/models.py:420
-#: windmill/models.py:496
+#: windmill/models.py:82 windmill/models.py:201 windmill/models.py:438
+#: windmill/models.py:514
 msgid "Agency"
 msgstr "에이전시"
 
@@ -544,7 +549,7 @@ msgstr "에이전시"
 msgid "Booking Day"
 msgstr "예매일자"
 
-#: windmill/models.py:121 windmill/models.py:203 windmill/models.py:508
+#: windmill/models.py:121 windmill/models.py:213 windmill/models.py:526
 msgid "Pax"
 msgstr "인원"
 
@@ -556,7 +561,7 @@ msgstr "일매출"
 msgid "Daily cost"
 msgstr "일비용"
 
-#: windmill/models.py:142 windmill/models.py:244
+#: windmill/models.py:142 windmill/models.py:267
 msgid "Round day"
 msgstr "라운드 일자"
 
@@ -564,199 +569,203 @@ msgstr "라운드 일자"
 msgid "Round days"
 msgstr "라운드 일자"
 
-#: windmill/models.py:158
+#: windmill/models.py:168
 msgid "Fixed"
 msgstr "확정"
 
-#: windmill/models.py:159
+#: windmill/models.py:169
 msgid "Stand-by"
-msgstr "대기"
+msgstr "스탠바이"
 
-#: windmill/models.py:163
+#: windmill/models.py:173
 msgid "Open"
 msgstr "구매가능"
 
-#: windmill/models.py:164
+#: windmill/models.py:174
 msgid "Held"
 msgstr "예약있음"
 
-#: windmill/models.py:165
+#: windmill/models.py:175
 msgid "Sold"
 msgstr "판매완료"
 
-#: windmill/models.py:166
+#: windmill/models.py:176
 msgid "Revoked"
 msgstr "취소"
 
-#: windmill/models.py:177 windmill/models.py:482
+#: windmill/models.py:187 windmill/models.py:500
 msgid "order opened"
 msgstr "접수대기"
 
-#: windmill/models.py:178 windmill/models.py:483
+#: windmill/models.py:188 windmill/models.py:501
 msgid "order pending"
 msgstr "예약대기"
 
-#: windmill/models.py:179 windmill/models.py:484
+#: windmill/models.py:189 windmill/models.py:502
 msgid "payment pending"
 msgstr "입금대기"
 
-#: windmill/models.py:180 windmill/models.py:485
+#: windmill/models.py:190 windmill/models.py:503
 msgid "order complete"
 msgstr "예약완료"
 
-#: windmill/models.py:181 windmill/models.py:486
+#: windmill/models.py:191 windmill/models.py:504
 msgid "order offered"
 msgstr "예약제안"
 
-#: windmill/models.py:182 windmill/models.py:487
+#: windmill/models.py:192 windmill/models.py:505
 msgid "order voided"
 msgstr "예약불가"
 
-#: windmill/models.py:183 windmill/models.py:488
+#: windmill/models.py:193 windmill/models.py:506
 msgid "refund requested"
 msgstr "환불요청"
 
-#: windmill/models.py:184 windmill/models.py:489
+#: windmill/models.py:194 windmill/models.py:507
 msgid "refund pending"
 msgstr "환불대기"
 
-#: windmill/models.py:185 windmill/models.py:490
+#: windmill/models.py:195 windmill/models.py:508
 msgid "order refunded(original)"
 msgstr "환불완료(O)"
 
-#: windmill/models.py:186 windmill/models.py:491
+#: windmill/models.py:196 windmill/models.py:509
 msgid "order refunded(reverse)"
 msgstr "환불완료(R)"
 
-#: windmill/models.py:198 windmill/models.py:503
+#: windmill/models.py:208 windmill/models.py:521
 msgid "Customer name"
 msgstr "고객명"
 
-#: windmill/models.py:215 windmill/models.py:236 windmill/models.py:520
-msgid "Status"
-msgstr "상태"
+#: windmill/models.py:225
+msgid "Booking status"
+msgstr "예약 상태"
 
-#: windmill/models.py:229
-msgid "Type"
-msgstr "종류"
+#: windmill/models.py:253
+msgid "Tee off type"
+msgstr "티오프 구분"
 
-#: windmill/models.py:257 windmill/models.py:261
+#: windmill/models.py:260
+msgid "Tee off status"
+msgstr "티오프 상태"
+
+#: windmill/models.py:280 windmill/models.py:284
 msgid "Tee-off time"
 msgstr "티오프"
 
-#: windmill/models.py:262
+#: windmill/models.py:285
 msgid "Tee-off times"
 msgstr "티오프"
 
-#: windmill/models.py:270 windmill/models.py:398
+#: windmill/models.py:293 windmill/models.py:416
 msgid "Petty cash"
 msgstr "시재"
 
-#: windmill/models.py:272
+#: windmill/models.py:295
 msgid "Bank account"
 msgstr "통장"
 
-#: windmill/models.py:273 windmill/models.py:400
+#: windmill/models.py:296 windmill/models.py:418
 msgid "E-Coupon"
 msgstr "E카드"
 
-#: windmill/models.py:277 windmill/models.py:432
+#: windmill/models.py:300 windmill/models.py:450
 msgid "Asset type"
 msgstr "자산구분"
 
-#: windmill/models.py:284
+#: windmill/models.py:307
 msgid "Asset name"
 msgstr "자산이름"
 
-#: windmill/models.py:289
+#: windmill/models.py:312
 msgid "Asset balance"
 msgstr "자산잔액"
 
-#: windmill/models.py:297
+#: windmill/models.py:320
 msgid "NA-ONE Asset"
 msgstr "나원 자산"
 
-#: windmill/models.py:298
+#: windmill/models.py:321
 msgid "NA-ONE Assets"
 msgstr "나원 자산"
 
-#: windmill/models.py:306
+#: windmill/models.py:329
 msgid "Green fee"
 msgstr "그린피"
 
-#: windmill/models.py:312 windmill/models.py:404
+#: windmill/models.py:335 windmill/models.py:422
 msgid "Cash-in"
 msgstr "입금"
 
-#: windmill/models.py:313 windmill/models.py:405
+#: windmill/models.py:336 windmill/models.py:423
 msgid "Cash-out"
 msgstr "지출"
 
-#: windmill/models.py:317 windmill/models.py:409
+#: windmill/models.py:340 windmill/models.py:427
 msgid "Manual input"
 msgstr "수동입력"
 
-#: windmill/models.py:318 windmill/models.py:410
+#: windmill/models.py:341 windmill/models.py:428
 msgid "Closing input"
 msgstr "마감입력"
 
-#: windmill/models.py:323
+#: windmill/models.py:346
 msgid "Order"
 msgstr "주문"
 
-#: windmill/models.py:331
+#: windmill/models.py:354
 msgid "Fee"
 msgstr "요금"
 
-#: windmill/models.py:338 windmill/models.py:439
+#: windmill/models.py:361 windmill/models.py:457
 msgid "Cash flow"
 msgstr "거래구분"
 
-#: windmill/models.py:345 windmill/models.py:459
+#: windmill/models.py:368 windmill/models.py:477
 msgid "Input type"
 msgstr "입력구분"
 
-#: windmill/models.py:353
+#: windmill/models.py:376
 msgid "Asset"
 msgstr "자산"
 
-#: windmill/models.py:359
+#: windmill/models.py:382
 msgid "Unit price"
 msgstr "단가"
 
-#: windmill/models.py:375
-msgid "Cart fee deducted from deposit"
-msgstr "카트피 선불카드 차감"
-
-#: windmill/models.py:380 windmill/models.py:414
+#: windmill/models.py:398 windmill/models.py:432
 msgid "Transaction date"
 msgstr "거래일자"
 
-#: windmill/models.py:384
+#: windmill/models.py:402
 msgid "Remarks"
 msgstr "비고"
 
-#: windmill/models.py:389
+#: windmill/models.py:407
 msgid "Asset transaction"
 msgstr "거래이력"
 
-#: windmill/models.py:390
+#: windmill/models.py:408
 msgid "Asset transactions"
 msgstr "거래이력"
 
-#: windmill/models.py:427
+#: windmill/models.py:445
 msgid "Transaction memo"
 msgstr "메모"
 
-#: windmill/models.py:446
+#: windmill/models.py:464
 msgid "Count"
 msgstr "수량"
 
-#: windmill/models.py:466 windmill/models.py:467
+#: windmill/models.py:484 windmill/models.py:485
 msgid "NA-ONE Managing Book"
 msgstr "나원 운영 장부"
 
-#: windmill/models.py:528
+#: windmill/models.py:538
+msgid "Status"
+msgstr "상태"
+
+#: windmill/models.py:546
 msgid "Bookings"
 msgstr "예매"
 
@@ -772,3 +781,9 @@ msgstr "티오프"
 #: windmill/templates/windmill/tee_off_list.html:33
 msgid "No tee off"
 msgstr "예약 가능한 티오프가 없습니다."
+
+#~ msgid "Type"
+#~ msgstr "종류"
+
+#~ msgid "Cart fee deducted from deposit"
+#~ msgstr "카트피 선불카드 차감"

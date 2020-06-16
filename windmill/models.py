@@ -86,7 +86,7 @@ class Agency(model_utils_models.TimeStampedModel):
         return '{} [{}/{}]'.format(self.name, self.get_entity_display(), self.get_type_display())
 
 
-class RoundDay(model_utils_models.TimeStampedModel):
+class TeeOffTime(model_utils_models.TimeStampedModel):
     SEASON_CHOICES = Choices(
         (0, 'low', _('Low season')),
         (1, 'high', _('High season')),
@@ -97,56 +97,6 @@ class RoundDay(model_utils_models.TimeStampedModel):
         (1, 'weekend', _('Weekend')),
     )
 
-    season = models.IntegerField(
-        verbose_name=_('High/Low Season'),
-        choices=SEASON_CHOICES,
-        default=SEASON_CHOICES.high,
-        db_index=True,
-    )
-
-    day_of_week = models.IntegerField(
-        verbose_name=_('Day of week'),
-        choices=DAY_CHOICES,
-        default=DAY_CHOICES.weekday,
-        db_index=True,
-    )
-
-    day = models.DateField(
-        verbose_name=_('Booking Day'),
-        db_index=True,
-        unique=True,
-    )
-
-    pax = models.IntegerField(
-        verbose_name=_('Pax'),
-        default=0,
-    )
-
-    sales = models.DecimalField(
-        verbose_name=_('Daily sales'),
-        max_digits=11,
-        decimal_places=0,
-        default=Decimal('0'),
-        help_text=_('THB'),
-    )
-
-    cost = models.DecimalField(
-        verbose_name=_('Daily cost'),
-        max_digits=11,
-        decimal_places=0,
-        default=Decimal('0'),
-        help_text=_('THB'),
-    )
-
-    class Meta:
-        verbose_name = _('Round day')
-        verbose_name_plural = _('Round days')
-
-    def __str__(self):
-        return '{}'.format(self.day)
-
-
-class TeeOffTime(model_utils_models.TimeStampedModel):
     SLOT_CHOICES = Choices(
         (0, 'morning', _('Morning')),
         (1, 'daytime', _('Daytime')),
@@ -212,9 +162,23 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
     )
 
     booking_status = models.IntegerField(
-        verbose_name=_('Status'),
+        verbose_name=_('Booking status'),
         choices=BOOKING_STATUS_CHOICES,
         default=BOOKING_STATUS_CHOICES.order_opened,
+        db_index=True,
+    )
+
+    season = models.IntegerField(
+        verbose_name=_('High/Low Season'),
+        choices=SEASON_CHOICES,
+        default=SEASON_CHOICES.high,
+        db_index=True,
+    )
+
+    day_of_week = models.IntegerField(
+        verbose_name=_('Day of week'),
+        choices=DAY_CHOICES,
+        default=DAY_CHOICES.weekday,
         db_index=True,
     )
 
@@ -226,31 +190,22 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
     )
 
     type = models.IntegerField(
-        verbose_name=_('Type'),
+        verbose_name=_('Tee off type'),
         choices=TYPE_CHOICES,
         default=TYPE_CHOICES.fixed,
         db_index=True,
     )
 
     tee_off_status = models.IntegerField(
-        verbose_name=_('Status'),
+        verbose_name=_('Tee off status'),
         choices=TEE_OFF_STATUS_CHOICES,
         default=TEE_OFF_STATUS_CHOICES.open,
         db_index=True,
     )
 
-    day = models.ForeignKey(
-        'windmill.RoundDay',
+    day = models.DateField(
         verbose_name=_('Round day'),
-        on_delete=models.CASCADE,
-    )
-
-    booking = models.ForeignKey(
-        'windmill.Booking',
-        verbose_name=_('Booking'),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
+        db_index=True,
     )
 
     time = models.TimeField(
@@ -463,64 +418,3 @@ class NaoneManagingBook(model_utils_models.TimeStampedModel):
 
     def __str__(self):
         return '{} {} {}'.format(self.agency, self.get_cash_flow_display(), self.amount)
-
-
-class Booking(model_utils_models.TimeStampedModel):
-    HOLE_CHOICES = Choices(
-        (0, 'hole18', _('18 Holes')),
-        (1, 'hole9', _('9 Holes')),
-        (2, 'hole27', _('27 Holes')),
-        (3, 'hole36', _('36 Holes')),
-    )
-
-    STATUS_CHOICES = Choices(
-        (0, 'order_opened', _('order opened')),
-        (1, 'order_pending', _('order pending')),
-        (2, 'payment_pending', _('payment pending')),
-        (3, 'completed', _('order complete')),
-        (4, 'offered', _('order offered')),
-        (5, 'voided', _('order voided')),
-        (6, 'refund_requested', _('refund requested')),
-        (7, 'refund_pending', _('refund pending')),
-        (8, 'refunded1', _('order refunded(original)')),  # original order
-        (9, 'refunded2', _('order refunded(reverse)')),  # refund order
-    )
-
-    agency = models.ForeignKey(
-        'windmill.Agency',
-        verbose_name=_('Agency'),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-    )
-
-    customer_name = models.CharField(
-        verbose_name=_('Customer name'),
-        max_length=255,
-    )
-
-    pax = models.IntegerField(
-        verbose_name=_('Pax'),
-        default=4,
-    )
-
-    hole = models.IntegerField(
-        verbose_name=_('No. of holes'),
-        choices=HOLE_CHOICES,
-        default=HOLE_CHOICES.hole18,
-        db_index=True,
-    )
-
-    status = models.IntegerField(
-        verbose_name=_('Status'),
-        choices=STATUS_CHOICES,
-        default=STATUS_CHOICES.order_opened,
-        db_index=True,
-    )
-
-    class Meta:
-        verbose_name = _('Booking')
-        verbose_name_plural = _('Bookings')
-
-    def __str__(self):
-        return '{}'.format(self.customer_name)
