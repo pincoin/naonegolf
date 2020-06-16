@@ -18,23 +18,6 @@ class AssetTransactionInline(admin.TabularInline):
 class TeeOffTimeInline(admin.StackedInline):
     model = models.TeeOffTime
     extra = 0
-    fieldsets = (
-        (_('Tee-off info'), {
-            'fields': (
-                'day', 'time', 'slot', 'status', 'type',
-            )
-        }),
-        (_('Payment info'), {
-            'fields': (
-                ('green_fee_pay_on_arrival', 'green_fee_sales_unit_price', 'green_fee_sales',
-                 'green_fee_cost_unit_price', 'green_fee_cost'),
-                ('caddie_fee_pay_on_arrival', 'caddie_fee_sales_unit_price', 'caddie_fee_sales',
-                 'caddie_fee_cost_unit_price', 'caddie_fee_cost'),
-                ('cart_fee_pay_on_arrival', 'cart_fee_sales_unit_price', 'cart_fee_sales',
-                 'cart_fee_cost_unit_price', 'cart_fee_deducted_from_deposit', 'cart_fee_cost',),
-            )
-        }),
-    )
     ordering = ['time', ]
 
 
@@ -61,32 +44,6 @@ class TeeOffTimeAdmin(admin.ModelAdmin):
         (_('Booking info'), {
             'fields': (
                 'agency', 'customer_name', 'pax', 'hole', 'booking_status',
-            )
-        }),
-        (_('Tee-off info'), {
-            'fields': (
-                'booking', 'day', 'time', 'slot', 'tee_off_status', 'type',
-            )
-        }),
-        (_('Green fee'), {
-            'fields': (
-                ('green_fee_pay_on_arrival',
-                 'green_fee_sales_unit_price', 'green_fee_sales', 'green_fee_sales_asset',
-                 'green_fee_cost_unit_price', 'green_fee_cost', 'green_fee_cost_asset',),
-            )
-        }),
-        (_('Caddie fee'), {
-            'fields': (
-                ('caddie_fee_pay_on_arrival',
-                 'caddie_fee_sales_unit_price', 'caddie_fee_sales', 'caddie_fee_sales_asset',
-                 'caddie_fee_cost_unit_price', 'caddie_fee_cost', 'caddie_fee_cost_asset',),
-            )
-        }),
-        (_('Cart fee'), {
-            'fields': (
-                ('cart_fee_pay_on_arrival',
-                 'cart_fee_sales_unit_price', 'cart_fee_sales', 'cart_fee_sales_asset',
-                 'cart_fee_cost_unit_price', 'cart_fee_deducted_from_deposit', 'cart_fee_cost', 'cart_fee_cost_asset'),
             )
         }),
     )
