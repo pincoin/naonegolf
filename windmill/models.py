@@ -219,6 +219,28 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
     def __str__(self):
         return '{} {}'.format(self.day, self.time)
 
+    @property
+    def sales(self):
+        total = 0
+
+        for i in self.naoneassettransaction_set.all():
+            if i.cash_flow == NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in:
+                total += i.amount
+
+        return total
+
+    @property
+    def profit(self):
+        total = 0
+
+        for i in self.naoneassettransaction_set.all():
+            if i.cash_flow == NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in:
+                total += i.amount
+            else:
+                total -= i.amount
+
+        return total
+
 
 class NaoneAsset(model_utils_models.TimeStampedModel):
     ASSET_TYPE_CHOICES = Choices(

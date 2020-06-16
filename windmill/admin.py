@@ -33,10 +33,11 @@ class TeeOffTimeAdmin(admin.ModelAdmin):
     inlines = [AssetTransactionInline, ]
     date_hierarchy = 'day'
     ordering = ['-day']
+    readonly_fields = ('sales', 'profit')
     fieldsets = (
         (_('Booking info'), {
             'fields': (
-                'agency', 'customer_name', 'booking_status',
+                'agency', 'customer_name', 'booking_status', 'sales', 'profit',
             )
         }),
         (_('Tee off info'), {
@@ -48,10 +49,14 @@ class TeeOffTimeAdmin(admin.ModelAdmin):
         }),
     )
 
+    class Media:
+        js = ('admin/js/jquery.init.js', 'js/admin/windmill/teeoff.js')
+
 
 class NaoneAssetAdmin(admin.ModelAdmin):
     list_display = ('asset_type', 'name', 'balance')
     list_filter = ('asset_type',)
+    ordering = ('asset_type',)
 
 
 class NaoneAssetTransaction(admin.ModelAdmin):
