@@ -227,7 +227,9 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
             if i.cash_flow == NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in:
                 total += i.amount
 
-        return total
+        return f'{total:,}'
+
+    sales.fget.short_description = _('Sales')
 
     @property
     def profit(self):
@@ -239,7 +241,9 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
             else:
                 total -= i.amount
 
-        return total
+        return f'{total:,}'
+
+    profit.fget.short_description = _('Profit')
 
 
 class NaoneAsset(model_utils_models.TimeStampedModel):
