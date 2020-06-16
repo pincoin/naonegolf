@@ -476,27 +476,89 @@ class NaoneAsset(model_utils_models.TimeStampedModel):
         help_text=_('THB'),
     )
 
-    twilight = models.IntegerField(
-        verbose_name=_('Twilight golf'),
-        default=0,
-    )
-
-    night = models.IntegerField(
-        verbose_name=_('Night golf'),
-        default=0,
-    )
-
-    cart = models.IntegerField(
-        verbose_name=_('Golf cart'),
-        default=0,
-    )
-
     class Meta:
         verbose_name = _('NA-ONE Asset')
         verbose_name_plural = _('NA-ONE Assets')
 
     def __str__(self):
         return '{} {}'.format(self.name, self.balance)
+
+
+class NaoneAssetTransaction(model_utils_models.TimeStampedModel):
+    FEE_CHOICES = Choices(
+        (0, 'green_fee', _('Green fee')),
+        (1, 'caddie_fee', _('Caddie fee')),
+        (2, 'cart_fee', _('Cart fee')),
+    )
+
+    CASH_FLOW_CHOICES = Choices(
+        (0, 'cash_in', _('Cash-in')),
+        (1, 'cash_out', _('Cash-out')),
+    )
+
+    INPUT_TYPE_CHOICES = Choices(
+        (0, 'manual', _('Manual input')),
+        (1, 'closing', _('Closing input')),
+    )
+
+    order = models.ForeignKey(
+        'windmill.TeeOffTime',
+        verbose_name=_('Order'),
+        db_index=True,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+    )
+
+    fee = models.IntegerField(
+        verbose_name=_('Fee'),
+        choices=FEE_CHOICES,
+        default=FEE_CHOICES.green_fee,
+        db_index=True,
+    )
+
+    cash_flow = models.IntegerField(
+        verbose_name=_('Cash flow'),
+        choices=CASH_FLOW_CHOICES,
+        default=CASH_FLOW_CHOICES.cash_in,
+        db_index=True,
+    )
+
+    input_type = models.IntegerField(
+        verbose_name=_('Input type'),
+        choices=INPUT_TYPE_CHOICES,
+        default=INPUT_TYPE_CHOICES.manual,
+        db_index=True,
+    )
+
+    asset = models.ForeignKey(
+        'windmill.NaoneAsset',
+        verbose_name=_('Asset'),
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    amount = models.DecimalField(
+        verbose_name=_('Amount'),
+        max_digits=11,
+        decimal_places=0,
+    )
+
+    transaction_date = models.DateTimeField(
+        verbose_name=_('Transaction date'),
+    )
+
+    remarks = models.TextField(
+        verbose_name=_('Remarks'),
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = _('Asset transaction')
+        verbose_name_plural = _('Asset transactions')
+
+    def __str__(self):
+        return 'asset transaction - {} {}'.format(self.amount, self.transaction_date)
 
 
 class NaoneManagingBook(model_utils_models.TimeStampedModel):

@@ -9,6 +9,12 @@ admin.site.site_title = _('NA-ONE Communication')
 admin.site.index_title = _('NA-ONE Communication')
 
 
+class AssetTransactionInline(admin.TabularInline):
+    model = models.NaoneAssetTransaction
+    ordering = ['-transaction_date', ]
+    extra = 1
+
+
 class TeeOffTimeInline(admin.StackedInline):
     model = models.TeeOffTime
     extra = 0
@@ -50,6 +56,7 @@ class TeeOffTimeAdmin(admin.ModelAdmin):
     list_display_links = ('day', 'time')
     list_filter = ('tee_off_status', 'type')
     raw_id_fields = ('booking',)
+    inlines = [AssetTransactionInline, ]
     fieldsets = (
         (_('Booking info'), {
             'fields': (
@@ -101,7 +108,7 @@ class BookingAdmin(admin.ModelAdmin):
 
 
 class NaoneAssetAdmin(admin.ModelAdmin):
-    list_display = ('asset_type', 'name', 'balance', 'cart', 'twilight', 'night')
+    list_display = ('asset_type', 'name', 'balance')
     list_filter = ('asset_type',)
 
 
