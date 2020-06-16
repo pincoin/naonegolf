@@ -66,20 +66,7 @@ class NaoneAssetTransaction(admin.ModelAdmin):
     ordering = ['-transaction_date', 'fee', 'cash_flow']
 
 
-class NaoneManagingBookAdmin(admin.ModelAdmin):
-    list_display = ('date', 'memo', 'agency', 'asset_type', 'cash_flow', 'count', 'amount_comma_separated')
-    list_display_links = ('date', 'memo', 'agency')
-    list_filter = ('agency', 'asset_type', 'cash_flow')
-    ordering = ['-date', ]
-
-    def amount_comma_separated(self, instance):
-        return '{:,}'.format(instance.amount)
-
-    amount_comma_separated.short_description = _('Amount')
-
-
 admin.site.register(models.Agency, AgencyAdmin)
 admin.site.register(models.TeeOffTime, TeeOffTimeAdmin)
 admin.site.register(models.NaoneAsset, NaoneAssetAdmin)
 admin.site.register(models.NaoneAssetTransaction, NaoneAssetTransaction)
-admin.site.register(models.NaoneManagingBook, NaoneManagingBookAdmin)
