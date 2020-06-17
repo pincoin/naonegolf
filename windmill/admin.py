@@ -32,7 +32,7 @@ class TeeOffTimeAdmin(admin.ModelAdmin):
     list_filter = ('booking_status', 'tee_off_status', 'type', 'agency')
     inlines = [AssetTransactionInline, ]
     date_hierarchy = 'day'
-    ordering = ['-day']
+    ordering = ['-day', '-time']
     readonly_fields = ('sales', 'profit')
     fieldsets = (
         (_('Booking info'), {
