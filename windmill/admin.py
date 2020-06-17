@@ -27,7 +27,7 @@ class AgencyAdmin(admin.ModelAdmin):
 
 
 class TeeOffTimeAdmin(admin.ModelAdmin):
-    list_display = ('day', 'time', 'customer_name', 'pax', 'hole', 'booking_status', 'slot', 'type', 'tee_off_status')
+    list_display = ('day', 'time', 'agency', 'customer_name', 'pax', 'hole', 'booking_status', 'slot', 'type', 'tee_off_status')
     list_display_links = ('day', 'time', 'customer_name')
     list_filter = ('booking_status', 'tee_off_status', 'type', 'agency')
     inlines = [AssetTransactionInline, ]
