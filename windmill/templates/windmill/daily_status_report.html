@@ -8,9 +8,9 @@
 {% block content %}
     <div class="container">
         {% for item in tee_off_times %}
-            <div class="row mb-4">
-                <div class="col-md-4 col-12">
-                    {{ item.agency }} / {{ item.customer_name }}
+            <div class="row">
+                <div class="col-md-4 col-12 font-weight-bold">
+                    {{ forloop.counter }} {{ item.agency }} / {{ item.customer_name }}
                 </div>
                 <div class="col-md-2 col-6">
                     {{ item.day|date:'Y-m-d' }}
@@ -25,10 +25,29 @@
                 <div class="col-md-2 col-8">
                     {{ item.get_booking_status_display }}
                 </div>
-                <div class="col-md-2 col-4">
+                <div class="col-md-2 col-4 text-right">
                     {{ item.sales }} {% trans 'THB' %}
                 </div>
             </div>
+            {% for transaction in item.naoneassettransaction_set.all %}
+                <div class="row">
+                    <div class="col-md-3 col-4">
+                        {{ transaction.get_fee_display }}
+                    </div>
+                    <div class="col-md-2 col-4">
+                        {{ transaction.get_cash_flow_display }}
+                    </div>
+                    <div class="col-md-3 col-4">
+                        {{ transaction.asset }}
+                    </div>
+                    <div class="col-md-2 col-6">
+                        {{ transaction.unit_price }} {% trans 'THB' %}
+                    </div>
+                    <div class="col-md-2 col-6 text-right">
+                        {{ transaction.amount }} {% trans 'THB' %}
+                    </div>
+                </div>
+            {% endfor %}
         {% endfor %}
     </div>
 {% endblock %}
