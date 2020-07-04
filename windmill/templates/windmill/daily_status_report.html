@@ -8,7 +8,7 @@
 {% block content %}
     <div class="container">
         {% for item in tee_off_times %}
-            <div class="row{% if not forloop.first %} mt-5{% endif %}">
+            <div class="row border-bottom{% if not forloop.first %} mt-5{% endif %}">
                 <div class="col-md-4 col-12 font-weight-bold">
                     {{ forloop.counter }} {{ item.agency }} / {{ item.customer_name }}
                 </div>
@@ -23,14 +23,14 @@
                     {{ item.pax }} PAX
                 </div>
                 <div class="col-md-2 col-8">
-                    {{ item.get_booking_status_display }}
+                    <span class="badge badge-primary">{{ item.get_booking_status_display }}</span>
                 </div>
                 <div class="col-md-2 col-4 text-right">
                     {{ item.sales }} {% trans 'THB' %}
                 </div>
             </div>
             {% for transaction in item.naoneassettransaction_set.all %}
-                <div class="row">
+                <div class="row border-bottom">
                     <div class="col-md-3 col-4">
                         {{ transaction.get_fee_display }}
                     </div>
@@ -40,11 +40,10 @@
                     <div class="col-md-3 col-4">
                         {{ transaction.asset }}
                     </div>
-                    <div class="col-md-2 col-6">
+                    <div class="col-md-4 col-12 text-right">
                         {{ transaction.unit_price }} {% trans 'THB' %}
-                    </div>
-                    <div class="col-md-2 col-6 text-right">
-                        {{ transaction.amount }} {% trans 'THB' %}
+                        x {{ item.pax }}
+                        = {{ transaction.amount }} {% trans 'THB' %}
                     </div>
                 </div>
             {% endfor %}
