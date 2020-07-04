@@ -8,7 +8,7 @@
 {% block content %}
     <div class="container">
         {% for item in tee_off_times %}
-            <div class="row">
+            <div class="row my-4">
                 <div class="col-md-4 col-12">
                     {{ item.agency }} / {{ item.customer_name }}
                 </div>
@@ -22,7 +22,7 @@
                 <div class="col-md-1 col-3">
                     {{ item.pax }} PAX
                 </div>
-                <div class="col-md-2 col-3">
+                <div class="col-md-2 col-9">
                     {{ item.get_booking_status_display }}
                 </div>
                 <div class="col-md-2 col-3">
