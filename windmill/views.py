@@ -1,5 +1,5 @@
 from django.db.models import (
-    Sum
+    Sum, Q
 )
 from django.views import generic
 
@@ -27,4 +27,10 @@ class DailyStatusReport(generic.ListView):
             .filter(day__year=self.kwargs['year'],
                     day__month=self.kwargs['month'],
                     day__day=self.kwargs['day']) \
-            .annotate(total_petty_cash_in=Sum('naoneassettransaction__amount'))
+            .annotate(total_petty_cash_in=Sum('naoneassettransaction__amount',
+                                              filter=Q(naoneassettransaction__cash_flow
+                                                       =models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in)),
+                      total_petty_cash_out=Sum('naoneassettransaction__amount',
+                                               filter=Q(naoneassettransaction__cash_flow
+                                                        =models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_out)),
+                      )

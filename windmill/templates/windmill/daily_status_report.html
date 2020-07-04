@@ -1,7 +1,6 @@
 {% extends 'conf/base.html' %}
 
-{% load static %}
-{% load i18n %}
+{% load static i18n humanize %}
 
 {% block title %}{% trans 'Daily Status Report' %}{% endblock %}
 
@@ -41,13 +40,34 @@
                         {{ transaction.asset }}
                     </div>
                     <div class="col-md-4 col-12 text-right">
-                        {{ transaction.unit_price }} {% trans 'THB' %}
+                        {{ transaction.unit_price|floatformat:0|intcomma }} {% trans 'THB' %}
                         x {{ item.pax }}
-                        = {{ transaction.amount }} {% trans 'THB' %}
+                        = {{ transaction.amount|floatformat:0|intcomma }} {% trans 'THB' %}
                     </div>
                 </div>
             {% endfor %}
-            {{ item.total_petty_cash_in }}
+            <div class="row text-danger font-weight-bold">
+                <div class="col-md-8 col-4">
+                    {% trans 'Petty cash' %}
+                </div>
+                <div class="col-md-2 col-4">
+                    {% if item.total_petty_cash_in %}
+                        +{{ item.total_petty_cash_in|floatformat:0|intcomma }}
+                    {% else %}
+                        0
+                    {% endif %}
+                    {% trans 'THB' %}
+                </div>
+                <div class="col-md-2 col-4 text-right">
+                    {% if item.total_petty_cash_out %}
+                        -{{ item.total_petty_cash_out|floatformat:0|intcomma }}
+                    {% else %}
+                        0
+                    {% endif %}
+                    {% trans 'THB' %}
+                </div>
+            </div>
+
         {% endfor %}
     </div>
 {% endblock %}
