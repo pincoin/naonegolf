@@ -68,7 +68,7 @@
                 </div>
             </div>
         {% endfor %}
-        <div class="row mt-5 font-weight-bold">
+        <div class="row my-5 font-weight-bold">
             <div class="col-md-2 col-6">
                 {% trans 'Daily sales' %}
             </div>
@@ -86,6 +86,10 @@
             </div>
             <div class="col-md-2 col-6 text-right">
                 {{ total_profit|floatformat:0|intcomma }} {% trans 'THB' %}
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col">
             </div>
         </div>
     </div>
