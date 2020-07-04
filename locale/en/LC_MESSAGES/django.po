@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-16 20:44+0700\n"
+"POT-Creation-Date: 2020-07-04 23:51+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -220,6 +220,11 @@ msgstr ""
 #: windmill/models.py:46 windmill/models.py:54 windmill/models.py:62
 #: windmill/models.py:70 windmill/models.py:78 windmill/models.py:274
 #: windmill/models.py:345 windmill/models.py:353 windmill/models.py:432
+#: windmill/templates/windmill/daily_status_report.html:28
+#: windmill/templates/windmill/daily_status_report.html:43
+#: windmill/templates/windmill/daily_status_report.html:45
+#: windmill/templates/windmill/daily_status_report.html:59
+#: windmill/templates/windmill/daily_status_report.html:67
 msgid "THB"
 msgstr ""
 
@@ -483,10 +488,6 @@ msgstr ""
 msgid "Tee off info"
 msgstr ""
 
-#: windmill/admin.py:78 windmill/models.py:349 windmill/models.py:428
-msgid "Amount"
-msgstr ""
-
 #: windmill/apps.py:7
 msgid "Summit Windmill Golf Club"
 msgstr ""
@@ -644,6 +645,7 @@ msgid "Tee-off times"
 msgstr ""
 
 #: windmill/models.py:251 windmill/models.py:375
+#: windmill/templates/windmill/daily_status_report.html:51
 msgid "Petty cash"
 msgstr ""
 
@@ -719,6 +721,10 @@ msgstr ""
 msgid "Unit price"
 msgstr ""
 
+#: windmill/models.py:349 windmill/models.py:428
+msgid "Amount"
+msgstr ""
+
 #: windmill/models.py:357 windmill/models.py:391
 msgid "Transaction date"
 msgstr ""
@@ -749,6 +755,22 @@ msgstr ""
 
 #: windmill/templates/windmill/booking_create.html:6
 msgid "Book now"
+msgstr ""
+
+#: windmill/templates/windmill/daily_status_report.html:5
+msgid "Daily Status Report"
+msgstr ""
+
+#: windmill/templates/windmill/daily_status_report.html:73
+msgid "Daily sales"
+msgstr ""
+
+#: windmill/templates/windmill/daily_status_report.html:76
+msgid "Daily cost"
+msgstr ""
+
+#: windmill/templates/windmill/daily_status_report.html:79
+msgid "Daily profit"
 msgstr ""
 
 #: windmill/templates/windmill/tee_off_list.html:6

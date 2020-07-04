@@ -67,7 +67,20 @@
                     {% trans 'THB' %}
                 </div>
             </div>
-
         {% endfor %}
+        <div class="row">
+            <div class="col-md-4 col-12">
+                {% trans 'Daily sales' %}
+                {{ total_sales }} {% trans 'THB' %}
+            </div>
+            <div class="col-md-4 col-12">
+                {% trans 'Daily cost' %}
+                {{ total_cost }} {% trans 'THB' %}
+            </div>
+            <div class="col-md-4 col-12">
+                {% trans 'Daily profit' %}
+                {{ total_profit }} {% trans 'THB' %}
+            </div>
+        </div>
     </div>
 {% endblock %}
