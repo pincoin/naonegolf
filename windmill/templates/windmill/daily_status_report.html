@@ -9,11 +9,12 @@
     <div class="container">
         {% for item in tee_off_times %}
             <div class="row">
-                <div class="col-md-2 col-3">
-                    {{ item.get_booking_status_display }}
-                </div>
-                <div class="col-md-2 col-9">
+                <div class="col-md-4 col-12">
                     {{ item.agency }} / {{ item.customer_name }}
+                </div>
+                <div class="col-md-2 col-6">
+                    {{ item.day|date:'Y-m-d' }}
+                    {{ item.time|time:'H:i' }}
                 </div>
                 <div class="col-md-1 col-3">
                     {{ item.get_hole_display }}
@@ -21,9 +22,11 @@
                 <div class="col-md-1 col-3">
                     {{ item.pax }} PAX
                 </div>
-                <div class="col-md-3 col-6">
-                    {{ item.day|date:'Y-m-d' }}
-                    {{ item.time|time:'H:i' }}
+                <div class="col-md-2 col-3">
+                    {{ item.get_booking_status_display }}
+                </div>
+                <div class="col-md-2 col-3">
+                    {{ item.sales }} {% trans 'THB' %}
                 </div>
             </div>
         {% endfor %}
