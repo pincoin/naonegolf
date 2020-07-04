@@ -1,3 +1,6 @@
+from django.db.models import (
+    Sum
+)
 from django.views import generic
 
 from . import models
@@ -23,4 +26,5 @@ class DailyStatusReport(generic.ListView):
             .prefetch_related('naoneassettransaction_set__asset') \
             .filter(day__year=self.kwargs['year'],
                     day__month=self.kwargs['month'],
-                    day__day=self.kwargs['day'])
+                    day__day=self.kwargs['day']) \
+            .annotate(total_petty_cash_in=Sum('naoneassettransaction__amount'))
