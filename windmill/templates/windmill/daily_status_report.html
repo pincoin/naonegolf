@@ -1,0 +1,17 @@
+{% extends 'conf/base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'Daily Status Report' %}{% endblock %}
+
+{% block content %}
+    {% for item in tee_off_times %}
+        {{ item.customer_name }}
+        {{ item.agency }}
+        {{ item.pax }}
+        {{ item.hole }}
+        {{ item.day }}
+        {{ itme.time }}
+    {% endfor %}
+{% endblock %}
