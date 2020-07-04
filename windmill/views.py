@@ -29,8 +29,14 @@ class DailyStatusReport(generic.ListView):
                     day__day=self.kwargs['day']) \
             .annotate(total_petty_cash_in=Sum('naoneassettransaction__amount',
                                               filter=Q(naoneassettransaction__cash_flow
-                                                       =models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in)),
+                                                       =models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in,
+                                                       naoneassettransaction__asset__asset_type
+                                                       =models.NaoneAsset.ASSET_TYPE_CHOICES.petty_cash),
+                                              ),
                       total_petty_cash_out=Sum('naoneassettransaction__amount',
                                                filter=Q(naoneassettransaction__cash_flow
-                                                        =models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_out)),
+                                                        =models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_out,
+                                                        naoneassettransaction__asset__asset_type
+                                                        =models.NaoneAsset.ASSET_TYPE_CHOICES.petty_cash),
+                                               ),
                       )
