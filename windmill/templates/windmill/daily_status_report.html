@@ -6,12 +6,26 @@
 {% block title %}{% trans 'Daily Status Report' %}{% endblock %}
 
 {% block content %}
-    {% for item in tee_off_times %}
-        {{ item.customer_name }}
-        {{ item.agency }}
-        {{ item.pax }}
-        {{ item.hole }}
-        {{ item.day }}
-        {{ itme.time }}
-    {% endfor %}
+    <div class="container">
+        {% for item in tee_off_times %}
+            <div class="row">
+                <div class="col-md-2 col-3">
+                    {{ item.get_booking_status_display }}
+                </div>
+                <div class="col-md-2 col-9">
+                    {{ item.agency }} / {{ item.customer_name }}
+                </div>
+                <div class="col-md-1 col-3">
+                    {{ item.get_hole_display }}
+                </div>
+                <div class="col-md-1 col-3">
+                    {{ item.pax }} PAX
+                </div>
+                <div class="col-md-3 col-6">
+                    {{ item.day|date:'Y-m-d' }}
+                    {{ item.time|time:'H:i' }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

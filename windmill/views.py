@@ -18,4 +18,6 @@ class DailyStatusReport(generic.ListView):
     template_name = 'windmill/daily_status_report.html'
 
     def get_queryset(self):
-        return models.TeeOffTime.objects.all()
+        return models.TeeOffTime.objects.filter(day__year=self.kwargs['year'],
+                                                day__month=self.kwargs['month'],
+                                                day__day=self.kwargs['day'])
