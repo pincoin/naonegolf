@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-04 23:51+0700\n"
+"POT-Creation-Date: 2020-07-05 00:58+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -225,6 +225,9 @@ msgstr ""
 #: windmill/templates/windmill/daily_status_report.html:45
 #: windmill/templates/windmill/daily_status_report.html:59
 #: windmill/templates/windmill/daily_status_report.html:67
+#: windmill/templates/windmill/daily_status_report.html:74
+#: windmill/templates/windmill/daily_status_report.html:78
+#: windmill/templates/windmill/daily_status_report.html:82
 msgid "THB"
 msgstr ""
 
@@ -765,11 +768,11 @@ msgstr ""
 msgid "Daily sales"
 msgstr ""
 
-#: windmill/templates/windmill/daily_status_report.html:76
+#: windmill/templates/windmill/daily_status_report.html:77
 msgid "Daily cost"
 msgstr ""
 
-#: windmill/templates/windmill/daily_status_report.html:79
+#: windmill/templates/windmill/daily_status_report.html:81
 msgid "Daily profit"
 msgstr ""
 

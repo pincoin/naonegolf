@@ -68,18 +68,24 @@
                 </div>
             </div>
         {% endfor %}
-        <div class="row">
-            <div class="col-md-4 col-12">
+        <div class="row mt-5 font-weight-bold">
+            <div class="col-md-2 col-6">
                 {% trans 'Daily sales' %}
-                {{ total_sales }} {% trans 'THB' %}
             </div>
-            <div class="col-md-4 col-12">
+            <div class="col-md-2 col-6 text-right">
+                {{ total_sales|floatformat:0|intcomma }} {% trans 'THB' %}
+            </div>
+            <div class="col-md-2 col-6">
                 {% trans 'Daily cost' %}
-                {{ total_cost }} {% trans 'THB' %}
             </div>
-            <div class="col-md-4 col-12">
+            <div class="col-md-2 col-6 text-right">
+                {{ total_cost|floatformat:0|intcomma }} {% trans 'THB' %}
+            </div>
+            <div class="col-md-2 col-6">
                 {% trans 'Daily profit' %}
-                {{ total_profit }} {% trans 'THB' %}
+            </div>
+            <div class="col-md-2 col-6 text-right">
+                {{ total_profit|floatformat:0|intcomma }} {% trans 'THB' %}
             </div>
         </div>
     </div>
