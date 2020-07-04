@@ -7,7 +7,7 @@
 {% block content %}
     <div class="container">
         {% for item in tee_off_times %}
-            <div class="row border-bottom{% if not forloop.first %} mt-5{% endif %}">
+            <div class="row border-bottom mt-5">
                 <div class="col-md-4 col-12 font-weight-bold">
                     {{ forloop.counter }} {{ item.agency }} / {{ item.customer_name }}
                 </div>
