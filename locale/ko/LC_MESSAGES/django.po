@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-05 00:58+0700\n"
+"POT-Creation-Date: 2020-07-05 13:26+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -225,9 +225,9 @@ msgstr "카트피"
 #: windmill/templates/windmill/daily_status_report.html:45
 #: windmill/templates/windmill/daily_status_report.html:59
 #: windmill/templates/windmill/daily_status_report.html:67
-#: windmill/templates/windmill/daily_status_report.html:74
-#: windmill/templates/windmill/daily_status_report.html:78
+#: windmill/templates/windmill/daily_status_report.html:76
 #: windmill/templates/windmill/daily_status_report.html:82
+#: windmill/templates/windmill/daily_status_report.html:88
 msgid "THB"
 msgstr "바트"
 
@@ -770,13 +770,23 @@ msgstr "일일 현황"
 msgid "Daily sales"
 msgstr "일간 매출"
 
-#: windmill/templates/windmill/daily_status_report.html:77
+#: windmill/templates/windmill/daily_status_report.html:79
 msgid "Daily cost"
 msgstr "일간 비용"
 
-#: windmill/templates/windmill/daily_status_report.html:81
+#: windmill/templates/windmill/daily_status_report.html:85
 msgid "Daily profit"
 msgstr "일간 이익"
+
+#: windmill/templates/windmill/monthly_status_report.html:5
+#: windmill/templates/windmill/monthly_status_report.html:9
+msgid "Monthly Status Report"
+msgstr "월별 현황"
+
+#: windmill/templates/windmill/report.html:5
+#: windmill/templates/windmill/report.html:9
+msgid "Status Report"
+msgstr "현황 보고서"
 
 #: windmill/templates/windmill/tee_off_list.html:6
 #: windmill/templates/windmill/tee_off_list.html:12
@@ -786,3 +796,8 @@ msgstr "티오프"
 #: windmill/templates/windmill/tee_off_list.html:33
 msgid "No tee off"
 msgstr "예약 가능한 티오프가 없습니다."
+
+#: windmill/templates/windmill/yearly_status_report.html:5
+#: windmill/templates/windmill/yearly_status_report.html:9
+msgid "Yearly Status Report"
+msgstr "연간 현황"

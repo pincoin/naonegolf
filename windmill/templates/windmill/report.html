@@ -1,0 +1,18 @@
+{% extends 'conf/base.html' %}
+
+{% load static i18n humanize %}
+
+{% block title %}{% trans 'Status Report' %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h5 class="my-2">{% trans 'Status Report' %}</h5>
+        {% for year in years %}
+            <div class="row border-bottom my-2">
+                <div class="col-md-1 col-4">
+                    <a href="{% url 'windmill:yearly-status-report' year %}">{{ year }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

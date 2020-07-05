@@ -1,0 +1,21 @@
+{% extends 'conf/base.html' %}
+
+{% load static i18n humanize %}
+
+{% block title %}{% trans 'Yearly Status Report' %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h5 class="my-2">{% trans 'Yearly Status Report' %} - {{ year }}</h5>
+        <div class="row border-bottom my-3">
+            {% for month in months %}
+                <div class="col-md-1 col-4">
+                    <a href="{% url 'windmill:monthly-status-report' year month|stringformat:"02d" %}"
+                       class="{% if this_year and this_month == month %}font-weight-bold text-danger{% endif %}">
+                        {{ month }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

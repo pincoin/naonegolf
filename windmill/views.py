@@ -1,6 +1,9 @@
+import calendar
+
 from django.db.models import (
     Sum, Q
 )
+from django.utils import timezone
 from django.views import generic
 
 from . import models
@@ -14,6 +17,61 @@ class TeeOffListView(generic.TemplateView):
 
 class BookingCreateForm(generic.TemplateView):
     template_name = 'windmill/booking_create.html'
+
+
+class Report(generic.TemplateView):
+    context_object_name = 'reports'
+
+    template_name = 'windmill/report.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Report, self).get_context_data(**kwargs)
+
+        context['years'] = list(range((timezone.datetime.now() + timezone.timedelta(days=90)).year, 2019, -1))
+
+        return context
+
+
+class YearlyStatusReport(generic.TemplateView):
+    template_name = 'windmill/yearly_status_report.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(YearlyStatusReport, self).get_context_data(**kwargs)
+
+        if int(self.kwargs['year']) == timezone.datetime.now().year:
+            month = timezone.datetime.now().month + 3
+
+            if month > 12:
+                month = 12
+
+            context['months'] = list(range(month, 0, -1))
+            context['this_year'] = True
+            context['this_month'] = timezone.datetime.now().month
+
+        elif int(self.kwargs['year']) <= timezone.datetime.now().year:
+            context['months'] = list(range(1, 13))
+        else:
+            context['months'] = list(range(1, 4))
+
+        context['year'] = self.kwargs['year']
+
+        return context
+
+
+class MonthlyStatusReport(generic.TemplateView):
+    template_name = 'windmill/monthly_status_report.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(MonthlyStatusReport, self).get_context_data(**kwargs)
+
+        context['days'] = list(range(1,
+                                     calendar.monthrange(int(self.kwargs['year']), int(self.kwargs['month']))[1] + 1)
+                               )
+
+        context['year'] = self.kwargs['year']
+        context['month'] = self.kwargs['month']
+
+        return context
 
 
 class DailyStatusReport(generic.ListView):
