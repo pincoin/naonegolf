@@ -1,8 +1,9 @@
 import calendar
 
 from django.db.models import (
-    Sum, Q
+    Sum, Q, Count
 )
+from django.db.models.functions import TruncDay
 from django.utils import timezone
 from django.views import generic
 
@@ -64,9 +65,28 @@ class MonthlyStatusReport(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(MonthlyStatusReport, self).get_context_data(**kwargs)
 
-        context['days'] = list(range(1,
-                                     calendar.monthrange(int(self.kwargs['year']), int(self.kwargs['month']))[1] + 1)
-                               )
+        qs = models.TeeOffTime.objects \
+            .filter(day__year=int(self.kwargs['year']), day__month=int(self.kwargs['month'])) \
+            .annotate(day1=TruncDay('day')) \
+            .values('day1') \
+            .annotate(count=Count('id')) \
+            .values('day1', 'count') \
+            .order_by('-day1')
+
+        context['days'] = []
+
+        for i in list(range(1, calendar.monthrange(int(self.kwargs['year']), int(self.kwargs['month']))[1] + 1)):
+            found = False
+            for s in qs:
+                if str(s['day1']) == timezone.datetime(int(self.kwargs['year']),
+                                                       int(self.kwargs['month']),
+                                                       int(i)).strftime('%Y-%m-%d'):
+                    found = True
+                    context['days'].append({'day': i, 'count': s['count']})
+                    break
+
+            if not found:
+                context['days'].append({'day': i, 'count': 0})
 
         context['year'] = self.kwargs['year']
         context['month'] = self.kwargs['month']

@@ -11,10 +11,11 @@
         <h5 class="my-2">{% trans 'Monthly Status Report' %} - {{ year }} - {{ month|month_name }}</h5>
         <div class="row border-bottom my-1">
             {% for day in days %}
-                <div class="col-md-12 col-12">
-                    <a href="{% url 'windmill:daily-status-report' year month day|stringformat:"02d" %}"
+                <div class="col-md-12 col-12 my-1">
+                    <a href="{% url 'windmill:daily-status-report' year month day.day|stringformat:"02d" %}"
                        class="{% if this_year and this_month == month %}font-weight-bold text-danger{% endif %}">
-                        {% get_date year month day %}
+                        {% get_date year month day.day %}
+                        {% if day.count > 0 %}<span class="badge badge-danger">{{ day.count }}</span>{% endif %}
                     </a>
                 </div>
             {% endfor %}
