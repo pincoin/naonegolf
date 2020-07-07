@@ -1,21 +1,29 @@
 {% extends 'conf/base.html' %}
 
 {% load static i18n humanize %}
+{% load windmill_filters %}
+{% load windmill_tags %}
 
 {% block title %}{% trans 'Monthly Status Report' %}{% endblock %}
 
 {% block content %}
     <div class="container">
-        <h5 class="my-2">{% trans 'Monthly Status Report' %} - {{ year }}-{{ month }}</h5>
+        <h5 class="my-2">{% trans 'Monthly Status Report' %} - {{ year }}-{{ month|month_name }}</h5>
         <div class="row border-bottom my-1">
             {% for day in days %}
-                <div class="col-md-1 col-4">
+                <div class="col-md-12 col-12">
                     <a href="{% url 'windmill:daily-status-report' year month day|stringformat:"02d" %}"
                        class="{% if this_year and this_month == month %}font-weight-bold text-danger{% endif %}">
-                        {{ day }}
+                        {% get_date year month day %}
                     </a>
                 </div>
             {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-block btn-primary"
+                   href="{% url 'windmill:yearly-status-report' year %}">{{ year }}</a>
+            </div>
         </div>
     </div>
 {% endblock %}

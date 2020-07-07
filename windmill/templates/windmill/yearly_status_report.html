@@ -1,6 +1,7 @@
 {% extends 'conf/base.html' %}
 
 {% load static i18n humanize %}
+{% load windmill_filters %}
 
 {% block title %}{% trans 'Yearly Status Report' %}{% endblock %}
 
@@ -9,13 +10,18 @@
         <h5 class="my-2">{% trans 'Yearly Status Report' %} - {{ year }}</h5>
         <div class="row border-bottom my-3">
             {% for month in months %}
-                <div class="col-md-1 col-4">
+                <div class="col-md-2 col-12">
                     <a href="{% url 'windmill:monthly-status-report' year month|stringformat:"02d" %}"
                        class="{% if this_year and this_month == month %}font-weight-bold text-danger{% endif %}">
-                        {{ month }}
+                        {{ year }} - {{ month|month_name }}
                     </a>
                 </div>
             {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-block btn-primary" href="{% url 'windmill:status-report' %}">{% trans 'All years' %}</a>
+            </div>
         </div>
     </div>
 {% endblock %}

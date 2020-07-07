@@ -127,4 +127,7 @@ class DailyStatusReport(generic.ListView):
         context['total_cost'] = self.total_cost
         context['total_profit'] = self.total_sales - self.total_cost
 
+        context['year'] = self.kwargs['year']
+        context['month'] = self.kwargs['month']
+
         return context

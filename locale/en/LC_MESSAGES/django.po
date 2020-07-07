@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-05 13:26+0700\n"
+"POT-Creation-Date: 2020-07-07 18:21+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -798,4 +798,8 @@ msgstr ""
 #: windmill/templates/windmill/yearly_status_report.html:5
 #: windmill/templates/windmill/yearly_status_report.html:9
 msgid "Yearly Status Report"
+msgstr ""
+
+#: windmill/templates/windmill/yearly_status_report.html:22
+msgid "All years"
 msgstr ""
