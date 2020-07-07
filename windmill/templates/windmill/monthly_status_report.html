@@ -8,7 +8,7 @@
 
 {% block content %}
     <div class="container">
-        <h5 class="my-2">{% trans 'Monthly Status Report' %} - {{ year }}-{{ month|month_name }}</h5>
+        <h5 class="my-2">{% trans 'Monthly Status Report' %} - {{ year }} - {{ month|month_name }}</h5>
         <div class="row border-bottom my-1">
             {% for day in days %}
                 <div class="col-md-12 col-12">
