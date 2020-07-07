@@ -1,0 +1,14 @@
+.blue-text {
+    color: #003366;
+}
+
+.red-text {
+    color: #a41515;
+}
+
+.pettycash-text {
+    color: #ba2121;
+    background: #eee;
+    font-weight: bold;
+    margin-top: .5rem;
+}

@@ -30,7 +30,11 @@
                 </div>
             </div>
             {% for transaction in item.naoneassettransaction_set.all %}
-                <div class="row border-bottom">
+                {% if  transaction.cash_flow == transaction.CASH_FLOW_CHOICES.cash_in %}
+                <div class="row border-bottom blue-text">
+                {% else %}
+                <div class="row border-bottom red-text">
+                {% endif %}
                     <div class="col-md-3 col-4">
                         {{ transaction.get_fee_display }}
                     </div>
@@ -47,7 +51,7 @@
                     </div>
                 </div>
             {% endfor %}
-            <div class="row text-danger font-weight-bold">
+            <div class="row pettycash-text">
                 <div class="col-md-8 col-4">
                     {% trans 'Petty cash' %}
                 </div>
@@ -96,4 +100,10 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block stylesheet %}
+    {{ block.super }}
+    <link rel="stylesheet"
+              href="{% static "windmill/css/windmill.css" %}">
 {% endblock %}
