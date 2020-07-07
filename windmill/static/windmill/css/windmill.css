@@ -12,3 +12,11 @@
     font-weight: bold;
     margin-top: .5rem;
 }
+
+.booking-heading {
+    color: #1d2124;
+    background: #eee;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
