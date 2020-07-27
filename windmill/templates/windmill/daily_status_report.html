@@ -6,72 +6,78 @@
 {% block title %}{% trans 'Daily Status Report' %}{% endblock %}
 
 {% block content %}
-    <div class="container">
-        {% for item in tee_off_times %}
-            <div class="row border-bottom mt-5 booking-heading">
-                <div class="col-md-4 col-12">
-                    {{ forloop.counter }} {{ item.agency }} / {{ item.customer_name }}
-                </div>
-                <div class="col-md-2 col-6">
-                    {{ item.day|date:'Y-m-d' }}
-                    {{ item.time|time:'H:i' }}
-                </div>
-                <div class="col-md-1 col-3">
-                    {{ item.get_hole_display }}
-                </div>
-                <div class="col-md-1 col-3">
-                    {{ item.pax }} PAX
-                </div>
-                <div class="col-md-2 col-8">
-                    <span class="badge badge-primary">{{ item.get_booking_status_display }}</span>
-                </div>
-                <div class="col-md-2 col-4 text-right">
-                    {{ item.sales }} {% trans 'THB' %}
-                </div>
+<div class="container">
+    {% for item in tee_off_times %}
+    <div class="row border-bottom mt-5 booking-heading">
+        <div class="col-md-4 col-12">
+            {% if user.is_superuser %}
+            <a href="{% url 'admin:windmill_teeofftime_change' item.id %}" class="text-dark">
+                {{ forloop.counter }} {{ item.agency }} / {{ item.customer_name }}
+            </a>
+            {% else %}
+            {{ forloop.counter }} {{ item.agency }} / {{ item.customer_name }}
+            {% endif %}
+        </div>
+        <div class="col-md-2 col-6">
+            {{ item.day|date:'Y-m-d' }}
+            {{ item.time|time:'H:i' }}
+        </div>
+        <div class="col-md-1 col-3">
+            {{ item.get_hole_display }}
+        </div>
+        <div class="col-md-1 col-3">
+            {{ item.pax }} PAX
+        </div>
+        <div class="col-md-2 col-8">
+            <span class="badge badge-primary">{{ item.get_booking_status_display }}</span>
+        </div>
+        <div class="col-md-2 col-4 text-right">
+            {{ item.sales }} {% trans 'THB' %}
+        </div>
+    </div>
+    {% for transaction in item.naoneassettransaction_set.all %}
+    {% if transaction.cash_flow == transaction.CASH_FLOW_CHOICES.cash_in %}
+    <div class="row border-bottom blue-text">
+        {% else %}
+        <div class="row border-bottom red-text">
+            {% endif %}
+            <div class="col-md-3 col-4">
+                {{ transaction.get_fee_display }}
             </div>
-            {% for transaction in item.naoneassettransaction_set.all %}
-                {% if  transaction.cash_flow == transaction.CASH_FLOW_CHOICES.cash_in %}
-                <div class="row border-bottom blue-text">
+            <div class="col-md-2 col-4">
+                {{ transaction.get_cash_flow_display }}
+            </div>
+            <div class="col-md-3 col-4">
+                {{ transaction.asset }}
+            </div>
+            <div class="col-md-4 col-12 text-right">
+                {{ transaction.unit_price|floatformat:0|intcomma }} {% trans 'THB' %}
+                x {{ item.pax }}
+                = {{ transaction.amount|floatformat:0|intcomma }} {% trans 'THB' %}
+            </div>
+        </div>
+        {% endfor %}
+        <div class="row pettycash-text">
+            <div class="col-md-8 col-4">
+                {% trans 'Petty cash' %}
+            </div>
+            <div class="col-md-2 col-4">
+                {% if item.total_petty_cash_in %}
+                +{{ item.total_petty_cash_in|floatformat:0|intcomma }}
                 {% else %}
-                <div class="row border-bottom red-text">
+                0
                 {% endif %}
-                    <div class="col-md-3 col-4">
-                        {{ transaction.get_fee_display }}
-                    </div>
-                    <div class="col-md-2 col-4">
-                        {{ transaction.get_cash_flow_display }}
-                    </div>
-                    <div class="col-md-3 col-4">
-                        {{ transaction.asset }}
-                    </div>
-                    <div class="col-md-4 col-12 text-right">
-                        {{ transaction.unit_price|floatformat:0|intcomma }} {% trans 'THB' %}
-                        x {{ item.pax }}
-                        = {{ transaction.amount|floatformat:0|intcomma }} {% trans 'THB' %}
-                    </div>
-                </div>
-            {% endfor %}
-            <div class="row pettycash-text">
-                <div class="col-md-8 col-4">
-                    {% trans 'Petty cash' %}
-                </div>
-                <div class="col-md-2 col-4">
-                    {% if item.total_petty_cash_in %}
-                        +{{ item.total_petty_cash_in|floatformat:0|intcomma }}
-                    {% else %}
-                        0
-                    {% endif %}
-                    {% trans 'THB' %}
-                </div>
-                <div class="col-md-2 col-4 text-right">
-                    {% if item.total_petty_cash_out %}
-                        -{{ item.total_petty_cash_out|floatformat:0|intcomma }}
-                    {% else %}
-                        0
-                    {% endif %}
-                    {% trans 'THB' %}
-                </div>
+                {% trans 'THB' %}
             </div>
+            <div class="col-md-2 col-4 text-right">
+                {% if item.total_petty_cash_out %}
+                -{{ item.total_petty_cash_out|floatformat:0|intcomma }}
+                {% else %}
+                0
+                {% endif %}
+                {% trans 'THB' %}
+            </div>
+        </div>
         {% endfor %}
         <div class="row my-5 font-weight-bold">
             <div class="col-md-2 col-6">
@@ -104,10 +110,10 @@
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block stylesheet %}
-    {{ block.super }}
-    <link rel="stylesheet"
-              href="{% static "windmill/css/windmill.css" %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'windmill/css/windmill.css' %}">
 {% endblock %}
