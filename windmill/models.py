@@ -212,6 +212,17 @@ class TeeOffTime(model_utils_models.TimeStampedModel):
         verbose_name=_('Tee-off time'),
     )
 
+    phone = models.CharField(
+        verbose_name=_('Telephone'),
+        max_length=32,
+        blank=True,
+    )
+
+    remarks = models.TextField(
+        verbose_name=_('Remarks'),
+        blank=True,
+    )
+
     class Meta:
         verbose_name = _('Tee-off time')
         verbose_name_plural = _('Tee-off times')
