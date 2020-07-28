@@ -46,6 +46,44 @@
                     <th>통장잔고증감</th>
                 </tr>
                 </thead>
+                <tbody>
+                {% for t in tee_off_times %}
+                <tr>
+                    <td>{{ t.day|date:'Ymd' }}</td>
+                    <td>{{ t.day|date:'D' }}</td>
+                    <td>{{ t.get_booking_status_display }}</td>
+                    <td>{{ t.agency.name }}</td>
+                    <td>{{ t.customer_name }}</td>
+                    <td>{{ t.pax }}</td>
+                    <td>{{ t.time|date:'H:i' }}</td>
+                    <td>{{ t.get_type_display }}</td>
+                    <td>그린피</td>
+                    <td>그.총액</td>
+                    <td>그.자산</td>
+                    <td>그.비용</td>
+                    <td>그.총비용</td>
+                    <td>캐디피</td>
+                    <td>캐.총액</td>
+                    <td>캐.자산</td>
+                    <td>캐.비용</td>
+                    <td>캐.총비용</td>
+                    <td>카트피</td>
+                    <td>카.총액</td>
+                    <td>카.자산</td>
+                    <td>카.비용</td>
+                    <td>카.총비용</td>
+                    <td>카.차감</td>
+                    <td>카.자산</td>
+                    <td>매출</td>
+                    <td>수익</td>
+                    <td>현장수금액 시재증액</td>
+                    <td>현장수금액 시재차감</td>
+                    <td>일시재증감</td>
+                    <td>선납액증감</td>
+                    <td>통장잔고증감</td>
+                </tr>
+                {% endfor %}
+                </tbody>
             </table>
         </div>
     </div>
