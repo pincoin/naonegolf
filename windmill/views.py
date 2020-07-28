@@ -167,7 +167,31 @@ class MonthlyDailyStatusReport(generic.ListView):
             .prefetch_related('naoneassettransaction_set__asset') \
             .filter(day__year=self.kwargs['year'],
                     day__month=self.kwargs['month']) \
-            .annotate(total_petty_cash_in=Sum('naoneassettransaction__amount',
+            .annotate(green_fee_price=Sum('naoneassettransaction__unit_price',
+                                          filter=Q(naoneassettransaction__fee
+                                                   =models.NaoneAssetTransaction.FEE_CHOICES.green_fee),
+                                          ),
+                      green_fee_subtotal=Sum('naoneassettransaction__amount',
+                                             filter=Q(naoneassettransaction__fee
+                                                      =models.NaoneAssetTransaction.FEE_CHOICES.green_fee),
+                                             ),
+                      caddie_fee_price=Sum('naoneassettransaction__unit_price',
+                                          filter=Q(naoneassettransaction__fee
+                                                   =models.NaoneAssetTransaction.FEE_CHOICES.caddie_fee),
+                                          ),
+                      caddie_fee_subtotal=Sum('naoneassettransaction__amount',
+                                             filter=Q(naoneassettransaction__fee
+                                                      =models.NaoneAssetTransaction.FEE_CHOICES.caddie_fee),
+                                             ),
+                      cart_fee_price=Sum('naoneassettransaction__unit_price',
+                                          filter=Q(naoneassettransaction__fee
+                                                   =models.NaoneAssetTransaction.FEE_CHOICES.cart_fee),
+                                          ),
+                      cart_fee_subtotal=Sum('naoneassettransaction__amount',
+                                             filter=Q(naoneassettransaction__fee
+                                                      =models.NaoneAssetTransaction.FEE_CHOICES.cart_fee),
+                                             ),
+                      total_petty_cash_in=Sum('naoneassettransaction__amount',
                                               filter=Q(naoneassettransaction__cash_flow
                                                        =models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in,
                                                        naoneassettransaction__asset__asset_type

@@ -57,18 +57,18 @@
                     <td>{{ t.pax }}</td>
                     <td>{{ t.time|date:'H:i' }}</td>
                     <td>{{ t.get_type_display }}</td>
-                    <td>그린피</td>
-                    <td>그.총액</td>
+                    <td>{{ t.green_fee_price|default_if_none:'0'|intcomma }}</td>
+                    <td>{{ t.green_fee_subtotal|default_if_none:'0'|intcomma }}</td>
                     <td>그.자산</td>
                     <td>그.비용</td>
                     <td>그.총비용</td>
-                    <td>캐디피</td>
-                    <td>캐.총액</td>
+                    <td>{{ t.caddie_fee_price|default_if_none:'0'|intcomma }}</td>
+                    <td>{{ t.caddie_fee_subtotal|default_if_none:'0'|intcomma }}</td>
                     <td>캐.자산</td>
                     <td>캐.비용</td>
                     <td>캐.총비용</td>
-                    <td>카트피</td>
-                    <td>카.총액</td>
+                    <td>{{ t.cart_fee_price|default_if_none:'0'|intcomma }}</td>
+                    <td>{{ t.cart_fee_subtotal|default_if_none:'0'|intcomma }}</td>
                     <td>카.자산</td>
                     <td>카.비용</td>
                     <td>카.총비용</td>
