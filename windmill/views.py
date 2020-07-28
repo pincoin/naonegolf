@@ -271,7 +271,11 @@ class MonthlyDailyStatusReport(generic.ListView):
 
         for teeoff in qs:
             teeoff.total_petty_cash_balance = teeoff.total_petty_cash_in or 0 - teeoff.total_petty_cash_out or 0
-            teeoff.total_bank_balance = teeoff.total_bank_in or 0 - teeoff.total_bank_out or 0
+
+            print(teeoff.total_petty_cash_in, teeoff.total_petty_cash_out)
+            print(teeoff.total_bank_in, teeoff.total_bank_out)
+            print(teeoff.total_prepaid_in, teeoff.total_prepaid_out)
+            # teeoff.total_bank_balance = teeoff.total_bank_in or 0 - teeoff.total_bank_out or 0
             # teeoff.total_prepaid_balance = teeoff.total_prepaid_in or 0 - teeoff.total_prepaid_out or 0
 
             for t in teeoff.naoneassettransaction_set.all():
