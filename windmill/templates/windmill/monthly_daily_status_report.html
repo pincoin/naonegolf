@@ -86,7 +86,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td>누계</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -111,8 +111,8 @@
                     <td>&nbsp;</td>
                     <td>{{ total_ecard|default_if_none:'0'|intcomma }}</td>
                     <td>&nbsp;</td>
-                    <td>매출</td>
-                    <td>수익</td>
+                    <td>{{ total_sales|default_if_none:'0'|intcomma }}</td>
+                    <td>{{ total_profit|default_if_none:'0'|intcomma }}</td>
                     <td>현장수금액 시재증액</td>
                     <td>현장수금액 시재차감</td>
                     <td>월시재증감</td>
