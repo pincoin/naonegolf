@@ -84,6 +84,42 @@
                 </tr>
                 {% endfor %}
                 </tbody>
+                <tfoot>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>{{ total_pax|default_if_none:'0'|intcomma }}</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>{{ total.ecard|default_if_none:'0'|intcomma }}</td>
+                    <td>&nbsp;</td>
+                    <td>매출</td>
+                    <td>수익</td>
+                    <td>현장수금액 시재증액</td>
+                    <td>현장수금액 시재차감</td>
+                    <td>월시재증감</td>
+                    <td>선납액증감</td>
+                    <td>통장잔고증감</td>
+                </tr>
+                </tfoot>
             </table>
         </div>
     </div>

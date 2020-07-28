@@ -269,6 +269,9 @@ class MonthlyDailyStatusReport(generic.ListView):
                       ) \
             .order_by('day', 'time')
 
+        self.total_pax = 0
+        self.total_ecard = 0
+
         for teeoff in qs:
             teeoff.total_petty_cash_in = 0 if teeoff.total_petty_cash_in is None else teeoff.total_petty_cash_in
             teeoff.total_petty_cash_out = 0 if teeoff.total_petty_cash_out is None else teeoff.total_petty_cash_out
@@ -283,6 +286,8 @@ class MonthlyDailyStatusReport(generic.ListView):
             teeoff.total_bank_balance = teeoff.total_bank_in - teeoff.total_bank_out
             teeoff.total_prepaid_balance = teeoff.total_prepaid_in - teeoff.total_prepaid_out
 
+            self.total_pax += teeoff.pax
+
             for t in teeoff.naoneassettransaction_set.all():
                 if t.cash_flow == models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in:
                     if t.fee == models.NaoneAssetTransaction.FEE_CHOICES.green_fee:
@@ -291,6 +296,8 @@ class MonthlyDailyStatusReport(generic.ListView):
                         teeoff.caddie_fee_asset = t.asset.name
                     elif t.fee == models.NaoneAssetTransaction.FEE_CHOICES.cart_fee:
                         teeoff.cart_fee_asset = t.asset.name
+
+                    self.total_sales += t.amount
                 else:
                     if t.fee == models.NaoneAssetTransaction.FEE_CHOICES.green_fee:
                         teeoff.green_fee_cost_asset = t.asset.name
@@ -300,12 +307,9 @@ class MonthlyDailyStatusReport(generic.ListView):
                         teeoff.cart_fee_cost_asset = t.asset.name
                         teeoff.ecard = t.amount / t.unit_price if teeoff.cart_fee_cost_asset == 'E-Card' else 0
 
-        for teeoff in qs:
-            for transaction in teeoff.naoneassettransaction_set.all():
-                if transaction.cash_flow == models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in:
-                    self.total_sales += transaction.amount
-                elif transaction.cash_flow == models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_out:
-                    self.total_cost += transaction.amount
+                        self.total_ecard += teeoff.ecard
+
+                    self.total_cost += t.amount
 
         return qs
 
@@ -315,6 +319,8 @@ class MonthlyDailyStatusReport(generic.ListView):
         context['total_sales'] = self.total_sales
         context['total_cost'] = self.total_cost
         context['total_profit'] = self.total_sales - self.total_cost
+        context['total_pax'] = self.total_pax
+        context['total_ecard'] = self.total_ecard
 
         context['year'] = self.kwargs['year']
         context['month'] = self.kwargs['month']
