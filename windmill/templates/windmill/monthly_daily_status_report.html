@@ -51,10 +51,10 @@
                 <tr>
                     <td>
                         {% if user.is_superuser %}
-                        <a href="{% url 'admin:windmill_teeofftime_change' item.id %}" class="text-dark">
+                        <a href="{% url 'admin:windmill_teeofftime_change' t.id %}" class="text-dark">
                             {{ t.day|date:'Ymd' }}
                         </a>
-                        {%else %}}
+                        {%else %}
                         {{ t.day|date:'Ymd' }}
                         {%endif %}
                     </td>
