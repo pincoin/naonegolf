@@ -332,6 +332,11 @@ class MonthlyDailyStatusReport(generic.ListView):
         context['total_profit'] = self.total_sales - self.total_cost
         context['total_pax'] = self.total_pax
         context['total_ecard'] = self.total_ecard
+        context['total_petty_cash_in'] = self.total_petty_cash_in
+        context['total_petty_cash_out'] = self.total_petty_cash_out
+        context['total_petty_cash_balance'] = self.total_petty_cash_balance
+        context['total_prepaid_balance'] = self.total_prepaid_balance
+        context['total_bank_balance'] = self.total_bank_balance
 
         context['year'] = self.kwargs['year']
         context['month'] = self.kwargs['month']

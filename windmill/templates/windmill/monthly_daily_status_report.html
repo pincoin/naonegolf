@@ -116,8 +116,8 @@
                     <td>{{ total_petty_cash_in|default_if_none:'0'|intcomma }}</td>
                     <td>{{ total_petty_cash_out|default_if_none:'0'|intcomma }}</td>
                     <td>{{ total_petty_cash_balance|default_if_none:'0'|intcomma }}</td>
-                    <td>선납액증감</td>
-                    <td>통장잔고증감</td>
+                    <td>{{ total_prepaid_balance|default_if_none:'0'|intcomma }}</td>
+                    <td>{{ total_bank_balance|default_if_none:'0'|intcomma }}</td>
                 </tr>
                 </tfoot>
             </table>
