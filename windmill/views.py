@@ -187,7 +187,8 @@ class MonthlyDailyStatusReport(generic.ListView):
                                      filter=Q(naoneassettransaction__cash_flow
                                               =models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_out),
                                      ),
-                      )
+                      ) \
+            .order_by('day', 'time')
 
         for teeoff in qs:
             for transaction in teeoff.naoneassettransaction_set.all():
