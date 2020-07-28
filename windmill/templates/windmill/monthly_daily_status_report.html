@@ -72,7 +72,7 @@
                     <td>{{ t.cart_fee_asset|default:'-'|asset_name }}</td>
                     <td>{{ t.cart_fee_cost|default_if_none:'0'|intcomma }}</td>
                     <td>{{ t.cart_fee_cost_subtotal|default_if_none:'0'|intcomma }}</td>
-                    <td>카.차감</td>
+                    <td>{{ t.ecard }}</td>
                     <td>{{ t.cart_fee_cost_asset|default:'-'|asset_name }}</td>
                     <td>{{ t.sales }}</td>
                     <td>{{ t.profit }}</td>

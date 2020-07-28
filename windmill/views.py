@@ -269,6 +269,7 @@ class MonthlyDailyStatusReport(generic.ListView):
                         teeoff.caddie_fee_cost_asset = t.asset.name
                     elif t.fee == models.NaoneAssetTransaction.FEE_CHOICES.cart_fee:
                         teeoff.cart_fee_cost_asset = t.asset.name
+                        teeoff.ecard = t.amount / t.unit_price if teeoff.cart_fee_cost_asset == 'E-Card' else 0
 
         for teeoff in qs:
             for transaction in teeoff.naoneassettransaction_set.all():
