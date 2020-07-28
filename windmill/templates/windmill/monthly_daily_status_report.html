@@ -79,8 +79,8 @@
                     <td>{{ t.total_petty_cash_in|default_if_none:'0'|intcomma }}</td>
                     <td>{{ t.total_petty_cash_out|default_if_none:'0'|intcomma }}</td>
                     <td>{{ t.total_petty_cash_balance|default_if_none:'0'|intcomma }}</td>
-                    <td>{{ t.total_prepaid_in|default_if_none:'0'|intcomma }}</td>
-                    <td>{{ t.total_bank_in|default_if_none:'0'|intcomma }}</td>
+                    <td>{{ t.total_prepaid_balance|default_if_none:'0'|intcomma }}</td>
+                    <td>{{ t.total_bank_balance|default_if_none:'0'|intcomma }}</td>
                 </tr>
                 {% endfor %}
                 </tbody>
