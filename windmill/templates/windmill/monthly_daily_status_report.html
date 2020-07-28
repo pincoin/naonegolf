@@ -74,12 +74,12 @@
                     <td>카.총비용</td>
                     <td>카.차감</td>
                     <td>카.자산</td>
-                    <td>매출</td>
-                    <td>수익</td>
-                    <td>현장수금액 시재증액</td>
-                    <td>현장수금액 시재차감</td>
-                    <td>일시재증감</td>
-                    <td>선납액증감</td>
+                    <td>{{ t.sales }}</td>
+                    <td>{{ t.profit }}</td>
+                    <td>{{ t.total_petty_cash_in|default_if_none:'0' }}</td>
+                    <td>{{ t.total_petty_cash_out|default_if_none:'0' }}</td>
+                    <td>{{ t.total_petty_cash_balance|default_if_none:'0' }}</td>
+                    <td>-</td>
                     <td>통장잔고증감</td>
                 </tr>
                 {% endfor %}

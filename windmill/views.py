@@ -179,6 +179,18 @@ class MonthlyDailyStatusReport(generic.ListView):
                                                         naoneassettransaction__asset__asset_type
                                                         =models.NaoneAsset.ASSET_TYPE_CHOICES.petty_cash),
                                                ),
+                      total_petty_cash_balance=Sum('naoneassettransaction__amount',
+                                                   filter=Q(naoneassettransaction__cash_flow
+                                                            =models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in,
+                                                            naoneassettransaction__asset__asset_type
+                                                            =models.NaoneAsset.ASSET_TYPE_CHOICES.petty_cash),
+                                                   )
+                                               - Sum('naoneassettransaction__amount',
+                                                     filter=Q(naoneassettransaction__cash_flow
+                                                              =models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_out,
+                                                              naoneassettransaction__asset__asset_type
+                                                              =models.NaoneAsset.ASSET_TYPE_CHOICES.petty_cash),
+                                                     ),
                       total_sales=Sum('naoneassettransaction__amount',
                                       filter=Q(naoneassettransaction__cash_flow
                                                =models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in),
