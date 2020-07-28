@@ -254,6 +254,22 @@ class MonthlyDailyStatusReport(generic.ListView):
         for teeoff in qs:
             teeoff.total_petty_cash_balance = teeoff.total_petty_cash_in or 0 - teeoff.total_petty_cash_out or 0
 
+            for t in teeoff.naoneassettransaction_set.all():
+                if t.cash_flow == models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in:
+                    if t.fee == models.NaoneAssetTransaction.FEE_CHOICES.green_fee:
+                        teeoff.green_fee_asset = t.asset.name
+                    elif t.fee == models.NaoneAssetTransaction.FEE_CHOICES.caddie_fee:
+                        teeoff.caddie_fee_asset = t.asset.name
+                    elif t.fee == models.NaoneAssetTransaction.FEE_CHOICES.cart_fee:
+                        teeoff.cart_fee_asset = t.asset.name
+                else:
+                    if t.fee == models.NaoneAssetTransaction.FEE_CHOICES.green_fee:
+                        teeoff.green_fee_cost_asset = t.asset.name
+                    elif t.fee == models.NaoneAssetTransaction.FEE_CHOICES.caddie_fee:
+                        teeoff.caddie_fee_cost_asset = t.asset.name
+                    elif t.fee == models.NaoneAssetTransaction.FEE_CHOICES.cart_fee:
+                        teeoff.cart_fee_cost_asset = t.asset.name
+
         for teeoff in qs:
             for transaction in teeoff.naoneassettransaction_set.all():
                 if transaction.cash_flow == models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in:

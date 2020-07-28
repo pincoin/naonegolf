@@ -59,21 +59,21 @@
                     <td>{{ t.get_type_display }}</td>
                     <td>{{ t.green_fee_price|default_if_none:'0'|intcomma }}</td>
                     <td>{{ t.green_fee_subtotal|default_if_none:'0'|intcomma }}</td>
-                    <td>그.자산</td>
+                    <td>{{ t.green_fee_asset }}</td>
                     <td>{{ t.green_fee_cost|default_if_none:'0'|intcomma }}</td>
                     <td>{{ t.green_fee_cost_subtotal|default_if_none:'0'|intcomma }}</td>
                     <td>{{ t.caddie_fee_price|default_if_none:'0'|intcomma }}</td>
                     <td>{{ t.caddie_fee_subtotal|default_if_none:'0'|intcomma }}</td>
-                    <td>캐.자산</td>
+                    <td>{{ t.caddie_fee_asset }}</td>
                     <td>{{ t.caddie_fee_cost|default_if_none:'0'|intcomma }}</td>
                     <td>{{ t.caddie_fee_cost_subtotal|default_if_none:'0'|intcomma }}</td>
                     <td>{{ t.cart_fee_price|default_if_none:'0'|intcomma }}</td>
                     <td>{{ t.cart_fee_subtotal|default_if_none:'0'|intcomma }}</td>
-                    <td>카.자산</td>
+                    <td>{{ t.cart_fee_asset|default:'-' }}</td>
                     <td>{{ t.cart_fee_cost|default_if_none:'0'|intcomma }}</td>
                     <td>{{ t.cart_fee_cost_subtotal|default_if_none:'0'|intcomma }}</td>
                     <td>카.차감</td>
-                    <td>카.자산</td>
+                    <td>{{ t.cart_fee_cost_asset|default:'-' }}</td>
                     <td>{{ t.sales }}</td>
                     <td>{{ t.profit }}</td>
                     <td>{{ t.total_petty_cash_in|default_if_none:'0'|intcomma }}</td>
