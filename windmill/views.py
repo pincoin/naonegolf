@@ -270,13 +270,18 @@ class MonthlyDailyStatusReport(generic.ListView):
             .order_by('day', 'time')
 
         for teeoff in qs:
-            teeoff.total_petty_cash_balance = teeoff.total_petty_cash_in or 0 - teeoff.total_petty_cash_out or 0
+            teeoff.total_petty_cash_in = 0 if teeoff.total_petty_cash_in is None else teeoff.total_petty_cash_in
+            teeoff.total_petty_cash_out = 0 if teeoff.total_petty_cash_out is None else teeoff.total_petty_cash_out
 
-            print(teeoff.total_petty_cash_in, teeoff.total_petty_cash_out)
-            print(teeoff.total_bank_in, teeoff.total_bank_out)
-            print(teeoff.total_prepaid_in, teeoff.total_prepaid_out)
-            # teeoff.total_bank_balance = teeoff.total_bank_in or 0 - teeoff.total_bank_out or 0
-            # teeoff.total_prepaid_balance = teeoff.total_prepaid_in or 0 - teeoff.total_prepaid_out or 0
+            teeoff.total_bank_in = 0 if teeoff.total_bank_in is None else teeoff.total_bank_in
+            teeoff.total_bank_out = 0 if teeoff.total_bank_out is None else teeoff.total_bank_out
+
+            teeoff.total_prepaid_in = 0 if teeoff.total_prepaid_in is None else teeoff.total_prepaid_in
+            teeoff.total_prepaid_out = 0 if teeoff.total_prepaid_out is None else teeoff.total_prepaid_out
+
+            teeoff.total_petty_cash_balance = teeoff.total_petty_cash_in - teeoff.total_petty_cash_out
+            teeoff.total_bank_balance = teeoff.total_bank_in - teeoff.total_bank_out
+            teeoff.total_prepaid_balance = teeoff.total_prepaid_in - teeoff.total_prepaid_out
 
             for t in teeoff.naoneassettransaction_set.all():
                 if t.cash_flow == models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in:
