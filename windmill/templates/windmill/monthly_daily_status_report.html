@@ -49,7 +49,15 @@
                 <tbody>
                 {% for t in tee_off_times %}
                 <tr>
-                    <td>{{ t.day|date:'Ymd' }}</td>
+                    <td>
+                        {% if user.is_superuser %}
+                        <a href="{% url 'admin:windmill_teeofftime_change' item.id %}" class="text-dark">
+                            {{ t.day|date:'Ymd' }}
+                        </a>
+                        {%else %}}
+                        {{ t.day|date:'Ymd' }}
+                        {%endif %}
+                    </td>
                     <td>{{ t.day|date:'D' }}</td>
                     <td>{{ t.get_booking_status_display }}</td>
                     <td>{{ t.agency.name }}</td>
