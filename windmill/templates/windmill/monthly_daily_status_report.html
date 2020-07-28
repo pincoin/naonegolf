@@ -1,0 +1,69 @@
+{% extends 'conf/base.html' %}
+
+{% load static i18n humanize %}
+{% load windmill_filters %}
+
+{% block title %}{% trans 'Daily Status Report' %}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row border-bottom mt-5 booking-heading">
+        <div class="col">
+            <table class="table table-responsive monthly-daily-status-report-table">
+                <thead>
+                <tr>
+                    <th>라운드일</th>
+                    <th>요일</th>
+                    <th>상태</th>
+                    <th>분류</th>
+                    <th>예약자명</th>
+                    <th>인원</th>
+                    <th>티오프</th>
+                    <th>ST</th>
+                    <th>그린피</th>
+                    <th>그.총액</th>
+                    <th>그.자산</th>
+                    <th>그.비용</th>
+                    <th>그.총비용</th>
+                    <th>캐디피</th>
+                    <th>캐.총액</th>
+                    <th>캐.자산</th>
+                    <th>캐.비용</th>
+                    <th>캐.총비용</th>
+                    <th>카트피</th>
+                    <th>카.총액</th>
+                    <th>카.자산</th>
+                    <th>카.비용</th>
+                    <th>카.총비용</th>
+                    <th>카.차감</th>
+                    <th>카.자산</th>
+                    <th>매출</th>
+                    <th>수익</th>
+                    <th>현장수금액 시재증액</th>
+                    <th>현장수금액 시재차감</th>
+                    <th>일시재증감</th>
+                    <th>선납액증감</th>
+                    <th>통장잔고증감</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-block btn-primary"
+               href="{% url 'windmill:monthly-status-report' year month %}">{{ year }} - {{ month|month_name }}</a>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block stylesheet %}
+{{ block.super }}
+<link href="{% static 'windmill/css/windmill.css' %}" rel="stylesheet">
+{% endblock %}

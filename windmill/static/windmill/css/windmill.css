@@ -20,3 +20,8 @@
     font-weight: bold;
     margin-bottom: .5rem;
 }
+
+.monthly-daily-status-report-table {
+    word-break: keep-all;
+    font-size: 0.8rem;
+}
