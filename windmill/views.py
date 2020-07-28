@@ -271,6 +271,11 @@ class MonthlyDailyStatusReport(generic.ListView):
 
         self.total_pax = 0
         self.total_ecard = 0
+        self.total_petty_cash_in = 0
+        self.total_petty_cash_out = 0
+        self.total_petty_cash_balance = 0
+        self.total_bank_balance = 0
+        self.total_prepaid_balance = 0
 
         for teeoff in qs:
             teeoff.total_petty_cash_in = 0 if teeoff.total_petty_cash_in is None else teeoff.total_petty_cash_in
@@ -287,6 +292,12 @@ class MonthlyDailyStatusReport(generic.ListView):
             teeoff.total_prepaid_balance = teeoff.total_prepaid_in - teeoff.total_prepaid_out
 
             self.total_pax += teeoff.pax
+
+            self.total_petty_cash_in += teeoff.total_petty_cash_in
+            self.total_petty_cash_out += teeoff.total_petty_cash_out
+            self.total_petty_cash_balance += teeoff.total_petty_cash_balance
+            self.total_bank_balance += teeoff.total_bank_balance
+            self.total_prepaid_balance += teeoff.total_prepaid_balance
 
             for t in teeoff.naoneassettransaction_set.all():
                 if t.cash_flow == models.NaoneAssetTransaction.CASH_FLOW_CHOICES.cash_in:
