@@ -19,5 +19,7 @@ def asset_name(name):
         return '통장'
     elif name == 'E-Card':
         return 'E카드'
+    elif name == '[Deposit] TOTO':
+        return '선납'
     else:
         return name
