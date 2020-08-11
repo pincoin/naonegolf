@@ -1,5 +1,6 @@
 from decimal import Decimal
 
+from django.core import validators
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from model_utils import Choices
@@ -456,3 +457,48 @@ class NaoneManagingBook(model_utils_models.TimeStampedModel):
 
     def __str__(self):
         return '{} {} {}'.format(self.agency, self.get_cash_flow_display(), self.amount)
+
+
+class NaoneAssetBalance(model_utils_models.TimeStampedModel):
+    asset = models.ForeignKey(
+        'windmill.NaoneAsset',
+        verbose_name=_('Asset'),
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    year = models.IntegerField(
+        verbose_name=_('Year'),
+        default=2020,
+        validators=[
+            validators.MinValueValidator(2020),
+        ],
+        db_index=True,
+    )
+
+    month = models.IntegerField(
+        verbose_name=_('Month'),
+        default=1,
+        validators=[
+            validators.MinValueValidator(1),
+            validators.MaxValueValidator(12),
+        ],
+        db_index=True,
+    )
+
+    amount = models.DecimalField(
+        verbose_name=_('Amount'),
+        max_digits=11,
+        decimal_places=0,
+        default=Decimal('0'),
+        help_text=_('THB'),
+    )
+
+    class Meta:
+        unique_together = ('year', 'month', 'amount')
+
+        verbose_name = _('NA-ONE Asset Balance')
+        verbose_name_plural = _('NA-ONE Asset Balance')
+
+    def __str__(self):
+        return '{} {} {}'.format(self.asset, self.year, self.month, self.amount)

@@ -28,7 +28,7 @@ class AgencyAdmin(admin.ModelAdmin):
 
 class TeeOffTimeAdmin(admin.ModelAdmin):
     list_display = (
-    'day', 'time', 'agency', 'customer_name', 'pax', 'hole', 'booking_status', 'slot', 'type', 'tee_off_status')
+        'day', 'time', 'agency', 'customer_name', 'pax', 'hole', 'booking_status', 'slot', 'type', 'tee_off_status')
     list_display_links = ('day', 'time', 'customer_name')
     list_filter = ('booking_status', 'tee_off_status', 'type', 'agency')
     inlines = [AssetTransactionInline, ]
@@ -60,6 +60,12 @@ class NaoneAssetAdmin(admin.ModelAdmin):
     ordering = ('asset_type',)
 
 
+class NaoneAssetBalanceAdmin(admin.ModelAdmin):
+    list_display = ('asset', 'year', 'month', 'amount')
+    list_filter = ('asset',)
+    ordering = ('-year', '-month', 'asset')
+
+
 class NaoneAssetTransaction(admin.ModelAdmin):
     list_display = ('fee', 'cash_flow', 'input_type', 'asset', 'unit_price', 'amount', 'transaction_date')
     list_filter = ('fee', 'cash_flow', 'input_type', 'asset')
@@ -70,4 +76,5 @@ class NaoneAssetTransaction(admin.ModelAdmin):
 admin.site.register(models.Agency, AgencyAdmin)
 admin.site.register(models.TeeOffTime, TeeOffTimeAdmin)
 admin.site.register(models.NaoneAsset, NaoneAssetAdmin)
+admin.site.register(models.NaoneAssetBalance, NaoneAssetBalanceAdmin)
 admin.site.register(models.NaoneAssetTransaction, NaoneAssetTransaction)
